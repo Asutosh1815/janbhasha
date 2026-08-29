@@ -1,4 +1,4 @@
-﻿import { TribalLanguage, LessonContent, WorksheetItem, FlashcardItem, AssessmentItem, TranslationRecord, OfflinePack } from '../types';
+import { TribalLanguage, LessonContent, WorksheetItem, AssessmentItem, TranslationRecord, OfflinePack } from '../types';
 
 export const LANGUAGES: TribalLanguage[] = [
   {
@@ -317,87 +317,6 @@ export const MOCK_WORKSHEETS: WorksheetItem[] = [
         answer: '🌳 पेड़ (Tree)'
       }
     ]
-  }
-];
-
-export const MOCK_FLASHCARDS: FlashcardItem[] = [
-  {
-    id: 'fc-1',
-    category: 'fruits',
-    hindiWord: 'सेब',
-    romanHindi: 'Seb',
-    tribalWord: 'सेब / उली लेका जो',
-    romanTribal: 'Seb / Uli Leka Jo',
-    englishMeaning: 'Apple',
-    emoji: '🍎',
-    imageUrl: 'apple',
-    exampleSentenceHindi: 'सेब स्वास्थ्य के लिए बहुत अच्छा होता है।',
-    exampleSentenceTribal: 'सेब जोम-ते हड़मो बुगिन ताहेना।'
-  },
-  {
-    id: 'fc-2',
-    category: 'nature',
-    hindiWord: 'पेड़',
-    romanHindi: 'Ped',
-    tribalWord: 'दारू (Daru)',
-    romanTribal: 'Daru',
-    englishMeaning: 'Tree',
-    emoji: '🌳',
-    imageUrl: 'tree',
-    exampleSentenceHindi: 'यह एक बड़ा हरा पेड़ है।',
-    exampleSentenceTribal: 'नेया मिद्ता मारांग हरियर दारू ताना।'
-  },
-  {
-    id: 'fc-3',
-    category: 'nature',
-    hindiWord: 'सूरज',
-    romanHindi: 'Sooraj',
-    tribalWord: 'सिंगी (Singi)',
-    romanTribal: 'Singi',
-    englishMeaning: 'Sun',
-    emoji: '☀️',
-    imageUrl: 'sun',
-    exampleSentenceHindi: 'सुबह सूरज पूर्व दिशा से उगता है।',
-    exampleSentenceTribal: 'सेता-रे सिंगी पूरब-ते ओलोंगा।'
-  },
-  {
-    id: 'fc-4',
-    category: 'nature',
-    hindiWord: 'पानी',
-    romanHindi: 'Paani',
-    tribalWord: 'दाः (Daah)',
-    romanTribal: 'Daah',
-    englishMeaning: 'Water',
-    emoji: '💧',
-    imageUrl: 'water',
-    exampleSentenceHindi: 'हमें साफ़ पानी पीना चाहिए।',
-    exampleSentenceTribal: 'आबू साफ दाः नू दरकार।'
-  },
-  {
-    id: 'fc-5',
-    category: 'animals',
-    hindiWord: 'चिड़िया',
-    romanHindi: 'Chidiya',
-    tribalWord: 'चेड़ो (Chero / Chede)',
-    romanTribal: 'Chede',
-    englishMeaning: 'Bird',
-    emoji: '🐦',
-    imageUrl: 'bird',
-    exampleSentenceHindi: 'चिड़िया आकाश में उड़ती है।',
-    exampleSentenceTribal: 'चेड़ो सिरमा-रे उड़ौ-आ।'
-  },
-  {
-    id: 'fc-6',
-    category: 'classroom',
-    hindiWord: 'किताब',
-    romanHindi: 'Kitaab',
-    tribalWord: 'पुथी (Puthi)',
-    romanTribal: 'Puthi',
-    englishMeaning: 'Book',
-    emoji: '📚',
-    imageUrl: 'book',
-    exampleSentenceHindi: 'किताब खोलो और पढ़ो।',
-    exampleSentenceTribal: 'पुथी झिज मे आर पाड़ाव मे।'
   }
 ];
 

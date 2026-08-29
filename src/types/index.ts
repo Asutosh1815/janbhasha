@@ -1,4 +1,5 @@
-﻿export type LanguageId = 'ho' | 'mundari' | 'santhali' | 'gondi' | 'kurukh';
+export type LanguageId = 'ho' | 'mundari' | 'santhali' | 'gondi' | 'kurukh';
+export type AppDisplayLanguage = 'en' | 'hi' | 'ho' | 'mundari' | 'santhali' | 'gondi' | 'kurukh';
 
 export interface TribalLanguage {
   id: LanguageId;
@@ -15,17 +16,31 @@ export interface TribalLanguage {
   isDownloaded: boolean;
 }
 
+export type UserRole = 'admin' | 'teacher' | 'student';
+
+export interface UserProfile {
+  role: UserRole;
+  name: string;
+  id: string;
+  school: string;
+  avatar: string;
+  designation?: string;
+  classLevel?: string;
+  starsEarned?: number;
+}
+
 export type ScreenType = 
   | 'splash'
+  | 'login'
   | 'language-select'
   | 'home'
   | 'voice-translation'
   | 'lessons'
   | 'worksheets'
-  | 'flashcards'
   | 'assessments'
   | 'history'
-  | 'settings';
+  | 'settings'
+  | 'admin-dashboard';
 
 export interface TranslationRecord {
   id: string;
@@ -84,6 +99,16 @@ export interface LessonContent {
   }[];
 }
 
+export interface WorksheetQuestion {
+  id: string;
+  qHindi: string;
+  qTribal: string;
+  prompt: string;
+  type: 'multiple-choice' | 'match' | 'count';
+  options?: string[];
+  answer: string | number;
+}
+
 export interface WorksheetItem {
   id: string;
   title: string;
@@ -92,29 +117,9 @@ export interface WorksheetItem {
   language: string;
   color: string;
   level: string;
-  questions: {
-    id: string;
-    qHindi: string;
-    qTribal: string;
-    prompt: string;
-    type: 'multiple-choice' | 'match' | 'count';
-    options?: string[];
-    answer: string | number;
-  }[];
-}
-
-export interface FlashcardItem {
-  id: string;
-  category: 'fruits' | 'animals' | 'nature' | 'classroom' | 'numbers';
-  hindiWord: string;
-  romanHindi: string;
-  tribalWord: string;
-  romanTribal: string;
-  englishMeaning: string;
-  emoji: string;
-  imageUrl: string;
-  exampleSentenceHindi: string;
-  exampleSentenceTribal: string;
+  createdBy?: string;
+  createdAt?: string;
+  questions: WorksheetQuestion[];
 }
 
 export interface AssessmentItem {

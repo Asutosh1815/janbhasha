@@ -1,13 +1,13 @@
-﻿import React from 'react';
-import { Home, BookOpen, Mic, ClipboardList, User } from 'lucide-react';
+import React from 'react';
+import { Home, BookOpen, Mic, ClipboardList, User, ShieldCheck, FileText, Globe } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { ScreenType } from '../../types';
 
 export const BottomNav: React.FC = () => {
-  const { currentScreen, setCurrentScreen } = useApp();
+  const { currentScreen, setCurrentScreen, currentUser, t } = useApp();
 
-  // Hidden on splash / onboarding screens
-  if (currentScreen === 'splash' || currentScreen === 'language-select') {
+  // Hidden on splash / onboarding / login / language-select screens
+  if (currentScreen === 'splash' || currentScreen === 'login' || currentScreen === 'language-select') {
     return null;
   }
 
@@ -18,13 +18,39 @@ export const BottomNav: React.FC = () => {
     isPrimaryFab?: boolean;
   }
 
-  const tabs: NavTab[] = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'lessons', label: 'Content', icon: BookOpen },
-    { id: 'voice-translation', label: 'Translate', icon: Mic, isPrimaryFab: true },
-    { id: 'assessments', label: 'Assessments', icon: ClipboardList },
-    { id: 'settings', label: 'Profile', icon: User },
-  ];
+  // Role-customized bottom navigation tabs (Flashcards removed)
+  const getTabs = (): NavTab[] => {
+    if (currentUser.role === 'admin') {
+      return [
+        { id: 'admin-dashboard', label: t('navAdmin'), icon: ShieldCheck },
+        { id: 'home', label: t('navHome'), icon: Home },
+        { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
+        { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
+        { id: 'settings', label: t('navSettings'), icon: User },
+      ];
+    }
+
+    if (currentUser.role === 'student') {
+      return [
+        { id: 'home', label: t('navHome'), icon: Home },
+        { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
+        { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
+        { id: 'lessons', label: t('navLessons'), icon: BookOpen },
+        { id: 'language-select', label: t('navLanguage'), icon: Globe },
+      ];
+    }
+
+    // Default Teacher tabs
+    return [
+      { id: 'home', label: t('navHome'), icon: Home },
+      { id: 'lessons', label: t('navLessons'), icon: BookOpen },
+      { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
+      { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
+      { id: 'settings', label: t('navSettings'), icon: User },
+    ];
+  };
+
+  const tabs = getTabs();
 
   return (
     <nav className="sticky bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 px-4 pt-2 pb-3 flex items-center justify-around shadow-[0_-4px_16px_rgba(0,0,0,0.03)]">
@@ -40,7 +66,7 @@ export const BottomNav: React.FC = () => {
                 className={`relative w-14 h-14 rounded-full bg-janbhasha-700 text-white flex items-center justify-center shadow-fab transition-all duration-300 transform active:scale-95 hover:bg-janbhasha-800 ${
                   isActive ? 'ring-4 ring-janbhasha-300 scale-105' : ''
                 }`}
-                title="Voice Translation"
+                title={t('voiceTranslateTitle')}
               >
                 <div className="absolute inset-0 rounded-full bg-janbhasha-600 animate-ping opacity-20" />
                 <Icon className="w-7 h-7" />

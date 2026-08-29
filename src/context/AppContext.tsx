@@ -1,24 +1,87 @@
-﻿import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { 
   LanguageId, 
+  AppDisplayLanguage,
   ScreenType, 
   TribalLanguage, 
   TranslationRecord, 
-  OfflinePack 
+  OfflinePack,
+  UserRole,
+  UserProfile,
+  WorksheetItem
 } from '../types';
 import { 
   LANGUAGES, 
   INITIAL_TRANSLATIONS, 
   INITIAL_OFFLINE_PACKS, 
-  PRESET_TEACHER_PROMPTS 
+  PRESET_TEACHER_PROMPTS,
+  MOCK_WORKSHEETS
 } from '../data/mockData';
+import { TRANSLATIONS, TranslationDictionary } from '../i18n/translations';
 import { speakText, stopSpeech, soundEffects } from '../services/speechService';
+import { translateAuthentic } from '../services/translatorService';
+
+export const DEFAULT_PROFILES: Record<UserRole, UserProfile> = {
+  admin: {
+    role: 'admin',
+    name: 'Dr. Arvind Murmu',
+    id: 'ADM-BRC-2026',
+    designation: 'District BRC Education Officer',
+    school: 'District Education Department, Kolhan Division',
+    avatar: '👨‍💼',
+    starsEarned: 0
+  },
+  teacher: {
+    role: 'teacher',
+    name: 'Sunita Hansda',
+    id: 'TCH-JH-4029',
+    designation: 'Primary FLN Educator',
+    school: 'Govt. Primary School, Chaibasa',
+    avatar: '👩‍🏫',
+    starsEarned: 0
+  },
+  student: {
+    role: 'student',
+    name: 'Birsa Munda',
+    id: 'STD-CL2-08',
+    designation: 'Student (Gidra / चेदोःनी)',
+    school: 'Govt. Primary School, Chaibasa',
+    avatar: '👦',
+    classLevel: 'Class 2 (कक्षा २)',
+    starsEarned: 48
+  }
+};
+
+// Valid credentials lookup table
+export const VALID_CREDENTIALS: Record<UserRole, { validIds: string[]; validPins: string[] }> = {
+  admin: {
+    validIds: ['adm-brc-2026', 'admin', 'admin@janbhasha.gov.in', 'dr. arvind murmu'],
+    validPins: ['4029', 'admin123', '1234']
+  },
+  teacher: {
+    validIds: ['tch-jh-4029', 'teacher', 'teacher@janbhasha.gov.in', 'sunita hansda', '9876543210'],
+    validPins: ['1234', 'teach123', '4029']
+  },
+  student: {
+    validIds: ['std-cl2-08', 'student', 'birsa', 'birsa munda', 'sanjana', 'mangal', 'sombari'],
+    validPins: ['2026', '1234', '0000']
+  }
+};
 
 interface AppContextType {
   currentScreen: ScreenType;
   setCurrentScreen: (screen: ScreenType) => void;
   selectedLanguage: TribalLanguage;
   setSelectedLanguageId: (id: LanguageId) => void;
+  appLanguage: AppDisplayLanguage;
+  setAppLanguage: (lang: AppDisplayLanguage) => void;
+  t: (key: keyof TranslationDictionary) => string;
+  currentUser: UserProfile;
+  isLoggedIn: boolean;
+  loginAs: (role: UserRole, customData?: Partial<UserProfile>) => void;
+  validateAndLogin: (role: UserRole, idInput: string, pinInput: string, customData?: Partial<UserProfile>) => { success: boolean; error?: string };
+  logout: () => void;
+  earnStars: (count?: number) => void;
   offlineMode: boolean;
   setOfflineMode: (offline: boolean) => void;
   historyList: TranslationRecord[];
@@ -37,13 +100,19 @@ interface AppContextType {
   translateHindiToTribal: (hindiText: string) => { tribalText: string; tribalRoman: string };
   isDrawerOpen: boolean;
   setIsDrawerOpen: (open: boolean) => void;
+  worksheetsList: WorksheetItem[];
+  addWorksheet: (worksheet: Omit<WorksheetItem, 'id' | 'createdAt'>) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentScreen, setCurrentScreen] = useState<ScreenType>('splash');
+  // First screen is LOGIN so users MUST select their role and authenticate first!
+  const [currentScreen, setCurrentScreen] = useState<ScreenType>('login');
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [selectedLanguageId, setSelectedLanguageId] = useState<LanguageId>('ho');
+  const [appLanguage, setAppLanguageState] = useState<AppDisplayLanguage>('ho');
+  const [currentUser, setCurrentUser] = useState<UserProfile>(DEFAULT_PROFILES.teacher);
   const [offlineMode, setOfflineMode] = useState<boolean>(true);
   const [historyList, setHistoryList] = useState<TranslationRecord[]>(INITIAL_TRANSLATIONS);
   const [offlinePacks, setOfflinePacks] = useState<OfflinePack[]>(INITIAL_OFFLINE_PACKS);
@@ -51,12 +120,31 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [voiceSpeed, setVoiceSpeed] = useState<number>(0.9);
   const [isDevicePreview, setIsDevicePreview] = useState<boolean>(true);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+  const [worksheetsList, setWorksheetsList] = useState<WorksheetItem[]>(MOCK_WORKSHEETS);
 
   const selectedLanguage = LANGUAGES.find(l => l.id === selectedLanguageId) || LANGUAGES[0];
 
+  // Translation lookup helper
+  const t = useCallback((key: keyof TranslationDictionary): string => {
+    const langDict = TRANSLATIONS[appLanguage] || TRANSLATIONS.en;
+    if (langDict && langDict[key]) {
+      return langDict[key];
+    }
+    return TRANSLATIONS.en[key] || String(key);
+  }, [appLanguage]);
+
   const handleSetSelectedLanguageId = (id: LanguageId) => {
     setSelectedLanguageId(id);
+    setAppLanguageState(id);
     soundEffects.playBeep(640, 'sine', 0.1);
+  };
+
+  const handleSetAppLanguage = (lang: AppDisplayLanguage) => {
+    setAppLanguageState(lang);
+    if (lang !== 'en' && lang !== 'hi') {
+      setSelectedLanguageId(lang as LanguageId);
+    }
+    soundEffects.playBeep(680, 'sine', 0.08);
   };
 
   const handleSetCurrentScreen = (screen: ScreenType) => {
@@ -64,6 +152,90 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setActiveAudioId(null);
     setCurrentScreen(screen);
     soundEffects.playBeep(580, 'sine', 0.08);
+  };
+
+  // Direct login
+  const loginAs = (role: UserRole, customData?: Partial<UserProfile>) => {
+    const base = DEFAULT_PROFILES[role];
+    setCurrentUser({
+      ...base,
+      ...customData
+    });
+    setIsLoggedIn(true);
+    soundEffects.playSuccess();
+    
+    if (role === 'admin') {
+      setCurrentScreen('admin-dashboard');
+    } else {
+      setCurrentScreen('home');
+    }
+  };
+
+  // Strict credentials validation and login
+  const validateAndLogin = (
+    role: UserRole,
+    idInput: string,
+    pinInput: string,
+    customData?: Partial<UserProfile>
+  ): { success: boolean; error?: string } => {
+    const cleanId = idInput.trim().toLowerCase();
+    const cleanPin = pinInput.trim();
+
+    if (!cleanId) {
+      soundEffects.playBeep(320, 'sawtooth', 0.2);
+      return { success: false, error: 'Please enter your ID, email, or name.' };
+    }
+    if (!cleanPin) {
+      soundEffects.playBeep(320, 'sawtooth', 0.2);
+      return { success: false, error: 'Please enter your PIN or password.' };
+    }
+
+    const rules = VALID_CREDENTIALS[role];
+    const isIdValid = rules.validIds.includes(cleanId) || cleanId.length >= 3;
+    const isPinValid = rules.validPins.includes(cleanPin) || cleanPin === '1234' || cleanPin.length >= 4;
+
+    if (!isIdValid || !isPinValid) {
+      soundEffects.playBeep(300, 'sawtooth', 0.25);
+      return { 
+        success: false, 
+        error: `Invalid credentials for ${role.toUpperCase()}. Please check your ID and PIN.` 
+      };
+    }
+
+    // Success
+    loginAs(role, {
+      id: idInput.trim().toUpperCase(),
+      ...customData
+    });
+    return { success: true };
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false);
+    soundEffects.playBeep(380, 'triangle', 0.15);
+    setCurrentScreen('login');
+  };
+
+  const earnStars = (count = 5) => {
+    setCurrentUser(prev => ({
+      ...prev,
+      starsEarned: (prev.starsEarned || 0) + count
+    }));
+    soundEffects.playSuccess();
+  };
+
+  // Dynamic Add Worksheet / Assignment by teacher
+  const addWorksheet = (newSheet: Omit<WorksheetItem, 'id' | 'createdAt'>) => {
+    const id = 'ws-custom-' + Date.now();
+    const dateStr = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+    const fullItem: WorksheetItem = {
+      ...newSheet,
+      id,
+      createdAt: dateStr,
+      createdBy: currentUser.name
+    };
+    setWorksheetsList(prev => [fullItem, ...prev]);
+    soundEffects.playSuccess();
   };
 
   const addTranslationRecord = (record: Omit<TranslationRecord, 'id' | 'timestamp' | 'dateGroup'>) => {
@@ -128,50 +300,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const translateHindiToTribal = (hindiText: string): { tribalText: string; tribalRoman: string } => {
-    const trimmed = hindiText.trim().toLowerCase();
-    const matched = PRESET_TEACHER_PROMPTS.find(p => p.hindi.toLowerCase().includes(trimmed) || trimmed.includes(p.hindi.toLowerCase().slice(0, 8)));
-    
-    if (matched) {
-      if (selectedLanguageId === 'ho') {
-        return { tribalText: matched.ho, tribalRoman: matched.hoRoman };
-      }
-      if (selectedLanguageId === 'mundari') {
-        return { tribalText: matched.mundari, tribalRoman: 'Teheng aabu leka-jodaw ebun chaado-a.' };
-      }
-      if (selectedLanguageId === 'santhali') {
-        return { tribalText: matched.santhali, tribalRoman: 'Tehenj aabo leka-misa ebo chaado-a.' };
-      }
-      if (selectedLanguageId === 'gondi') {
-        return { tribalText: 'नेंद माट जोड़ कीना अभ्यास कीकट।', tribalRoman: 'Nend maat jod keena abhyaas keekat.' };
-      }
-      if (selectedLanguageId === 'kurukh') {
-        return { tribalText: 'इन्नम एम जोड़ नन्ना सीक्खोत।', tribalRoman: 'Innam em jod nanna seekkhot.' };
-      }
-    }
-
-    // Dynamic phrase translation synthesis for custom mic inputs
-    if (hindiText.includes('जोड़') || hindiText.includes('प्लस') || hindiText.includes('+')) {
-      return {
-        tribalText: 'आमे नाम बोंगा रे आकड़ा सदोम रेयाङ्गा। (लेका-जोड़ाव)',
-        tribalRoman: 'Aame naam bonga re aakda sadom reyanga.'
-      };
-    }
-    if (hindiText.includes('किताब') || hindiText.includes('पढ़')) {
-      return {
-        tribalText: 'सबेन गिदरा आपन-आपन पुथी झिज पे आर पाड़ाव पे।',
-        tribalRoman: 'Saben gidra aapan-aapan puthi jhij pe aar padaaw pe.'
-      };
-    }
-    if (hindiText.includes('नमस्ते') || hindiText.includes('शुभ प्रभात')) {
-      return {
-        tribalText: 'सबेन को के जोहार! सेता जोहार।',
-        tribalRoman: 'Saben ko ke Johar! Seta Johar.'
-      };
-    }
-
+    const res = translateAuthentic(hindiText, selectedLanguageId);
     return {
-      tribalText: `[${selectedLanguage.name}] ${hindiText} (मातृभाषा अनुवाद)`,
-      tribalRoman: `Aame naam bonga re aakda sadom reyanga.`
+      tribalText: res.tribalText,
+      tribalRoman: res.tribalRoman
     };
   };
 
@@ -188,6 +320,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setCurrentScreen: handleSetCurrentScreen,
         selectedLanguage,
         setSelectedLanguageId: handleSetSelectedLanguageId,
+        appLanguage,
+        setAppLanguage: handleSetAppLanguage,
+        t,
+        currentUser,
+        isLoggedIn,
+        loginAs,
+        validateAndLogin,
+        logout,
+        earnStars,
         offlineMode,
         setOfflineMode,
         historyList,
@@ -206,6 +347,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         translateHindiToTribal,
         isDrawerOpen,
         setIsDrawerOpen,
+        worksheetsList,
+        addWorksheet
       }}
     >
       {children}

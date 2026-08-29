@@ -1,4 +1,4 @@
-﻿// Web Audio and Speech Synthesis/Recognition Service
+// Web Audio and Speech Synthesis/Recognition Service
 
 class SoundEffects {
   private ctx: AudioContext | null = null;
@@ -80,6 +80,58 @@ class SoundEffects {
 
 export const soundEffects = new SoundEffects();
 
+// Map Ol Chiki characters to phonetic Devanagari sounds so TTS reads full Santhali sentences cleanly
+function convertOlChikiToSpeakable(text: string): string {
+  const olChikiMap: Record<string, string> = {
+    'ᱚ': 'ओ', 'ᱛ': 'त', 'ᱜ': 'ग', 'ᱝ': 'ंग', 'ᱞ': 'ल',
+    'ᱟ': 'आ', 'ᱠ': 'क', 'ᱡ': 'ज', 'ᱢ': 'म', 'ᱣ': 'व',
+    'ᱤ': 'इ', 'ᱥ': 'स', 'ᱦ': 'ह', 'ᱧ': 'ञ', 'ᱨ': 'र',
+    'ᱩ': 'उ', 'ᱪ': 'च', 'ᱫ': 'द', 'ᱬ': 'ण', 'ᱭ': 'य',
+    'ᱮ': 'ए', 'ᱯ': 'प', 'ᱰ': 'ड', 'ᱱ': 'न', 'ᱲ': 'ड़',
+    'ᱳ': 'ओ', 'ᱴ': 'ट', 'ᱵ': 'ब', 'ᱶ': 'ंव', 'ᱷ': 'ह',
+    'ᱸ': 'ं', 'ᱹ': '़', 'ᱺ': 'ः', 'ᱻ': '\'', 'ᱼ': '-',
+    'ᱽ': '्', '᱾': '।', '᱿': '॥'
+  };
+
+  let result = '';
+  for (const char of text) {
+    result += olChikiMap[char] || char;
+  }
+  return result;
+}
+
+// Prepare clean, fluent speakable text for SpeechSynthesis without hiccups
+export function cleanTextForSpeech(rawText: string): string {
+  if (!rawText) return '';
+
+  let cleaned = rawText;
+
+  // Convert Ol Chiki to phonetic Devanagari
+  cleaned = convertOlChikiToSpeakable(cleaned);
+
+  // Replace symbols and equations with speakable words
+  cleaned = cleaned
+    .replace(/\+/g, ' प्लस ')
+    .replace(/=/g, ' बराबर ')
+    .replace(/⇄/g, '')
+    .replace(/[•★⭐✨🎉👋👦👧🧒👨👩🏛️🎙️📚🍎💧☀️🌳🐦]/g, '') // strip emojis & symbols
+    .replace(/\(.*?\)/g, (match) => {
+      // If parenthesis has words, keep clean text
+      return match.replace(/[()]/g, ' ');
+    })
+    .replace(/\[.*?\]/g, (match) => match.replace(/[[\]]/g, ' '))
+    .replace(/ः/g, 'ह') // soften visarga to aspirate h for natural flow
+    .replace(/[;:"~`]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return cleaned;
+}
+
+// Persistent global reference to prevent browser garbage collection of active speech
+let globalActiveUtterance: SpeechSynthesisUtterance | null = null;
+let speechKeepAliveTimer: any = null;
+
 export const speakText = (
   text: string, 
   lang: 'hi-IN' | 'en-IN' = 'hi-IN', 
@@ -92,23 +144,57 @@ export const speakText = (
     return;
   }
 
-  window.speechSynthesis.cancel();
+  // Clean & cancel existing speech
+  stopSpeech();
 
-  const utterance = new SpeechSynthesisUtterance(text);
+  const speakableString = cleanTextForSpeech(text);
+  if (!speakableString) {
+    if (onEnd) onEnd();
+    return;
+  }
+
+  const utterance = new SpeechSynthesisUtterance(speakableString);
   utterance.lang = lang;
   utterance.rate = rate;
   utterance.pitch = pitch;
 
-  // Try to find Indian English or Hindi voice
+  // Store in global reference
+  globalActiveUtterance = utterance;
+
+  // Find best Indian voice
   const voices = window.speechSynthesis.getVoices();
   const matchedVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN')) || voices[0];
   if (matchedVoice) {
     utterance.voice = matchedVoice;
   }
 
-  if (onEnd) {
-    utterance.onend = onEnd;
-    utterance.onerror = onEnd;
+  const cleanup = () => {
+    if (speechKeepAliveTimer) {
+      clearInterval(speechKeepAliveTimer);
+      speechKeepAliveTimer = null;
+    }
+    globalActiveUtterance = null;
+    if (onEnd) onEnd();
+  };
+
+  utterance.onend = cleanup;
+  utterance.onerror = (e) => {
+    console.log('Speech error/cancelled:', e);
+    cleanup();
+  };
+
+  // Browser keep-alive: prevents Chrome from cutting off utterances after 10-15 seconds
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.resume();
+    speechKeepAliveTimer = setInterval(() => {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.pause();
+        window.speechSynthesis.resume();
+      } else {
+        clearInterval(speechKeepAliveTimer);
+        speechKeepAliveTimer = null;
+      }
+    }, 4000);
   }
 
   window.speechSynthesis.speak(utterance);
@@ -116,6 +202,11 @@ export const speakText = (
 
 export const stopSpeech = () => {
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    if (speechKeepAliveTimer) {
+      clearInterval(speechKeepAliveTimer);
+      speechKeepAliveTimer = null;
+    }
+    globalActiveUtterance = null;
     window.speechSynthesis.cancel();
   }
 };
