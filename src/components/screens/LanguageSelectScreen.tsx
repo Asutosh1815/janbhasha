@@ -26,8 +26,7 @@ export const LanguageSelectScreen: React.FC = () => {
     setAppLanguage,
     t,
     playBilingualAudio,
-    activeAudioId,
-    currentUser
+    activeAudioId
   } = useApp();
 
   const [activeTab, setActiveTab] = useState<'tribal' | 'ui'>('tribal');
@@ -58,11 +57,7 @@ export const LanguageSelectScreen: React.FC = () => {
   };
 
   const handleContinue = () => {
-    if (currentUser.role === 'admin') {
-      setCurrentScreen('admin-dashboard');
-    } else {
-      setCurrentScreen('home');
-    }
+    setCurrentScreen('home');
   };
 
   return (
@@ -70,10 +65,7 @@ export const LanguageSelectScreen: React.FC = () => {
       {/* Top Bar */}
       <div className="pt-3 px-4 flex items-center justify-between sticky top-0 bg-[#fbfdf8]/95 backdrop-blur-xs z-10">
         <button
-          onClick={() => {
-            if (currentUser.role === 'admin') setCurrentScreen('admin-dashboard');
-            else setCurrentScreen('home');
-          }}
+          onClick={() => setCurrentScreen('home')}
           className="p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors"
           title={t('back')}
         >

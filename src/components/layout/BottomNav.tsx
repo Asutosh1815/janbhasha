@@ -1,13 +1,13 @@
 import React from 'react';
-import { Home, BookOpen, Mic, ClipboardList, User, ShieldCheck, FileText, Globe } from 'lucide-react';
+import { Home, BookOpen, Mic, Layers, User } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { ScreenType } from '../../types';
 
 export const BottomNav: React.FC = () => {
-  const { currentScreen, setCurrentScreen, currentUser, t } = useApp();
+  const { currentScreen, setCurrentScreen, t } = useApp();
 
-  // Hidden on splash / onboarding / login / language-select screens
-  if (currentScreen === 'splash' || currentScreen === 'login' || currentScreen === 'language-select') {
+  // Hidden on splash / language-select screens
+  if (currentScreen === 'splash' || currentScreen === 'language-select') {
     return null;
   }
 
@@ -18,39 +18,13 @@ export const BottomNav: React.FC = () => {
     isPrimaryFab?: boolean;
   }
 
-  // Role-customized bottom navigation tabs (Flashcards removed)
-  const getTabs = (): NavTab[] => {
-    if (currentUser.role === 'admin') {
-      return [
-        { id: 'admin-dashboard', label: t('navAdmin'), icon: ShieldCheck },
-        { id: 'home', label: t('navHome'), icon: Home },
-        { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
-        { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
-        { id: 'settings', label: t('navSettings'), icon: User },
-      ];
-    }
-
-    if (currentUser.role === 'student') {
-      return [
-        { id: 'home', label: t('navHome'), icon: Home },
-        { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
-        { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
-        { id: 'lessons', label: t('navLessons'), icon: BookOpen },
-        { id: 'language-select', label: t('navLanguage'), icon: Globe },
-      ];
-    }
-
-    // Default Teacher tabs
-    return [
-      { id: 'home', label: t('navHome'), icon: Home },
-      { id: 'lessons', label: t('navLessons'), icon: BookOpen },
-      { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
-      { id: 'worksheets', label: t('navWorksheets'), icon: FileText },
-      { id: 'settings', label: t('navSettings'), icon: User },
-    ];
-  };
-
-  const tabs = getTabs();
+  const tabs: NavTab[] = [
+    { id: 'home', label: t('navHome'), icon: Home },
+    { id: 'lessons', label: t('navLessons'), icon: BookOpen },
+    { id: 'voice-translation', label: t('navTranslate'), icon: Mic, isPrimaryFab: true },
+    { id: 'flashcards', label: t('navFlashcards'), icon: Layers },
+    { id: 'settings', label: t('navSettings'), icon: User },
+  ];
 
   return (
     <nav className="sticky bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 px-4 pt-2 pb-3 flex items-center justify-around shadow-[0_-4px_16px_rgba(0,0,0,0.03)]">

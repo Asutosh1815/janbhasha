@@ -16,31 +16,17 @@ export interface TribalLanguage {
   isDownloaded: boolean;
 }
 
-export type UserRole = 'admin' | 'teacher' | 'student';
-
-export interface UserProfile {
-  role: UserRole;
-  name: string;
-  id: string;
-  school: string;
-  avatar: string;
-  designation?: string;
-  classLevel?: string;
-  starsEarned?: number;
-}
-
 export type ScreenType = 
   | 'splash'
-  | 'login'
   | 'language-select'
   | 'home'
   | 'voice-translation'
   | 'lessons'
   | 'worksheets'
+  | 'flashcards'
   | 'assessments'
   | 'history'
-  | 'settings'
-  | 'admin-dashboard';
+  | 'settings';
 
 export interface TranslationRecord {
   id: string;
@@ -120,6 +106,20 @@ export interface WorksheetItem {
   createdBy?: string;
   createdAt?: string;
   questions: WorksheetQuestion[];
+}
+
+export interface FlashcardItem {
+  id: string;
+  category: 'fruits' | 'animals' | 'nature' | 'classroom' | 'numbers';
+  hindiWord: string;
+  romanHindi: string;
+  tribalWord: string;
+  romanTribal: string;
+  englishMeaning: string;
+  emoji: string;
+  imageUrl: string;
+  exampleSentenceHindi: string;
+  exampleSentenceTribal: string;
 }
 
 export interface AssessmentItem {

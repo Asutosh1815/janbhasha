@@ -6,20 +6,12 @@ import {
   Languages, 
   Download, 
   Volume2, 
-  HelpCircle, 
   Info, 
   ChevronRight, 
   Check, 
   Loader2, 
-  Sparkles, 
   X, 
-  BookOpen, 
-  ShieldCheck,
-  User,
-  LogOut,
-  Globe2,
-  Sliders,
-  RefreshCw
+  Globe2
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { JanBhashaLogo } from '../common/Illustrations';
@@ -35,13 +27,11 @@ export const SettingsScreen: React.FC = () => {
     downloadPack,
     voiceSpeed,
     setVoiceSpeed,
-    currentUser,
-    logout,
     t,
     appLanguage
   } = useApp();
 
-  const [activeModal, setActiveModal] = useState<'packs' | 'voice' | 'help' | 'about' | null>(null);
+  const [activeModal, setActiveModal] = useState<'packs' | 'voice' | 'about' | null>(null);
 
   const currentPack = offlinePacks.find(p => p.id === selectedLanguage.id) || offlinePacks[0];
 
@@ -50,10 +40,7 @@ export const SettingsScreen: React.FC = () => {
       {/* Top App Bar */}
       <div className="pt-3 px-4 pb-2 flex items-center justify-between sticky top-0 bg-[#fbfdf8]/95 backdrop-blur-xs z-20">
         <button
-          onClick={() => {
-            if (currentUser.role === 'admin') setCurrentScreen('admin-dashboard');
-            else setCurrentScreen('home');
-          }}
+          onClick={() => setCurrentScreen('home')}
           className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -67,35 +54,6 @@ export const SettingsScreen: React.FC = () => {
       </div>
 
       <div className="px-4 pt-1 pb-8 space-y-3.5 flex-1">
-        {/* User Account Profile Card */}
-        <div className="p-4 rounded-3xl bg-white border border-slate-200/90 shadow-2xs">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center text-2xl shadow-2xs">
-                {currentUser.avatar}
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-slate-900">{currentUser.name}</h3>
-                <p className="text-[11px] text-slate-500 font-medium">{currentUser.designation || currentUser.school}</p>
-                <div className="mt-1 flex items-center gap-1.5">
-                  <span className="px-2 py-0.5 rounded-full bg-janbhasha-700 text-white text-[9px] font-extrabold uppercase">
-                    {currentUser.role}
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-semibold">{currentUser.id}</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setCurrentScreen('login')}
-              className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-600 border border-slate-200"
-              title={t('switchRole')}
-            >
-              <User className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
         {/* Offline Mode Status Banner Card */}
         <div className="rounded-3xl bg-white border border-slate-200/90 p-4 shadow-2xs flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -175,7 +133,7 @@ export const SettingsScreen: React.FC = () => {
                 {t('audioSpeed')}
               </h3>
               <p className="text-[11px] text-slate-500 mt-0.5">
-                Playback rate: <strong>{voiceSpeed}x</strong> (Teacher clear speed)
+                Playback rate: <strong>{voiceSpeed}x</strong> (Clear classroom voice)
               </p>
             </div>
           </div>
@@ -203,7 +161,7 @@ export const SettingsScreen: React.FC = () => {
           <ChevronRight className="w-4 h-4 text-slate-400" />
         </div>
 
-        {/* Help & Support */}
+        {/* Help & About */}
         <div 
           onClick={() => setActiveModal('about')}
           className="rounded-3xl bg-white border border-slate-200/90 p-4 shadow-2xs flex items-center justify-between cursor-pointer hover:border-emerald-300 transition-colors"
@@ -223,15 +181,6 @@ export const SettingsScreen: React.FC = () => {
           </div>
           <ChevronRight className="w-4 h-4 text-slate-400" />
         </div>
-
-        {/* Log Out Button */}
-        <button
-          onClick={logout}
-          className="w-full py-3 px-4 rounded-2xl bg-rose-50 hover:bg-rose-100 text-rose-700 font-bold text-xs flex items-center justify-center gap-2 border border-rose-200 transition-colors shadow-2xs"
-        >
-          <LogOut className="w-4 h-4" />
-          <span>{t('logout')} ({currentUser.name})</span>
-        </button>
       </div>
 
       {/* Voice Speed Modal */}

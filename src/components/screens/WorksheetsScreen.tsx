@@ -26,7 +26,6 @@ export const WorksheetsScreen: React.FC = () => {
     selectedLanguage, 
     worksheetsList, 
     addWorksheet, 
-    currentUser,
     t 
   } = useApp();
 
@@ -153,19 +152,15 @@ export const WorksheetsScreen: React.FC = () => {
           {t('worksheetsTitle')}
         </h2>
 
-        {/* Add Assignment Button for Teacher / Admin */}
-        {currentUser.role !== 'student' ? (
-          <button 
-            onClick={() => setIsAddModalOpen(true)}
-            className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-janbhasha-700 hover:bg-janbhasha-800 text-white text-xs font-bold shadow-2xs transition-transform active:scale-95"
-            title="Create New Assignment"
-          >
-            <Plus className="w-4 h-4 stroke-[2.5]" />
-            <span>Add</span>
-          </button>
-        ) : (
-          <div className="w-9" />
-        )}
+        {/* Add Assignment Button */}
+        <button 
+          onClick={() => setIsAddModalOpen(true)}
+          className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-janbhasha-700 hover:bg-janbhasha-800 text-white text-xs font-bold shadow-2xs transition-transform active:scale-95"
+          title="Create New Assignment"
+        >
+          <Plus className="w-4 h-4 stroke-[2.5]" />
+          <span>Add</span>
+        </button>
       </div>
 
       {/* Filter Horizontal Chips */}
