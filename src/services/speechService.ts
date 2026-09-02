@@ -116,7 +116,6 @@ export function cleanTextForSpeech(rawText: string): string {
     .replace(/⇄/g, '')
     .replace(/[•★⭐✨🎉👋👦👧🧒👨👩🏛️🎙️📚🍎💧☀️🌳🐦]/g, '') // strip emojis & symbols
     .replace(/\(.*?\)/g, (match) => {
-      // If parenthesis has words, keep clean text
       return match.replace(/[()]/g, ' ');
     })
     .replace(/\[.*?\]/g, (match) => match.replace(/[[\]]/g, ' '))
@@ -131,6 +130,14 @@ export function cleanTextForSpeech(rawText: string): string {
 // Persistent global reference to prevent browser garbage collection of active speech
 let globalActiveUtterance: SpeechSynthesisUtterance | null = null;
 let speechKeepAliveTimer: any = null;
+let cachedVoices: SpeechSynthesisVoice[] = [];
+
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  cachedVoices = window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => {
+    cachedVoices = window.speechSynthesis.getVoices();
+  };
+}
 
 export const speakText = (
   text: string, 
@@ -153,6 +160,12 @@ export const speakText = (
     return;
   }
 
+  try {
+    window.speechSynthesis.resume();
+  } catch {
+    // Ignore
+  }
+
   const utterance = new SpeechSynthesisUtterance(speakableString);
   utterance.lang = lang;
   utterance.rate = rate;
@@ -162,8 +175,8 @@ export const speakText = (
   globalActiveUtterance = utterance;
 
   // Find best Indian voice
-  const voices = window.speechSynthesis.getVoices();
-  const matchedVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN')) || voices[0];
+  const voices = cachedVoices.length > 0 ? cachedVoices : window.speechSynthesis.getVoices();
+  const matchedVoice = voices.find(v => v.lang.includes('hi') || v.lang.includes('IN') || v.lang.includes('Hindi'));
   if (matchedVoice) {
     utterance.voice = matchedVoice;
   }
@@ -179,13 +192,11 @@ export const speakText = (
 
   utterance.onend = cleanup;
   utterance.onerror = (e) => {
-    console.log('Speech error/cancelled:', e);
     cleanup();
   };
 
-  // Browser keep-alive: prevents Chrome from cutting off utterances after 10-15 seconds
+  // Browser keep-alive
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.resume();
     speechKeepAliveTimer = setInterval(() => {
       if (window.speechSynthesis.speaking) {
         window.speechSynthesis.pause();
@@ -207,6 +218,10 @@ export const stopSpeech = () => {
       speechKeepAliveTimer = null;
     }
     globalActiveUtterance = null;
-    window.speechSynthesis.cancel();
+    try {
+      window.speechSynthesis.cancel();
+    } catch {
+      // Ignore
+    }
   }
 };
