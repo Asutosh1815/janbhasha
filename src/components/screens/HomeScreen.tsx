@@ -174,6 +174,36 @@ export const HomeScreen: React.FC = () => {
           </div>
         </div>
 
+        {/* FEATURED: Live Classroom Broadcaster (Whisper ➔ IndicTrans2 ➔ Santali TTS) */}
+        <div 
+          onClick={() => setCurrentScreen('live-classroom')}
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-janbhasha-800 via-emerald-900 to-teal-950 p-4 text-white shadow-md cursor-pointer hover:shadow-lg transition-all group active:scale-[0.99]"
+        >
+          <div className="flex items-center justify-between">
+            <div className="space-y-1 max-w-[78%]">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-full bg-rose-500/90 text-[9px] font-extrabold flex items-center gap-1 uppercase tracking-wider animate-pulse">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                  Live Broadcast
+                </span>
+                <span className="px-2 py-0.5 rounded-full bg-white/10 text-[9px] font-bold text-emerald-200">
+                  AI4Bharat IndicTrans2
+                </span>
+              </div>
+              <h3 className="font-extrabold text-sm text-white flex items-center gap-1.5 pt-0.5">
+                <span>Classroom Broadcast &amp; Captions</span>
+              </h3>
+              <p className="text-[11px] text-emerald-100 font-medium leading-tight">
+                Teacher speaks Hindi ➔ Whisper ➔ IndicTrans2 ➔ Santali Ol Chiki ➔ Student Audio
+              </p>
+            </div>
+
+            <div className="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+              <ChevronRight className="w-6 h-6 text-emerald-200" />
+            </div>
+          </div>
+        </div>
+
         {/* Section Heading */}
         <div className="flex items-center justify-between pt-1">
           <h2 className="text-sm font-extrabold text-slate-900 tracking-tight">

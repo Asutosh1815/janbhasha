@@ -1,5 +1,6 @@
 import { LanguageId } from '../types';
 import customDataset from '../data/custom_dataset.json';
+import { translateHindiToSantali } from './santaliTranslator';
 
 export interface TranslationResult {
   tribalText: string;
@@ -1322,6 +1323,17 @@ const VOCABULARY_LEXICON: WordEntry[] = [
 // Main Accurate Linguistic Translation Engine
 export function translateAuthentic(hindiText: string, targetLangId: LanguageId): TranslationResult {
   const cleanInput = hindiText.trim();
+
+  // If Target is Santhali, use the True Santali Linguistic & Ol Chiki Machine Translator
+  if (targetLangId === 'santhali') {
+    const sat = translateHindiToSantali(cleanInput);
+    return {
+      tribalText: `${sat.olChiki} (${sat.devanagari})`,
+      tribalRoman: sat.romanPhonics,
+      accuracy: 'high'
+    };
+  }
+
   const lowerInput = cleanInput.toLowerCase().replace(/[.,?!।]/g, '');
 
   // 1. Direct High-Precision Full-Sentence Match
@@ -1338,9 +1350,6 @@ export function translateAuthentic(hindiText: string, targetLangId: LanguageId):
         }
         if (targetLangId === 'mundari') {
           return { tribalText: item.mundari, tribalRoman: item.mundariRoman, accuracy: 'high' };
-        }
-        if (targetLangId === 'santhali') {
-          return { tribalText: item.santhali, tribalRoman: item.santhaliRoman, accuracy: 'high' };
         }
         if (targetLangId === 'gondi') {
           return { tribalText: item.gondi, tribalRoman: item.gondiRoman, accuracy: 'high' };
@@ -1365,13 +1374,6 @@ export function translateAuthentic(hindiText: string, targetLangId: LanguageId):
       return {
         tribalText: 'लेका-जोड़ाव: बारिया आर आपेया मिसा-ते मोड़ेया हुयू-आ।',
         tribalRoman: 'Leka-jodaw: Bariya aar aapeya misa-te modeya huyu-a.',
-        accuracy: 'high'
-      };
-    }
-    if (targetLangId === 'santhali') {
-      return {
-        tribalText: 'ᱞᱮᱠᱷᱟ-ᱢᱮᱥᱟ: ᱵᱟᱨ ᱟᱨ ᱯᱮ ᱢᱮᱥᱟ-ᱛᱮ ᱢᱚᱬᱮ ᱦᱩᱭᱩᱜ-ᱟ᱾ (लेका-मेसा: बार आर पे मेसा-ते मोणे हुयुक-आ)',
-        tribalRoman: 'Lekha-mesa: Bar aar pe mesa-te mone huyug-a.',
         accuracy: 'high'
       };
     }
@@ -1411,9 +1413,6 @@ export function translateAuthentic(hindiText: string, targetLangId: LanguageId):
       } else if (targetLangId === 'mundari') {
         translatedWords.push(entry.mundari);
         romanWords.push(entry.mundariRoman);
-      } else if (targetLangId === 'santhali') {
-        translatedWords.push(entry.santhali);
-        romanWords.push(entry.santhaliRoman);
       } else if (targetLangId === 'gondi') {
         translatedWords.push(entry.gondi);
         romanWords.push(entry.gondiRoman);
@@ -1436,9 +1435,6 @@ export function translateAuthentic(hindiText: string, targetLangId: LanguageId):
     if (targetLangId === 'ho' || targetLangId === 'mundari') {
       finalTribalText += ' ताना।';
       finalRomanText += ' tana.';
-    } else if (targetLangId === 'santhali') {
-      finalTribalText += ' ᱠᱟᱱᱟ (काना)᱾';
-      finalRomanText += ' kana.';
     } else if (targetLangId === 'gondi') {
       finalTribalText += ' आय।';
       finalRomanText += ' aay.';

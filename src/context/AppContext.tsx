@@ -52,9 +52,9 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default screen starts at Splash, default app display language is English ('en')
+  // Default screen starts at Splash, default app display language is English ('en'), default tribal language is Santali
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('splash');
-  const [selectedLanguageId, setSelectedLanguageId] = useState<LanguageId>('ho');
+  const [selectedLanguageId, setSelectedLanguageId] = useState<LanguageId>('santhali');
   const [appLanguage, setAppLanguageState] = useState<AppDisplayLanguage>('en');
   
   const [offlineMode, setOfflineMode] = useState<boolean>(true);

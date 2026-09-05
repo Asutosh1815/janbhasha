@@ -2,6 +2,20 @@ import { TribalLanguage, LessonContent, WorksheetItem, FlashcardItem, Assessment
 
 export const LANGUAGES: TribalLanguage[] = [
   {
+    id: 'santhali',
+    name: 'Santhali',
+    nativeName: 'संताली (ᱚᱞ ᱪᱤᱠᱤ)',
+    script: 'Ol Chiki (ᱚᱞ ᱪᱤᱠᱤ) / Devanagari',
+    icon: 'feather',
+    region: 'Jharkhand, West Bengal, Odisha, Assam',
+    speakers: '7.6+ Million (8th Schedule)',
+    greeting: 'ᱥᱟᱱᱟᱢ ᱠᱚ ᱡᱚᱦᱟᱨ! (Johar)',
+    greetingHindi: 'नमस्ते',
+    packSize: '1.4 GB',
+    packSizeBytes: 1503238553,
+    isDownloaded: true,
+  },
+  {
     id: 'ho',
     name: 'Ho',
     nativeName: 'हो भाषा',
@@ -13,7 +27,7 @@ export const LANGUAGES: TribalLanguage[] = [
     greetingHindi: 'नमस्ते',
     packSize: '1.2 GB',
     packSizeBytes: 1288490188,
-    isDownloaded: true,
+    isDownloaded: false,
   },
   {
     id: 'mundari',
@@ -27,20 +41,6 @@ export const LANGUAGES: TribalLanguage[] = [
     greetingHindi: 'नमस्ते',
     packSize: '1.1 GB',
     packSizeBytes: 1181116006,
-    isDownloaded: false,
-  },
-  {
-    id: 'santhali',
-    name: 'Santhali',
-    nativeName: 'संताली',
-    script: 'Ol Chiki (ᱚᱞ ᱪᱤᱠᱤ) / Devanagari',
-    icon: 'feather',
-    region: 'Jharkhand, West Bengal, Odisha, Assam',
-    speakers: '7.6+ Million (8th Schedule)',
-    greeting: 'जोहार (Johar)',
-    greetingHindi: 'नमस्ते',
-    packSize: '1.4 GB',
-    packSizeBytes: 1503238553,
     isDownloaded: false,
   },
   {

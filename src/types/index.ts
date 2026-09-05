@@ -21,6 +21,7 @@ export type ScreenType =
   | 'language-select'
   | 'home'
   | 'voice-translation'
+  | 'live-classroom'
   | 'lessons'
   | 'worksheets'
   | 'flashcards'

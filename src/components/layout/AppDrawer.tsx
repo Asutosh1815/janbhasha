@@ -105,6 +105,22 @@ export const AppDrawer: React.FC = () => {
           </button>
 
           <button 
+            onClick={() => navigateTo('live-classroom')}
+            className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-slate-100 transition-colors text-left bg-emerald-50/60 border border-emerald-200/60"
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="p-1.5 rounded-lg bg-rose-100 text-rose-600">
+                <span className="w-4 h-4 flex items-center justify-center font-bold text-xs">📡</span>
+              </span>
+              <div>
+                <span className="font-bold text-slate-900 block leading-tight">Live Classroom</span>
+                <span className="text-[10px] text-emerald-800 font-semibold">Whisper ➔ IndicTrans2</span>
+              </div>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+          </button>
+
+          <button 
             onClick={() => navigateTo('lessons')}
             className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-slate-100 transition-colors text-left"
           >

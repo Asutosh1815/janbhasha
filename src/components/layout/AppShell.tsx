@@ -6,6 +6,7 @@ import { SplashScreen } from '../screens/SplashScreen';
 import { LanguageSelectScreen } from '../screens/LanguageSelectScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import { VoiceTranslationScreen } from '../screens/VoiceTranslationScreen';
+import { LiveClassroomScreen } from '../screens/LiveClassroomScreen';
 import { LessonScreen } from '../screens/LessonScreen';
 import { WorksheetsScreen } from '../screens/WorksheetsScreen';
 import { FlashcardsScreen } from '../screens/FlashcardsScreen';
@@ -26,6 +27,8 @@ export const AppShell: React.FC = () => {
         return <HomeScreen />;
       case 'voice-translation':
         return <VoiceTranslationScreen />;
+      case 'live-classroom':
+        return <LiveClassroomScreen />;
       case 'lessons':
         return <LessonScreen />;
       case 'flashcards':
