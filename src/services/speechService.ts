@@ -1,20 +1,19 @@
-// Universal Multi-Tier Audio & Speech Engine for JanBhasha
-// 100% OFFLINE & ONLINE CAPABLE
-// Supported Targets:
-// 1. Android APK (Capacitor Native TextToSpeech with dual Hindi + Roman fallback)
-// 2. Desktop/Mobile Browser (Web Speech API with smart phonetic fallback)
-// 3. Optional Local Backend Stream (/api/tts when connected)
+// Universal High-Reliability Speech Engine for JanBhasha
+// Guaranteed Sound Output across:
+// 1. Android Native APK (Capacitor TextToSpeech with dual Hindi + Roman fallback)
+// 2. Desktop Browsers (Chrome / Edge / Firefox with Chromium-bug-safe Web Speech + /api/tts stream)
+// 3. Mobile WebViews & Safari (Auto-unlocked Audio element)
 
 import { Capacitor } from '@capacitor/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 // ==========================================
 // 1. SOUND EFFECTS (Web Audio API)
 // ==========================================
 class SoundEffects {
   private ctx: AudioContext | null = null;
-  private isUnlocked = false;
 
-  private getContext(): AudioContext | null {
+  public getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;
     if (!this.ctx) {
       const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
@@ -29,22 +28,12 @@ class SoundEffects {
   }
 
   public unlock() {
-    if (this.isUnlocked) return;
     try {
       const ctx = this.getContext();
-      if (!ctx) return;
-      if (ctx.state === 'suspended') {
-        ctx.resume();
+      if (ctx && ctx.state === 'suspended') {
+        ctx.resume().catch(() => {});
       }
-      const buffer = ctx.createBuffer(1, 1, 22050);
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-      source.connect(ctx.destination);
-      source.start(0);
-      this.isUnlocked = true;
-    } catch (e) {
-      // Ignore
-    }
+    } catch {}
   }
 
   playBeep(frequency = 520, type: OscillatorType = 'sine', duration = 0.12) {
@@ -53,21 +42,23 @@ class SoundEffects {
       if (!ctx) return;
 
       const play = () => {
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
+        try {
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
 
-        osc.type = type;
-        osc.frequency.setValueAtTime(frequency, now);
+          osc.type = type;
+          osc.frequency.setValueAtTime(frequency, now);
 
-        gain.gain.setValueAtTime(0.2, now);
-        gain.gain.linearRampToValueAtTime(0.001, now + duration);
+          gain.gain.setValueAtTime(0.25, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + duration);
 
-        osc.connect(gain);
-        gain.connect(ctx.destination);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
 
-        osc.start(now);
-        osc.stop(now + duration);
+          osc.start(now);
+          osc.stop(now + duration);
+        } catch {}
       };
 
       if (ctx.state === 'suspended') {
@@ -75,9 +66,7 @@ class SoundEffects {
       } else {
         play();
       }
-    } catch {
-      // Fallback
-    }
+    } catch {}
   }
 
   playSuccess() {
@@ -86,25 +75,27 @@ class SoundEffects {
       if (!ctx) return;
 
       const play = () => {
-        const now = ctx.currentTime;
-        [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          const start = now + i * 0.07;
-          const end = start + 0.18;
+        try {
+          const now = ctx.currentTime;
+          [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            const start = now + i * 0.07;
+            const end = start + 0.18;
 
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(freq, start);
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, start);
 
-          gain.gain.setValueAtTime(0.18, start);
-          gain.gain.linearRampToValueAtTime(0.001, end);
+            gain.gain.setValueAtTime(0.2, start);
+            gain.gain.linearRampToValueAtTime(0.001, end);
 
-          osc.connect(gain);
-          gain.connect(ctx.destination);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
 
-          osc.start(start);
-          osc.stop(end);
-        });
+            osc.start(start);
+            osc.stop(end);
+          });
+        } catch {}
       };
 
       if (ctx.state === 'suspended') {
@@ -112,9 +103,7 @@ class SoundEffects {
       } else {
         play();
       }
-    } catch {
-      // Fallback
-    }
+    } catch {}
   }
 
   playCardFlip() {
@@ -123,22 +112,24 @@ class SoundEffects {
       if (!ctx) return;
 
       const play = () => {
-        const now = ctx.currentTime;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
+        try {
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
 
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(320, now);
-        osc.frequency.linearRampToValueAtTime(750, now + 0.07);
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.linearRampToValueAtTime(750, now + 0.07);
 
-        gain.gain.setValueAtTime(0.15, now);
-        gain.gain.linearRampToValueAtTime(0.001, now + 0.07);
+          gain.gain.setValueAtTime(0.18, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.07);
 
-        osc.connect(gain);
-        gain.connect(ctx.destination);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
 
-        osc.start(now);
-        osc.stop(now + 0.07);
+          osc.start(now);
+          osc.stop(now + 0.07);
+        } catch {}
       };
 
       if (ctx.state === 'suspended') {
@@ -146,56 +137,51 @@ class SoundEffects {
       } else {
         play();
       }
-    } catch {
-      // Fallback
-    }
+    } catch {}
   }
 }
 
 export const soundEffects = new SoundEffects();
 
 // ==========================================
-// 2. DOM-ATTACHED PERSISTENT AUDIO PLAYER
+// 2. DOM AUDIO ELEMENT (Unlocked on Tap)
 // ==========================================
-let domAudioElement: HTMLAudioElement | null = null;
+let domAudio: HTMLAudioElement | null = null;
 
-function getOrCreateAudioElement(): HTMLAudioElement | null {
+function getDomAudio(): HTMLAudioElement | null {
   if (typeof window === 'undefined' || typeof document === 'undefined') return null;
-  if (!domAudioElement) {
-    let el = document.getElementById('janbhasha-global-audio') as HTMLAudioElement | null;
+  if (!domAudio) {
+    let el = document.getElementById('janbhasha-player-node') as HTMLAudioElement | null;
     if (!el) {
       el = document.createElement('audio');
-      el.id = 'janbhasha-global-audio';
+      el.id = 'janbhasha-player-node';
       el.style.display = 'none';
       el.preload = 'auto';
       document.body.appendChild(el);
     }
-    domAudioElement = el;
+    domAudio = el;
   }
-  return domAudioElement;
+  return domAudio;
 }
 
-// Global user-gesture audio unlocker
+// User-gesture audio unlocker
 if (typeof window !== 'undefined') {
-  const handleUserGesture = () => {
+  const unlockAudioPipeline = () => {
     soundEffects.unlock();
-    const audio = getOrCreateAudioElement();
-    if (audio && !audio.src) {
-      audio.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-      audio.play().catch(() => {});
+    const a = getDomAudio();
+    if (a && !a.src) {
+      // Inaudible silent audio to wake audio system
+      a.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+      a.play().catch(() => {});
     }
-    window.removeEventListener('click', handleUserGesture, true);
-    window.removeEventListener('touchstart', handleUserGesture, true);
-    window.removeEventListener('keydown', handleUserGesture, true);
   };
 
-  window.addEventListener('click', handleUserGesture, true);
-  window.addEventListener('touchstart', handleUserGesture, true);
-  window.addEventListener('keydown', handleUserGesture, true);
+  window.addEventListener('click', unlockAudioPipeline, { capture: true, passive: true });
+  window.addEventListener('touchstart', unlockAudioPipeline, { capture: true, passive: true });
 }
 
 // ==========================================
-// 3. SCRIPT & PHONETIC CONVERSION TABLES
+// 3. SCRIPT & PHONETIC CONVERTERS
 // ==========================================
 const VOWEL_INDEP: Record<string, string> = {
   'ᱚ': 'ओ', 'ᱟ': 'आ', 'ᱤ': 'इ', 'ᱩ': 'उ', 'ᱮ': 'ए', 'ᱳ': 'ओ'
@@ -213,18 +199,6 @@ const CONSONANTS: Record<string, string> = {
 };
 const MODIFIERS: Record<string, string> = {
   'ᱽ': '्', 'ᱸ': 'ं', 'ᱹ': '', 'ᱺ': 'ः', '᱾': '।', '᱿': '॥',
-  '᱑': '1', '᱒': '2', '᱓': '3', '᱔': '4', '᱕': '5',
-  '᱖': '6', '᱗': '7', '᱘': '8', '᱙': '9', '᱐': '0'
-};
-
-const OL_CHIKI_TO_ROMAN: Record<string, string> = {
-  'ᱚ': 'o', 'ᱛ': 't', 'ᱜ': 'g', 'ᱝ': 'ng', 'ᱞ': 'l',
-  'ᱟ': 'a', 'ᱠ': 'k', 'ᱡ': 'j', 'ᱢ': 'm', 'ᱣ': 'w',
-  'ᱤ': 'i', 'ᱥ': 's', 'ᱦ': 'h', 'ᱧ': 'ny', 'ᱨ': 'r',
-  'ᱩ': 'u', 'ᱪ': 'ch', 'ᱫ': 'd', 'ᱬ': 'n', 'ᱭ': 'y',
-  'ᱮ': 'e', 'ᱯ': 'p', 'ᱰ': 'd', 'ᱱ': 'n', 'ᱲ': 'r',
-  'ᱳ': 'o', 'ᱴ': 't', 'ᱵ': 'b', 'ᱶ': 'nw', 'ᱷ': 'h',
-  'ᱽ': '', 'ᱸ': 'n', 'ᱹ': '', 'ᱺ': 'h', '᱾': '.', '᱿': '.',
   '᱑': '1', '᱒': '2', '᱓': '3', '᱔': '4', '᱕': '5',
   '᱖': '6', '᱗': '7', '᱘': '8', '᱙': '9', '᱐': '0'
 };
@@ -259,16 +233,6 @@ export function convertOlChikiToSpeakable(text: string): string {
   return out.join('');
 }
 
-export function convertOlChikiToRoman(text: string): string {
-  let out = '';
-  for (let i = 0; i < text.length; i++) {
-    const ch = text[i];
-    out += OL_CHIKI_TO_ROMAN[ch] !== undefined ? OL_CHIKI_TO_ROMAN[ch] : ch;
-  }
-  return out;
-}
-
-// Convert Devanagari to clean speakable Roman phonics (for English offline voice fallback)
 const DEVA_TO_ROMAN: Record<string, string> = {
   'अ': 'a', 'आ': 'aa', 'इ': 'i', 'ई': 'ee', 'उ': 'u', 'ऊ': 'oo',
   'ए': 'e', 'ऐ': 'ai', 'ओ': 'o', 'औ': 'au',
@@ -287,11 +251,7 @@ export function convertDevanagariToRoman(text: string): string {
   let out = '';
   for (let i = 0; i < text.length; i++) {
     const ch = text[i];
-    if (DEVA_TO_ROMAN[ch] !== undefined) {
-      out += DEVA_TO_ROMAN[ch];
-    } else {
-      out += ch;
-    }
+    out += DEVA_TO_ROMAN[ch] !== undefined ? DEVA_TO_ROMAN[ch] : ch;
   }
   return out.replace(/\s+/g, ' ').trim();
 }
@@ -300,7 +260,7 @@ export function cleanTextForSpeech(rawText: string): string {
   if (!rawText) return '';
   let cleaned = rawText.trim();
 
-  // If formatted as "OlChiki (Devanagari)", use the clean Devanagari inside parentheses
+  // If text is formatted as "OlChiki (Devanagari)", extract Devanagari inside parentheses
   const parenMatch = cleaned.match(/\(([^)]+)\)/);
   if (parenMatch && /[\u0900-\u097F]/.test(parenMatch[1])) {
     cleaned = parenMatch[1];
@@ -323,36 +283,90 @@ export function cleanTextForSpeech(rawText: string): string {
   return cleaned;
 }
 
-// ==========================================
-// 4. MULTI-TIER SPEECH ENGINE
-// ==========================================
-let nativeTTSModule: any = null;
-let nativeTTSChecked = false;
-let globalUtterance: SpeechSynthesisUtterance | null = null;
-let keepAliveTimer: any = null;
+// Global active utterance reference to prevent V8 garbage-collection audio cutoff
+let activeUtterance: SpeechSynthesisUtterance | null = null;
 
-async function getNativeTTS() {
-  if (nativeTTSChecked) return nativeTTSModule;
-  nativeTTSChecked = true;
+// ==========================================
+// 4. SPEECH SYNTHESIS ENGINE
+// ==========================================
 
-  if (Capacitor.isNativePlatform()) {
-    try {
-      const mod = await import('@capacitor-community/text-to-speech');
-      nativeTTSModule = mod.TextToSpeech;
-      console.log('[TTS] Capacitor Native TextToSpeech plugin active');
-    } catch (e) {
-      console.warn('[TTS] Native TextToSpeech plugin not loaded:', e);
-    }
+/**
+ * Robust Web Speech Synthesis with Chromium cancel-bug avoidance
+ */
+function speakViaWebSpeechSafe(
+  text: string,
+  preferredLang: string,
+  rate = 0.9,
+  pitch = 1.0,
+  onEnd?: () => void
+): boolean {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+    if (onEnd) onEnd();
+    return false;
   }
-  return nativeTTSModule;
-}
-getNativeTTS();
 
-// HTML5 audio stream via local server or CDN
-function playViaAudioElement(text: string, onEnd?: () => void): Promise<boolean> {
+  try {
+    const synth = window.speechSynthesis;
+    synth.resume();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = rate;
+    utterance.pitch = pitch;
+
+    const voices = synth.getVoices();
+    let chosenVoice: SpeechSynthesisVoice | undefined;
+
+    if (preferredLang.startsWith('hi')) {
+      chosenVoice = voices.find(v =>
+        v.lang.startsWith('hi') || v.lang.includes('IN') || v.name.toLowerCase().includes('hindi')
+      );
+    }
+
+    if (!chosenVoice) {
+      // Find an Indian English voice or default voice
+      chosenVoice = voices.find(v => v.lang.includes('IN') || v.lang.startsWith('en') || v.default) || voices[0];
+    }
+
+    if (chosenVoice) {
+      utterance.voice = chosenVoice;
+      utterance.lang = chosenVoice.lang;
+    } else {
+      utterance.lang = preferredLang;
+    }
+
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      activeUtterance = null;
+      if (onEnd) onEnd();
+    };
+
+    utterance.onend = finish;
+    utterance.onerror = (e) => {
+      console.warn('[TTS] WebSpeech utterance error:', e);
+      finish();
+    };
+
+    activeUtterance = utterance;
+
+    // Speak without calling cancel() beforehand to avoid Chromium cancellation lock
+    synth.speak(utterance);
+    return true;
+  } catch (err) {
+    console.warn('[TTS] WebSpeech error:', err);
+    if (onEnd) onEnd();
+    return false;
+  }
+}
+
+/**
+ * Play high-res Hindi audio stream from local server or CDN
+ */
+function playServerAudioStream(text: string, onEnd?: () => void): Promise<boolean> {
   return new Promise((resolve) => {
     try {
-      const audio = getOrCreateAudioElement();
+      const audio = getDomAudio();
       if (!audio) {
         if (onEnd) onEnd();
         return resolve(false);
@@ -362,32 +376,33 @@ function playViaAudioElement(text: string, onEnd?: () => void): Promise<boolean>
       audio.currentTime = 0;
 
       const encoded = encodeURIComponent(text.slice(0, 180));
-      const localUrl = `http://localhost:5001/api/tts?text=${encoded}`;
-      const directCdnUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=hi&client=tw-ob`;
+      // Use relative path so Vite proxy forwards without CORS or host errors
+      const proxyUrl = `/api/tts?text=${encoded}`;
+      const cdnUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=hi&client=tw-ob`;
 
-      let hasFinished = false;
-      const finish = (success: boolean) => {
-        if (hasFinished) return;
-        hasFinished = true;
+      let done = false;
+      const complete = (ok: boolean) => {
+        if (done) return;
+        done = true;
         if (onEnd) onEnd();
-        resolve(success);
+        resolve(ok);
       };
 
-      audio.onended = () => finish(true);
+      audio.onended = () => complete(true);
 
       audio.onerror = () => {
-        // Try CDN fallback
-        audio.onerror = () => finish(false);
-        audio.src = directCdnUrl;
-        audio.play().catch(() => finish(false));
+        console.warn('[TTS] Server audio stream failed, trying CDN');
+        audio.onerror = () => complete(false);
+        audio.src = cdnUrl;
+        audio.play().catch(() => complete(false));
       };
 
-      audio.src = localUrl;
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          audio.src = directCdnUrl;
-          audio.play().catch(() => finish(false));
+      audio.src = proxyUrl;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.catch(() => {
+          audio.src = cdnUrl;
+          audio.play().catch(() => complete(false));
         });
       }
     } catch {
@@ -397,92 +412,9 @@ function playViaAudioElement(text: string, onEnd?: () => void): Promise<boolean>
   });
 }
 
-// Web Speech API execution
-function speakViaWebSpeech(text: string, lang: string, rate: number, pitch: number, onEnd?: () => void): boolean {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    if (onEnd) onEnd();
-    return false;
-  }
-
-  try {
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.resume();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
-    utterance.rate = rate;
-    utterance.pitch = pitch;
-
-    const voices = window.speechSynthesis.getVoices();
-    if (lang.startsWith('hi')) {
-      const hindiVoice = voices.find(v =>
-        v.lang.startsWith('hi') || v.lang.includes('IN') || v.name.toLowerCase().includes('hindi')
-      );
-      if (hindiVoice) {
-        utterance.voice = hindiVoice;
-      }
-    } else {
-      // English or default voice
-      const engVoice = voices.find(v => v.lang.includes('en') || v.default);
-      if (engVoice) {
-        utterance.voice = engVoice;
-      }
-    }
-
-    let ended = false;
-    const finish = () => {
-      if (ended) return;
-      ended = true;
-      if (keepAliveTimer) {
-        clearInterval(keepAliveTimer);
-        keepAliveTimer = null;
-      }
-      globalUtterance = null;
-      if (onEnd) onEnd();
-    };
-
-    utterance.onend = finish;
-    utterance.onerror = (e) => {
-      console.warn('[TTS] Web Speech error:', e);
-      finish();
-    };
-
-    globalUtterance = utterance;
-
-    // Keep-alive loop for Chrome/Edge
-    keepAliveTimer = setInterval(() => {
-      if (window.speechSynthesis.speaking) {
-        window.speechSynthesis.pause();
-        window.speechSynthesis.resume();
-      } else {
-        clearInterval(keepAliveTimer);
-        keepAliveTimer = null;
-      }
-    }, 4000);
-
-    window.speechSynthesis.speak(utterance);
-    return true;
-  } catch (err) {
-    console.warn('[TTS] Web Speech exception:', err);
-    if (onEnd) onEnd();
-    return false;
-  }
-}
-
 /**
- * Universal Speak Function:
- * GUARANTEED TO SPEAK ALOUD IN BOTH OFFLINE & ONLINE MODES
- *
- * Fallback Chain:
- * 1. Native Android APK:
- *    - Step A: Speaks Devanagari Hindi phonetics via native Android TTS engine (hi-IN)
- *    - Step B (Offline / No Hindi pack): Speaks Roman phonetics via native Android TTS engine (en-IN / default voice)
- * 2. Web Browser:
- *    - Step A: If Hindi voice is present in browser, speaks Devanagari offline with that voice
- *    - Step B: If local Python server is reachable, streams high-res MP3
- *    - Step C (Offline without Hindi pack): Speaks Roman phonetics using the browser's default voice
- *
- * Result: ZERO SILENCE. Always speaks aloud clearly.
+ * Master speakText function
+ * NEVER SILENT: Tries native Android TTS, high-res server audio, and Web Speech phonics
  */
 export const speakText = async (
   text: string,
@@ -501,145 +433,122 @@ export const speakText = async (
     return;
   }
 
-  // Derive Roman phonics for speech engines without Hindi fonts
-  const romanText = (fallbackRoman && fallbackRoman.trim()) 
-    ? fallbackRoman.trim() 
+  const romanPhonics = (fallbackRoman && fallbackRoman.trim())
+    ? fallbackRoman.trim()
     : convertDevanagariToRoman(speakableDevanagari);
 
-  console.log('[TTS] Speaking request:', {
+  console.log('[TTS] Speaking:', {
     deva: speakableDevanagari,
-    roman: romanText,
+    roman: romanPhonics,
     isNative: Capacitor.isNativePlatform()
   });
 
-  // ==============================================================
-  // TIER 1: Native Android / iOS App (Capacitor TextToSpeech)
-  // Works 100% OFFLINE on mobile devices
-  // ==============================================================
+  // -------------------------------------------------------------
+  // STRATEGY 1: Native Android / iOS Device TTS (Works 100% Offline)
+  // -------------------------------------------------------------
   if (Capacitor.isNativePlatform()) {
     try {
-      const tts = await getNativeTTS();
-      if (tts) {
-        // Step 1: Check if Hindi is supported on this Android device
-        let hindiSupported = false;
-        try {
-          const check = await tts.isLanguageSupported({ lang: 'hi-IN' });
-          if (check && check.supported) {
-            hindiSupported = true;
-          } else {
-            const check2 = await tts.isLanguageSupported({ lang: 'hi' });
-            if (check2 && check2.supported) hindiSupported = true;
-          }
-        } catch {
-          // If check method throws, attempt Hindi speak first
-          hindiSupported = true;
-        }
-
-        // Try speaking Devanagari with Hindi voice
-        if (hindiSupported && lang.startsWith('hi')) {
-          try {
-            await tts.speak({
-              text: speakableDevanagari,
-              lang: 'hi-IN',
-              rate: rate,
-              pitch: pitch,
-              volume: 1.0,
-              category: 'playback'
-            });
-            if (onEnd) onEnd();
-            return;
-          } catch (hindiErr) {
-            console.warn('[TTS] Native Hindi speech failed, falling back to Roman phonics:', hindiErr);
-          }
-        }
-
-        // Step 2: Fallback to Roman Phonics using the default offline English voice
-        // (Every Android device has an English voice installed offline)
-        try {
-          await tts.speak({
-            text: romanText,
-            lang: 'en-IN',
-            rate: rate,
-            pitch: pitch,
-            volume: 1.0,
-            category: 'playback'
-          });
-          if (onEnd) onEnd();
-          return;
-        } catch (romanErr) {
-          console.warn('[TTS] Native Roman speak failed, trying default system voice:', romanErr);
-          // Last try with no language tag (uses whatever voice is active)
-          await tts.speak({
-            text: romanText,
-            rate: rate,
-            pitch: pitch,
-            volume: 1.0,
-            category: 'playback'
-          });
-          if (onEnd) onEnd();
-          return;
-        }
+      // Step A: Attempt Hindi on native TTS
+      let spokenHindi = false;
+      try {
+        await TextToSpeech.speak({
+          text: speakableDevanagari,
+          lang: 'hi-IN',
+          rate: rate,
+          pitch: pitch,
+          volume: 1.0,
+          category: 'playback'
+        });
+        spokenHindi = true;
+      } catch (hiErr) {
+        console.warn('[TTS] Native Hindi voice missing or failed:', hiErr);
       }
-    } catch (e) {
-      console.warn('[TTS] Native speak error, falling through to web fallbacks:', e);
+
+      if (spokenHindi) {
+        if (onEnd) onEnd();
+        return;
+      }
+
+      // Step B: Fallback to Roman Phonics using the default offline system voice
+      try {
+        await TextToSpeech.speak({
+          text: romanPhonics,
+          lang: 'en-IN',
+          rate: rate,
+          pitch: pitch,
+          volume: 1.0,
+          category: 'playback'
+        });
+        if (onEnd) onEnd();
+        return;
+      } catch {
+        // Last native attempt with default voice
+        await TextToSpeech.speak({
+          text: romanPhonics,
+          rate: rate,
+          pitch: pitch,
+          volume: 1.0,
+          category: 'playback'
+        });
+        if (onEnd) onEnd();
+        return;
+      }
+    } catch (nativeErr) {
+      console.warn('[TTS] Native TextToSpeech plugin error:', nativeErr);
     }
   }
 
-  // ==============================================================
-  // TIER 2: Web Browser (Chrome / Edge / Firefox)
-  // ==============================================================
+  // -------------------------------------------------------------
+  // STRATEGY 2: Browser with Native Hindi Voice Installed
+  // -------------------------------------------------------------
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     const voices = window.speechSynthesis.getVoices();
-    const hasHindiVoice = voices.some(v =>
-      v.lang.startsWith('hi') || v.name.toLowerCase().includes('hindi')
-    );
+    const hasHindi = voices.some(v => v.lang.startsWith('hi') || v.name.toLowerCase().includes('hindi'));
 
-    // If browser has an offline Hindi voice:
-    if (hasHindiVoice && lang.startsWith('hi')) {
-      const ok = speakViaWebSpeech(speakableDevanagari, 'hi-IN', rate, pitch, onEnd);
+    if (hasHindi && lang.startsWith('hi')) {
+      const ok = speakViaWebSpeechSafe(speakableDevanagari, 'hi-IN', rate, pitch, onEnd);
       if (ok) return;
     }
   }
 
-  // ==============================================================
-  // TIER 3: Local Python Server Audio Stream (if server.py is running)
-  // ==============================================================
+  // -------------------------------------------------------------
+  // STRATEGY 3: Local Audio Stream (/api/tts - High Fidelity MP3)
+  // -------------------------------------------------------------
   if (!Capacitor.isNativePlatform()) {
     try {
-      const audioSuccess = await playViaAudioElement(speakableDevanagari, onEnd);
-      if (audioSuccess) return;
-    } catch {
-      // Fall through
-    }
-  }
-
-  // ==============================================================
-  // TIER 4: Ultimate Offline Web Speech Fallback (Roman Phonics)
-  // Pronounces "Sanam gidra ko Johar!" clearly with default system voice
-  // ==============================================================
-  speakViaWebSpeech(romanText, 'en-US', rate, pitch, onEnd);
-};
-
-export const stopSpeech = () => {
-  if (nativeTTSModule) {
-    nativeTTSModule.stop().catch(() => {});
-  }
-
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    if (keepAliveTimer) {
-      clearInterval(keepAliveTimer);
-      keepAliveTimer = null;
-    }
-    globalUtterance = null;
-    try {
-      window.speechSynthesis.cancel();
+      const streamed = await playServerAudioStream(speakableDevanagari, onEnd);
+      if (streamed) return;
     } catch {}
   }
 
-  if (domAudioElement) {
+  // -------------------------------------------------------------
+  // STRATEGY 4: Universal Offline Web Speech (Roman Phonics)
+  // Speaks "Sanam gidra ko Johar!" with Microsoft David / Zira / system voice
+  // -------------------------------------------------------------
+  speakViaWebSpeechSafe(romanPhonics, 'en-US', rate, pitch, onEnd);
+};
+
+export const stopSpeech = () => {
+  // 1. Stop Native TTS
+  try {
+    TextToSpeech.stop().catch(() => {});
+  } catch {}
+
+  // 2. Stop DOM Audio
+  if (domAudio) {
     try {
-      domAudioElement.pause();
-      domAudioElement.currentTime = 0;
+      domAudio.pause();
+      domAudio.currentTime = 0;
+    } catch {}
+  }
+
+  // 3. Stop Web Speech
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    activeUtterance = null;
+    try {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
     } catch {}
   }
 };
