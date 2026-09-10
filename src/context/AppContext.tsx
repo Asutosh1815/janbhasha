@@ -36,7 +36,7 @@ interface AppContextType {
   offlinePacks: OfflinePack[];
   downloadPack: (id: LanguageId) => void;
   activeAudioId: string | null;
-  playBilingualAudio: (id: string, text: string, langType?: 'hindi' | 'tribal') => void;
+  playBilingualAudio: (id: string, text: string, langType?: 'hindi' | 'tribal', fallbackRoman?: string) => void;
   stopAudio: () => void;
   voiceSpeed: number;
   setVoiceSpeed: (speed: number) => void;
@@ -147,7 +147,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }, 400);
   };
 
-  const playBilingualAudio = (id: string, text: string, langType: 'hindi' | 'tribal' = 'hindi') => {
+  const playBilingualAudio = (id: string, text: string, langType: 'hindi' | 'tribal' = 'hindi', fallbackRoman?: string) => {
     if (activeAudioId === id) {
       stopSpeech();
       setActiveAudioId(null);
@@ -160,7 +160,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const pitch = langType === 'tribal' ? 1.05 : 0.95;
     speakText(text, 'hi-IN', voiceSpeed, pitch, () => {
       setActiveAudioId(null);
-    });
+    }, fallbackRoman);
   };
 
   const stopAudio = () => {

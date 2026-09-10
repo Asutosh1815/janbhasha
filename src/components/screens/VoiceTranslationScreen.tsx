@@ -23,6 +23,7 @@ import { PRESET_TEACHER_PROMPTS, LANGUAGES } from '../../data/mockData';
 import { soundEffects } from '../../services/speechService';
 import { translateAuthentic } from '../../services/translatorService';
 import { runIndicTrans2Pipeline, checkBackendHealth, BackendStatus } from '../../services/indicTrans2Service';
+import { Capacitor } from '@capacitor/core';
 
 
 export const VoiceTranslationScreen: React.FC = () => {
@@ -40,6 +41,7 @@ export const VoiceTranslationScreen: React.FC = () => {
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [inputText, setInputText] = useState<string>('नमस्ते बच्चों');
   const [tribalText, setTribalText] = useState<string>('ᱥᱟᱱᱟᱢ ᱜᱤᱫᱽᱨᱟᱹ ᱠᱚ ᱡᱚᱦᱟᱨ!');
+  const [tribalDevanagari, setTribalDevanagari] = useState<string>('सनाम गिदरा को जोहार!');
   const [tribalRoman, setTribalRoman] = useState<string>('Sanam gidra ko Johar!');
   
   const [copied, setCopied] = useState<boolean>(false);
@@ -70,7 +72,8 @@ export const VoiceTranslationScreen: React.FC = () => {
     if (selectedLanguage.id === 'santhali') {
       setStatusText('Translating with AI4Bharat IndicTrans2 Neural Model...');
       const res = await runIndicTrans2Pipeline(textToTranslate);
-      setTribalText(`${res.santaliOlChiki} (${res.santaliDevanagari})`);
+      setTribalText(res.santaliOlChiki);
+      setTribalDevanagari(res.santaliDevanagari);
       setTribalRoman(res.santaliRomanPhonics);
       setStatusText(`⚡ ${res.engine} (${res.latencyMs}ms)`);
 
@@ -80,16 +83,17 @@ export const VoiceTranslationScreen: React.FC = () => {
         targetLangId: selectedLanguage.id,
         sourceText: textToTranslate,
         sourceRoman: textToTranslate,
-        targetText: `${res.santaliOlChiki} (${res.santaliDevanagari})`,
+        targetText: res.santaliOlChiki,
         targetRoman: res.santaliRomanPhonics,
       });
 
       if (shouldSpeak || autoReadAloud) {
-        playBilingualAudio('tribal-voice', res.santaliDevanagari, 'tribal');
+        playBilingualAudio('tribal-voice', res.santaliDevanagari, 'tribal', res.santaliRomanPhonics);
       }
     } else {
       const res = translateAuthentic(textToTranslate, selectedLanguage.id);
       setTribalText(res.tribalText);
+      setTribalDevanagari(res.tribalText);
       setTribalRoman(res.tribalRoman);
       setStatusText(`Translated to ${selectedLanguage.name}!`);
 
@@ -104,7 +108,7 @@ export const VoiceTranslationScreen: React.FC = () => {
       });
 
       if (shouldSpeak || autoReadAloud) {
-        playBilingualAudio('tribal-voice', res.tribalText, 'tribal');
+        playBilingualAudio('tribal-voice', res.tribalText, 'tribal', res.tribalRoman);
       }
     }
   };
@@ -121,12 +125,14 @@ export const VoiceTranslationScreen: React.FC = () => {
     if (text.trim()) {
       if (selectedLanguage.id === 'santhali') {
         const res = await runIndicTrans2Pipeline(text);
-        setTribalText(`${res.santaliOlChiki} (${res.santaliDevanagari})`);
+        setTribalText(res.santaliOlChiki);
+        setTribalDevanagari(res.santaliDevanagari);
         setTribalRoman(res.santaliRomanPhonics);
         setStatusText(`⚡ ${res.engine} (${res.latencyMs}ms)`);
       } else {
         const res = translateAuthentic(text, selectedLanguage.id);
         setTribalText(res.tribalText);
+        setTribalDevanagari(res.tribalText);
         setTribalRoman(res.tribalRoman);
       }
     }
@@ -141,47 +147,137 @@ export const VoiceTranslationScreen: React.FC = () => {
 
 
   // Start / Stop Microphone Speech Recognition
-  const handleMicToggle = () => {
+  const handleMicToggle = async () => {
     if (isRecording) {
-      if (recognitionRef.current) {
+      // Stop recording
+      if (Capacitor.isNativePlatform()) {
         try {
-          recognitionRef.current.stop();
-        } catch {
-          // Ignore
-        }
+          const { SpeechRecognition } = await import('@capacitor-community/speech-recognition');
+          await SpeechRecognition.stop();
+          SpeechRecognition.removeAllListeners();
+        } catch {}
+      } else if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch {}
       }
       setIsRecording(false);
       setStatusText('Listening stopped.');
-      soundEffects.playBeep(440, 'sine', 0.15);
+      soundEffects.playBeep(440, 'sine', 0.12);
       return;
     }
 
     stopAudio();
-    soundEffects.playBeep(680, 'sine', 0.15);
+    soundEffects.playBeep(680, 'sine', 0.12);
     setIsRecording(true);
     setStatusText('Listening to Hindi speech... Speak now 🎙️');
 
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (SpeechRecognition) {
+    // ---- Strategy 1: Native Capacitor Speech Recognition (for Android APK) ----
+    if (Capacitor.isNativePlatform()) {
       try {
-        const recognition = new SpeechRecognition();
+        const { SpeechRecognition } = await import('@capacitor-community/speech-recognition');
+        
+        // 1. Check availability
+        const { available } = await SpeechRecognition.available();
+        if (!available) {
+          console.warn('[Speech] Native speech recognition not available on device');
+        }
+
+        // 2. Request permission
+        const permStatus = await SpeechRecognition.requestPermissions();
+        if (permStatus.speechRecognition !== 'granted') {
+          setIsRecording(false);
+          setStatusText('Microphone permission not granted. Allow in Android Settings.');
+          return;
+        }
+
+        // 3. Listener for partial live transcription
+        let recognizedText = '';
+        SpeechRecognition.addListener('partialResults', (data: any) => {
+          if (data && data.matches && data.matches.length > 0) {
+            recognizedText = data.matches[0];
+            if (recognizedText && recognizedText.trim()) {
+              setInputText(recognizedText);
+              setStatusText(`Heard: "${recognizedText}"`);
+            }
+          }
+        });
+
+        // 4. Start speech recognition
+        // popup: true ensures the native Google dialog appears, which works reliably across all Android devices
+        const result = await SpeechRecognition.start({
+          language: 'hi-IN',
+          maxResults: 3,
+          prompt: 'यहाँ हिन्दी में बोलें (Speak in Hindi)',
+          partialResults: true,
+          popup: true,
+        });
+
+        setIsRecording(false);
+        try {
+          await SpeechRecognition.removeAllListeners();
+        } catch {}
+
+        const finalMatch = (result && result.matches && result.matches[0]) || recognizedText;
+        if (finalMatch && finalMatch.trim()) {
+          setInputText(finalMatch);
+          setStatusText(`Translating: "${finalMatch}"`);
+          runTranslation(finalMatch, true);
+        } else {
+          setStatusText('No speech detected. Tap mic to try again.');
+        }
+        return;
+      } catch (err: any) {
+        console.warn('[Speech] Native recognition error:', err);
+        setIsRecording(false);
+        setStatusText('Tap mic to try speaking again.');
+        return;
+      }
+    }
+
+    // ---- Strategy 2: Web Speech Recognition (for localhost browser) ----
+    const SpeechRecognitionWeb = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (SpeechRecognitionWeb) {
+      try {
+        const recognition = new SpeechRecognitionWeb();
         recognition.lang = 'hi-IN';
-        recognition.interimResults = false;
+        recognition.interimResults = true;
         recognition.maxAlternatives = 1;
         recognitionRef.current = recognition;
 
+        let finalTranscript = '';
+
         recognition.onresult = (event: any) => {
-          const transcript = event.results[0][0].transcript;
-          if (transcript) {
-            setInputText(transcript);
-            runTranslation(transcript, true);
+          let interim = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript = transcript;
+            } else {
+              interim += transcript;
+            }
           }
-          setIsRecording(false);
+
+          const currentText = finalTranscript || interim;
+          if (currentText) {
+            setInputText(currentText);
+            setStatusText(`Hearing: "${currentText}"`);
+          }
+
+          if (finalTranscript) {
+            setIsRecording(false);
+            runTranslation(finalTranscript, true);
+          }
         };
 
-        recognition.onerror = () => {
+        recognition.onerror = (e: any) => {
+          console.warn('[Speech] Web recognition error:', e.error);
           setIsRecording(false);
-          setStatusText('Tap mic to try speaking again.');
+          if (e.error === 'not-allowed') {
+            setStatusText('Microphone permission blocked. Please allow mic in browser.');
+          } else if (e.error === 'no-speech') {
+            setStatusText('No speech heard. Tap mic and speak in Hindi.');
+          } else {
+            setStatusText('Speech recognition error. Tap to retry.');
+          }
         };
 
         recognition.onend = () => {
@@ -191,19 +287,19 @@ export const VoiceTranslationScreen: React.FC = () => {
         recognition.start();
         return;
       } catch (err) {
-        console.log('Speech recognition init error:', err);
+        console.log('[Speech] Web speech init error:', err);
       }
     }
 
-    // Fallback simulation
-    setTimeout(() => {
-      setIsRecording(false);
-      const randomPrompt = PRESET_TEACHER_PROMPTS[Math.floor(Math.random() * PRESET_TEACHER_PROMPTS.length)];
-      setInputText(randomPrompt.hindi);
-      runTranslation(randomPrompt.hindi, true);
-      soundEffects.playSuccess();
-    }, 1800);
-  };
+//     // Fallback preset demo if browser has zero speech support
+//     setTimeout(() => {
+//       setIsRecording(false);
+//       const randomPrompt = PRESET_TEACHER_PROMPTS[Math.floor(Math.random() * PRESET_TEACHER_PROMPTS.length)];
+//       setInputText(randomPrompt.hindi);
+//       runTranslation(randomPrompt.hindi, true);
+//       soundEffects.playSuccess();
+//     }, 1500);
+   };
 
   const handlePlayHindi = () => {
     if (activeAudioId === 'hindi-voice') {
@@ -217,9 +313,11 @@ export const VoiceTranslationScreen: React.FC = () => {
     if (activeAudioId === 'tribal-voice') {
       stopAudio();
     } else {
-      playBilingualAudio('tribal-voice', tribalText, 'tribal');
+      const textToSpeak = tribalDevanagari || tribalText;
+      playBilingualAudio('tribal-voice', textToSpeak, 'tribal', tribalRoman);
     }
   };
+
 
   const handleCopy = () => {
     navigator.clipboard.writeText(`${inputText}\n${tribalText}`);
@@ -419,14 +517,25 @@ export const VoiceTranslationScreen: React.FC = () => {
           </div>
 
           {/* Translated Mother Tongue Text */}
-          <div className="my-2">
-            <h3 className="text-xl font-black text-janbhasha-950 leading-snug">
+          <div className="my-2 space-y-1.5">
+            <h3 className="text-2xl font-black text-janbhasha-950 leading-snug tracking-wide">
               {tribalText}
             </h3>
-            <p className="text-xs text-janbhasha-800 font-semibold italic mt-1.5 bg-white/80 px-3 py-1.5 rounded-xl inline-block border border-emerald-200/80 shadow-2xs">
-              Phonics: "{tribalRoman}"
-            </p>
+
+            {tribalDevanagari && tribalDevanagari !== tribalText && (
+              <div className="text-sm font-bold text-slate-800 font-hindi bg-white/75 px-3 py-1 rounded-xl inline-block border border-emerald-200/80 shadow-2xs">
+                <span className="text-xs text-slate-500 font-medium">उच्चारण: </span>
+                <span className="text-janbhasha-900 font-extrabold">{tribalDevanagari}</span>
+              </div>
+            )}
+
+            <div>
+              <p className="text-xs text-janbhasha-800 font-semibold italic bg-white/80 px-3 py-1.5 rounded-xl inline-block border border-emerald-200/80 shadow-2xs">
+                Phonics: "{tribalRoman}"
+              </p>
+            </div>
           </div>
+
 
           {/* Animated Waveform during audio playback */}
           {activeAudioId === 'tribal-voice' && (

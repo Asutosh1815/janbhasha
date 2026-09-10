@@ -29,8 +29,9 @@ if sys.platform.startswith("win"):
         pass
 
 import numpy as np
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
+
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173", "*"])
@@ -52,24 +53,47 @@ model_state = {
     "whisper": None
 }
 
-# Ol Chiki to Devanagari transliteration table for speech synthesis
-OLCHIKI_TO_DEVA = {
-    'ᱚ': 'ऑ', 'ᱟ': 'आ', 'ᱤ': 'इ', 'ᱩ': 'उ', 'ᱮ': 'ए', 'ᱳ': 'ओ',
-    'ᱠ': 'क', 'ᱜ': 'ग', 'ᱝ': 'ङ', 'ᱞ': 'ल',
-    'ᱪ': 'च', 'ᱡ': 'ज', 'ᱧ': 'ञ', 'ᱨ': 'र',
-    'ᱴ': 'ट', 'ᱰ': 'ड', 'ᱬ': 'ण', 'ᱲ': 'ड़',
-    'ᱛ': 'त', 'ᱫ': 'द', 'ᱱ': 'न', 'ᱯ': 'प', 'ᱵ': 'ब', 'ᱢ': 'म',
-    'ᱭ': 'य', 'ᱣ': 'व', 'ᱥ': 'स', 'ᱦ': 'ह',
-    'ᱽ': '', 'ᱸ': 'ं', 'ᱹ': '', 'ᱺ': 'ः', '᱾': '।', '᱿': '॥',
+# Natural Ol Chiki to Devanagari conversion for fluent, clear speech
+VOWEL_INDEP = {'ᱚ': 'ओ', 'ᱟ': 'आ', 'ᱤ': 'इ', 'ᱩ': 'उ', 'ᱮ': 'ए', 'ᱳ': 'ओ'}
+VOWEL_MATRA = {'ᱚ': 'ो', 'ᱟ': 'ा', 'ᱤ': 'ि', 'ᱩ': 'ु', 'ᱮ': 'े', 'ᱳ': 'ो'}
+CONSONANTS = {
+    'ᱛ': 'त', 'ᱜ': 'ग', 'ᱝ': 'ङ', 'ᱞ': 'ल',
+    'ᱠ': 'क', 'ᱡ': 'ज', 'ᱢ': 'म', 'ᱣ': 'व',
+    'ᱥ': 'स', 'ᱦ': 'ह', 'ᱧ': 'ञ', 'ᱨ': 'र',
+    'ᱪ': 'च', 'ᱫ': 'द', 'ᱬ': 'ण', 'ᱭ': 'य',
+    'ᱯ': 'प', 'ᱰ': 'ड', 'ᱱ': 'न', 'ᱲ': 'ड़',
+    'ᱴ': 'ट', 'ᱵ': 'ब', 'ᱶ': 'ंव', 'ᱷ': 'ह'
+}
+MODIFIERS = {
+    'ᱽ': '्', 'ᱸ': 'ं', 'ᱹ': '', 'ᱺ': 'ः', '᱾': '।', '᱿': '॥',
     '᱑': '1', '᱒': '2', '᱓': '3', '᱔': '4', '᱕': '5',
     '᱖': '6', '᱗': '7', '᱘': '8', '᱙': '9', '᱐': '0'
 }
 
 def olchiki_to_devanagari(text: str) -> str:
-    res = []
+    out = []
+    prev_was_consonant = False
+    
     for ch in text:
-        res.append(OLCHIKI_TO_DEVA.get(ch, ch))
-    return "".join(res)
+        if ch in VOWEL_INDEP:
+            if prev_was_consonant:
+                out.append(VOWEL_MATRA[ch])
+            else:
+                out.append(VOWEL_INDEP[ch])
+            prev_was_consonant = False
+        elif ch in CONSONANTS:
+            out.append(CONSONANTS[ch])
+            prev_was_consonant = True
+        elif ch in MODIFIERS:
+            out.append(MODIFIERS[ch])
+            if ch == 'ᱽ':
+                prev_was_consonant = False
+        else:
+            out.append(ch)
+            prev_was_consonant = False
+            
+    return ''.join(out)
+
 
 
 def find_onnx_model_path() -> Path:
@@ -307,6 +331,34 @@ def transcribe():
         "engine": "Browser WebSpeech API",
         "notice": "Whisper model not initialized or audio format unreadable"
     })
+
+
+@app.route("/api/tts", methods=["GET"])
+def tts():
+    """Proxy/generate clean Hindi/Santali TTS audio stream (MP3) for WebViews & mobile apps"""
+    text = request.args.get("text", "").strip()
+    if not text:
+        return jsonify({"error": "No text provided"}), 400
+
+    try:
+        import urllib.parse, urllib.request
+        # If input has Ol Chiki, convert to natural Devanagari first
+        has_olchiki = any(ord(c) >= 0x1C50 and ord(c) <= 0x1C7F for c in text)
+        if has_olchiki:
+            text = olchiki_to_devanagari(text)
+
+        encoded = urllib.parse.quote(text[:200])
+        url = f"https://translate.google.com/translate_tts?ie=UTF-8&q={encoded}&tl=hi&client=tw-ob"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as r:
+            audio_data = r.read()
+            return Response(audio_data, mimetype="audio/mpeg", headers={
+                "Access-Control-Allow-Origin": "*",
+                "Cache-Control": "public, max-age=86400"
+            })
+    except Exception as e:
+        print(f"[JanBhasha] TTS error: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":

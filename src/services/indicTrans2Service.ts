@@ -3,6 +3,7 @@
 // Model: ai4bharat/indictrans2-indic-indic-dist-320M (hin_Deva -> sat_Olck)
 // GitHub: https://github.com/AI4Bharat/IndicTrans2
 import { translateHindiToSantali } from './santaliTranslator';
+import { Capacitor } from '@capacitor/core';
 
 const LOCAL_BACKEND_URL = 'http://localhost:5001';
 
@@ -15,9 +16,14 @@ export interface BackendStatus {
 
 // Check if local Python backend is running
 export async function checkBackendHealth(): Promise<BackendStatus> {
+  // On native mobile devices, localhost points to the phone (no Python backend running locally)
+  if (Capacitor.isNativePlatform()) {
+    return { available: false, model_loaded: false, model_loading: false };
+  }
+
   try {
     const res = await fetch(`${LOCAL_BACKEND_URL}/api/health`, { 
-      signal: AbortSignal.timeout(1500) 
+      signal: AbortSignal.timeout(800) 
     });
     if (!res.ok) return { available: false, model_loaded: false, model_loading: false };
     const data = await res.json();
@@ -34,13 +40,18 @@ export async function checkBackendHealth(): Promise<BackendStatus> {
 
 // Call local Python backend (AI4Bharat IndicTrans2 model)
 export async function callLocalBackend(hindiText: string): Promise<IndicTrans2PipelineResult | null> {
+  // Skip on native mobile apps so translation is instant (0ms delay) using the offline engine
+  if (Capacitor.isNativePlatform()) {
+    return null;
+  }
+
   try {
     const t0 = performance.now();
     const res = await fetch(`${LOCAL_BACKEND_URL}/api/translate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: hindiText, src: 'hin_Deva', tgt: 'sat_Olck' }),
-      signal: AbortSignal.timeout(15000)
+      signal: AbortSignal.timeout(600)
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -56,7 +67,7 @@ export async function callLocalBackend(hindiText: string): Promise<IndicTrans2Pi
       };
     }
   } catch {
-    // Backend not running — silently fall through
+    // Backend not running — silently fall through to instant offline translation
   }
   return null;
 }
