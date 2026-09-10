@@ -139,12 +139,6 @@ export const VoiceTranslationScreen: React.FC = () => {
     runTranslation(inputText, true);
   };
 
-  // Select Quick Preset Instruction Phrase
-  const handleSelectPreset = (hindi: string) => {
-    setInputText(hindi);
-    soundEffects.playBeep(600, 'sine', 0.08);
-    runTranslation(hindi, true);
-  };
 
   // Start / Stop Microphone Speech Recognition
   const handleMicToggle = () => {
@@ -233,23 +227,6 @@ export const VoiceTranslationScreen: React.FC = () => {
     soundEffects.playBeep(800, 'sine', 0.08);
     setTimeout(() => setCopied(false), 2000);
   };
-
-  const quickChips = [
-    'नमस्ते बच्चों',
-    'किताब खोलो',
-    'आज हम जोड़ सीखेंगे',
-    'दो और तीन पांच होते हैं',
-    'पानी लाओ',
-    'खाना खाओ',
-    'घर चलो',
-    'चुपचाप बैठो',
-    'तुम्हारा नाम क्या है?',
-    'मेरा नाम बिरसा है',
-    'आज बारिश हो रही है',
-    'हम सब स्कूल जाते हैं',
-    'पेड़ मत काटो',
-    'बहुत अच्छा शाबाश'
-  ];
 
   return (
     <div className="flex flex-col h-full bg-[#fbfdf8] text-slate-800 justify-between select-none overflow-y-auto no-scrollbar pb-6">
@@ -458,30 +435,6 @@ export const VoiceTranslationScreen: React.FC = () => {
               <AudioWaveform isPlaying={true} />
             </div>
           )}
-        </div>
-
-        {/* 1-Tap Quick Action Chips */}
-        <div className="space-y-1.5 pt-0.5">
-          <div className="flex items-center justify-between text-xs font-bold text-slate-700 px-1">
-            <span>1-Tap Classroom Phrases</span>
-            <span className="text-[10px] text-janbhasha-700 font-semibold">Tap to translate &amp; speak</span>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto no-scrollbar py-0.5">
-            {quickChips.map((chip, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleSelectPreset(chip)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all border shadow-2xs ${
-                  inputText === chip
-                    ? 'bg-emerald-100 border-janbhasha-700 text-janbhasha-900'
-                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                {chip}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
 
