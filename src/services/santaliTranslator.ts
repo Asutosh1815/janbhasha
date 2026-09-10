@@ -459,16 +459,44 @@ const SANTALI_LEXICON: SantaliWordEntry[] = [
   { hindiWords: ['दस', '१०', '10'], olChiki: 'ᱜᱮᱞ', devanagari: 'गेल', roman: 'Gel' }
 ];
 
+const DEVA_TO_OLCHIKI_MAP: Record<string, string> = {
+  'अ': 'ᱚ', 'आ': 'ᱟ', 'इ': 'ᱤ', 'ई': 'ᱤ', 'उ': 'ᱩ', 'ऊ': 'ᱩ',
+  'ए': 'ᱮ', 'ऐ': 'ᱮ', 'ओ': 'ᱳ', 'औ': 'ᱳ',
+  'क': 'ᱠ', 'ख': 'ᱠᱷ', 'ग': 'ᱜ', 'घ': 'ᱜᱷ', 'ङ': 'ᱝ',
+  'च': 'ᱪ', 'छ': 'ᱪᱷ', 'ज': 'ᱡ', 'झ': 'ᱡᱷ', 'ञ': 'ᱧ',
+  'ट': 'ᱴ', 'ठ': 'ᱴᱷ', 'ड': 'ᱰ', 'ढ': 'ᱰᱷ', 'ण': 'ᱬ',
+  'त': 'ᱛ', 'थ': 'ᱛᱷ', 'द': 'ᱫ', 'ध': 'ᱫᱷ', 'न': 'ᱱ',
+  'प': 'ᱯ', 'फ': 'ᱯᱷ', 'ब': 'ᱵ', 'भ': 'ᱵᱷ', 'म': 'ᱢ',
+  'य': 'ᱭ', 'र': 'ᱨ', 'ल': 'ᱞ', 'व': 'ᱣ', 'श': 'ᱥ', 'ष': 'ᱥ', 'स': 'ᱥ', 'ह': 'ᱦ',
+  'ड़': 'ᱲ', 'ढ़': 'ᱲᱷ',
+  'ा': 'ᱟ', 'ि': 'ᱤ', 'ी': 'ᱤ', 'ु': 'ᱩ', 'ू': 'ᱩ', 'े': 'ᱮ', 'ै': 'ᱮ', 'ो': 'ᱳ', 'ौ': 'ᱳ',
+  '्': 'ᱽ', 'ं': 'ᱸ', 'ः': 'ᱺ', '़': 'ᱹ', '।': '᱾', '॥': '᱿',
+  '1': '᱑', '2': '᱒', '3': '᱓', '4': '᱔', '5': '᱕',
+  '6': '᱖', '7': '᱗', '8': '᱘', '9': '᱙', '0': '᱐'
+};
+
+export function convertDevanagariToOlChiki(devaText: string): string {
+  let res = '';
+  for (let i = 0; i < devaText.length; i++) {
+    const ch = devaText[i];
+    res += DEVA_TO_OLCHIKI_MAP[ch] || ch;
+  }
+  return res;
+}
+
 // Main True Translation Function for Santali
 export function translateHindiToSantali(hindiInput: string): SantaliTranslation {
   const clean = hindiInput.trim();
+  if (!clean) {
+    return { olChiki: '', devanagari: '', romanPhonics: '', confidence: 'grammatical_synthesized' };
+  }
   const lowerClean = clean.toLowerCase().replace(/[.,?!।]/g, '');
 
-  // 1. Check Full Sentence Bitext Pairs
+  // 1. Check Full Sentence Bitext Pairs (exact match first, then full phrase containment)
   for (const item of FULL_SENTENCE_PAIRS) {
     for (const pat of item.patterns) {
       const p = pat.toLowerCase().replace(/[.,?!।]/g, '');
-      if (lowerClean === p || lowerClean.includes(p) || p.includes(lowerClean)) {
+      if (lowerClean === p || (lowerClean.length >= 4 && lowerClean.includes(p))) {
         return {
           olChiki: item.olChiki,
           devanagari: item.devanagari,
@@ -490,43 +518,51 @@ export function translateHindiToSantali(hindiInput: string): SantaliTranslation 
     const stripped = rawWord.replace(/[.,?!।]/g, '').toLowerCase();
     if (!stripped) continue;
 
-    // Search in Santali lexicon
-    const entry = SANTALI_LEXICON.find(e =>
-      e.hindiWords.some(hw => hw.toLowerCase() === stripped || stripped.includes(hw.toLowerCase()) || hw.toLowerCase().includes(stripped))
+    // Prioritize exact match
+    let entry = SANTALI_LEXICON.find(e =>
+      e.hindiWords.some(hw => hw.toLowerCase() === stripped)
     );
+
+    // Fallback: substring match only if stripped word is at least 3 chars
+    if (!entry && stripped.length >= 3) {
+      entry = SANTALI_LEXICON.find(e =>
+        e.hindiWords.some(hw => hw.length >= 3 && (stripped.includes(hw.toLowerCase()) || hw.toLowerCase().includes(stripped)))
+      );
+    }
 
     if (entry) {
       matchedOlChiki.push(entry.olChiki);
       matchedDeva.push(entry.devanagari);
       matchedRoman.push(entry.roman);
     } else {
-      // If word is a number, format it
       const numMatch = stripped.match(/\d+/);
       if (numMatch) {
         matchedOlChiki.push(numMatch[0]);
         matchedDeva.push(numMatch[0]);
         matchedRoman.push(numMatch[0]);
       } else {
-        // Keep clean phonetic equivalent
-        matchedOlChiki.push(rawWord);
+        // Transliterate to authentic Ol Chiki script!
+        matchedOlChiki.push(convertDevanagariToOlChiki(rawWord));
         matchedDeva.push(rawWord);
         matchedRoman.push(rawWord);
       }
     }
   }
 
-  // Add Santali sentence copula (ᱠᱟᱱᱟ / काना) if not present
   let finalOlChiki = matchedOlChiki.join(' ');
   let finalDeva = matchedDeva.join(' ');
   let finalRoman = matchedRoman.join(' ');
 
-  if (!finalOlChiki.includes('ᱠᱟᱱᱟ') && !finalOlChiki.includes('ᱢᱮ') && !finalOlChiki.includes('ᱯᱮ') && !finalOlChiki.endsWith('?')) {
+  // Only add Santali copula (ᱠᱟᱱᱟ / काना) if the Hindi input is a declarative statement with 'है', 'हैं', 'हूँ'
+  const hasCopula = /है|हैं|हूँ|हो/.test(clean);
+  if (hasCopula && !finalOlChiki.includes('ᱠᱟᱱᱟ') && !finalOlChiki.includes('ᱢᱮ')) {
     finalOlChiki += ' ᱠᱟᱱᱟ᱾';
     finalDeva += ' काना।';
     finalRoman += ' kana.';
-  } else {
+  } else if (!finalOlChiki.endsWith('᱾') && !finalOlChiki.endsWith('?')) {
     finalOlChiki += '᱾';
     finalDeva += '।';
+    finalRoman += '.';
   }
 
   return {

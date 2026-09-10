@@ -53,6 +53,8 @@ export const VoiceTranslationScreen: React.FC = () => {
   });
 
   const recognitionRef = useRef<any>(null);
+  const activeReqIdRef = useRef<number>(0);
+  const debounceTimerRef = useRef<any>(null);
 
   // Poll local AI backend server health
   useEffect(() => {
@@ -67,48 +69,68 @@ export const VoiceTranslationScreen: React.FC = () => {
 
   // Perform translation using official AI4Bharat IndicTrans2 Neural Model for Santhali
   const runTranslation = async (textToTranslate: string, shouldSpeak = false) => {
-    if (!textToTranslate.trim()) return;
+    const trimmed = textToTranslate.trim();
+    if (!trimmed) {
+      setTribalText('');
+      setTribalDevanagari('');
+      setTribalRoman('');
+      setStatusText('Ready. Type or tap mic to speak in Hindi.');
+      return;
+    }
 
-    if (selectedLanguage.id === 'santhali') {
-      setStatusText('Translating with AI4Bharat IndicTrans2 Neural Model...');
-      const res = await runIndicTrans2Pipeline(textToTranslate);
-      setTribalText(res.santaliOlChiki);
-      setTribalDevanagari(res.santaliDevanagari);
-      setTribalRoman(res.santaliRomanPhonics);
-      setStatusText(`⚡ ${res.engine} (${res.latencyMs}ms)`);
+    const currentReqId = ++activeReqIdRef.current;
+    setStatusText('Translating...');
 
-      addTranslationRecord({
-        sourceLang: 'Hindi',
-        targetLang: selectedLanguage.name,
-        targetLangId: selectedLanguage.id,
-        sourceText: textToTranslate,
-        sourceRoman: textToTranslate,
-        targetText: res.santaliOlChiki,
-        targetRoman: res.santaliRomanPhonics,
-      });
+    try {
+      if (selectedLanguage.id === 'santhali') {
+        const res = await runIndicTrans2Pipeline(trimmed);
+        if (currentReqId !== activeReqIdRef.current) return;
 
-      if (shouldSpeak || autoReadAloud) {
-        playBilingualAudio('tribal-voice', res.santaliDevanagari, 'tribal', res.santaliRomanPhonics);
+        setTribalText(res.santaliOlChiki);
+        setTribalDevanagari(res.santaliDevanagari);
+        setTribalRoman(res.santaliRomanPhonics);
+        setStatusText(`⚡ ${res.engine} (${res.latencyMs}ms)`);
+
+        addTranslationRecord({
+          sourceLang: 'Hindi',
+          targetLang: selectedLanguage.name,
+          targetLangId: selectedLanguage.id,
+          sourceText: trimmed,
+          sourceRoman: trimmed,
+          targetText: res.santaliOlChiki,
+          targetRoman: res.santaliRomanPhonics,
+        });
+
+        if (shouldSpeak || autoReadAloud) {
+          playBilingualAudio('tribal-voice', res.santaliDevanagari, 'tribal', res.santaliRomanPhonics);
+        }
+      } else {
+        const res = translateAuthentic(trimmed, selectedLanguage.id);
+        if (currentReqId !== activeReqIdRef.current) return;
+
+        setTribalText(res.tribalText);
+        setTribalDevanagari(res.tribalText);
+        setTribalRoman(res.tribalRoman);
+        setStatusText(`Translated to ${selectedLanguage.name}!`);
+
+        addTranslationRecord({
+          sourceLang: 'Hindi',
+          targetLang: selectedLanguage.name,
+          targetLangId: selectedLanguage.id,
+          sourceText: trimmed,
+          sourceRoman: trimmed,
+          targetText: res.tribalText,
+          targetRoman: res.tribalRoman,
+        });
+
+        if (shouldSpeak || autoReadAloud) {
+          playBilingualAudio('tribal-voice', res.tribalText, 'tribal', res.tribalRoman);
+        }
       }
-    } else {
-      const res = translateAuthentic(textToTranslate, selectedLanguage.id);
-      setTribalText(res.tribalText);
-      setTribalDevanagari(res.tribalText);
-      setTribalRoman(res.tribalRoman);
-      setStatusText(`Translated to ${selectedLanguage.name}!`);
-
-      addTranslationRecord({
-        sourceLang: 'Hindi',
-        targetLang: selectedLanguage.name,
-        targetLangId: selectedLanguage.id,
-        sourceText: textToTranslate,
-        sourceRoman: textToTranslate,
-        targetText: res.tribalText,
-        targetRoman: res.tribalRoman,
-      });
-
-      if (shouldSpeak || autoReadAloud) {
-        playBilingualAudio('tribal-voice', res.tribalText, 'tribal', res.tribalRoman);
+    } catch (err) {
+      console.warn('[Translation] Error:', err);
+      if (currentReqId === activeReqIdRef.current) {
+        setStatusText('Ready. Tap mic or type to translate.');
       }
     }
   };
@@ -118,29 +140,33 @@ export const VoiceTranslationScreen: React.FC = () => {
     runTranslation(inputText, false);
   }, [selectedLanguage.id]);
 
-  // Handle manual input change (live neural translation as user types!)
-  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Handle manual input change with smooth 250ms debouncing (no concurrent lockups!)
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
     setInputText(text);
-    if (text.trim()) {
-      if (selectedLanguage.id === 'santhali') {
-        const res = await runIndicTrans2Pipeline(text);
-        setTribalText(res.santaliOlChiki);
-        setTribalDevanagari(res.santaliDevanagari);
-        setTribalRoman(res.santaliRomanPhonics);
-        setStatusText(`⚡ ${res.engine} (${res.latencyMs}ms)`);
-      } else {
-        const res = translateAuthentic(text, selectedLanguage.id);
-        setTribalText(res.tribalText);
-        setTribalDevanagari(res.tribalText);
-        setTribalRoman(res.tribalRoman);
-      }
-    }
-  };
 
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    if (!text.trim()) {
+      setTribalText('');
+      setTribalDevanagari('');
+      setTribalRoman('');
+      setStatusText('Ready. Type or tap mic to speak in Hindi.');
+      return;
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      runTranslation(text, false);
+    }, 280);
+  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
     if (!inputText.trim()) return;
     runTranslation(inputText, true);
   };
@@ -470,6 +496,31 @@ export const VoiceTranslationScreen: React.FC = () => {
               <span>Translate</span>
             </button>
           </form>
+
+          {/* Quick Classroom Phrase Chips */}
+          <div className="flex gap-1.5 overflow-x-auto no-scrollbar pt-1">
+            {[
+              'नमस्ते बच्चों',
+              'किताब खोलो',
+              'अपनी कॉपी में लिखो',
+              'आज हम जोड़ सीखेंगे',
+              'पानी लाओ',
+              'घर जाओ',
+              'बहुत अच्छा'
+            ].map((phrase) => (
+              <button
+                key={phrase}
+                type="button"
+                onClick={() => {
+                  setInputText(phrase);
+                  runTranslation(phrase, true);
+                }}
+                className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-100 hover:bg-janbhasha-100 text-slate-700 hover:text-janbhasha-900 border border-slate-200 transition-colors whitespace-nowrap shrink-0"
+              >
+                {phrase}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* CARD 2: Learner Output (Mother Tongue) - Instant Native Audio */}
@@ -519,7 +570,7 @@ export const VoiceTranslationScreen: React.FC = () => {
           {/* Translated Mother Tongue Text */}
           <div className="my-2 space-y-1.5">
             <h3 className="text-2xl font-black text-janbhasha-950 leading-snug tracking-wide">
-              {tribalText}
+              {tribalText || 'यहाँ अनुवाद दिखाई देगा...'}
             </h3>
 
             {tribalDevanagari && tribalDevanagari !== tribalText && (
@@ -529,11 +580,13 @@ export const VoiceTranslationScreen: React.FC = () => {
               </div>
             )}
 
-            <div>
-              <p className="text-xs text-janbhasha-800 font-semibold italic bg-white/80 px-3 py-1.5 rounded-xl inline-block border border-emerald-200/80 shadow-2xs">
-                Phonics: "{tribalRoman}"
-              </p>
-            </div>
+            {tribalRoman && (
+              <div>
+                <p className="text-xs text-janbhasha-800 font-semibold italic bg-white/80 px-3 py-1.5 rounded-xl inline-block border border-emerald-200/80 shadow-2xs">
+                  Phonics: "{tribalRoman}"
+                </p>
+              </div>
+            )}
           </div>
 
 
