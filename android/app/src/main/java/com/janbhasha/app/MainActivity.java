@@ -8,12 +8,29 @@ public class MainActivity extends BridgeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        applyWebViewSettings();
+    }
 
-        // Allow audio playback without user gesture requirement in WebView
-        // This is critical for AudioContext oscillator sounds (beeps, card flips, success chimes)
-        WebView webView = getBridge().getWebView();
-        if (webView != null) {
-            webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+    @Override
+    public void onStart() {
+        super.onStart();
+        applyWebViewSettings();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        applyWebViewSettings();
+    }
+
+    private void applyWebViewSettings() {
+        try {
+            if (getBridge() != null && getBridge().getWebView() != null) {
+                WebView webView = getBridge().getWebView();
+                webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+            }
+        } catch (Exception e) {
+            // Ignore
         }
     }
 }

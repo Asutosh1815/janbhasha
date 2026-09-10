@@ -155,7 +155,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
 
     setActiveAudioId(id);
-    soundEffects.playBeep(520, 'sine', 0.05);
+    soundEffects.playBeep(560, 'sine', 0.1);
 
     const pitch = langType === 'tribal' ? 1.05 : 0.95;
     speakText(text, 'hi-IN', voiceSpeed, pitch, () => {
