@@ -1,5 +1,6 @@
 export type LanguageId = 'ho' | 'mundari' | 'santhali' | 'gondi' | 'kurukh';
 export type AppDisplayLanguage = 'en' | 'hi' | 'ho' | 'mundari' | 'santhali' | 'gondi' | 'kurukh';
+export type UserRole = 'teacher' | 'student';
 
 export interface TribalLanguage {
   id: LanguageId;
@@ -18,6 +19,7 @@ export interface TribalLanguage {
 
 export type ScreenType = 
   | 'splash'
+  | 'role-select'
   | 'language-select'
   | 'home'
   | 'voice-translation'

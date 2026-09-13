@@ -6,8 +6,8 @@ import { ScreenType } from '../../types';
 export const BottomNav: React.FC = () => {
   const { currentScreen, setCurrentScreen, t } = useApp();
 
-  // Hidden on splash / language-select screens
-  if (currentScreen === 'splash' || currentScreen === 'language-select') {
+  // Hidden on splash / role-select / language-select screens
+  if (currentScreen === 'splash' || currentScreen === 'role-select' || currentScreen === 'language-select') {
     return null;
   }
 

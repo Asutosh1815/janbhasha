@@ -1,0 +1,76 @@
+{
+  "category": "Common Adjectives",
+  "total": 5,
+  "items": [
+    {
+      "id": 128,
+      "category": "Common Adjectives",
+      "hindi": "अच्छा / सुंदर",
+      "english": "Good / Beautiful",
+      "santali": "Bes / Napai / Raska",
+      "ho": "Bugin / Bugite",
+      "mundari": "Bugan / Bes",
+      "pronunciation": "Bes / Bu-gin",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 129,
+      "category": "Common Adjectives",
+      "hindi": "बड़ा",
+      "english": "Big / Large",
+      "santali": "Marang",
+      "ho": "Marang",
+      "mundari": "Marang",
+      "pronunciation": "Ma-rang",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 130,
+      "category": "Common Adjectives",
+      "hindi": "छोटा",
+      "english": "Small",
+      "santali": "Huding / Katic'",
+      "ho": "Huring",
+      "mundari": "Huring",
+      "pronunciation": "Hu-ding / Hu-ring",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 131,
+      "category": "Common Adjectives",
+      "hindi": "नया",
+      "english": "New",
+      "santali": "Nawa",
+      "ho": "Nawa",
+      "mundari": "Nawa",
+      "pronunciation": "Na-wa",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 132,
+      "category": "Common Adjectives",
+      "hindi": "पुराना",
+      "english": "Old",
+      "santali": "Mare",
+      "ho": "Mare",
+      "mundari": "Mare",
+      "pronunciation": "Ma-re",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

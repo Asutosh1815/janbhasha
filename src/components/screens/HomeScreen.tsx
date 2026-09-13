@@ -25,6 +25,7 @@ export const HomeScreen: React.FC = () => {
     offlineMode, 
     setOfflineMode, 
     setIsDrawerOpen,
+    userRole,
     t
   } = useApp();
 
@@ -38,7 +39,7 @@ export const HomeScreen: React.FC = () => {
     badge?: string;
   }
 
-  const quickActions: QuickAction[] = [
+  const teacherQuickActions: QuickAction[] = [
     {
       id: 'voice-translation',
       title: t('voiceTranslateTitle'),
@@ -91,6 +92,62 @@ export const HomeScreen: React.FC = () => {
     },
   ];
 
+  const studentQuickActions: QuickAction[] = [
+    {
+      id: 'live-classroom',
+      title: 'Live Teacher Broadcast',
+      description: 'Listen to teacher in mother tongue with Ol Chiki captions',
+      icon: Mic,
+      iconBg: 'bg-amber-100',
+      iconColor: 'text-amber-700',
+      badge: 'Live'
+    },
+    {
+      id: 'flashcards',
+      title: t('flashcardsTitle'),
+      description: 'Learn words, animals & numbers with interactive audio cards',
+      icon: Layers,
+      iconBg: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      badge: '3D'
+    },
+    {
+      id: 'lessons',
+      title: t('lessonsTitle'),
+      description: 'Stories, math addition & primary school lessons',
+      icon: BookOpen,
+      iconBg: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+    },
+    {
+      id: 'voice-translation',
+      title: 'Practice Speaking',
+      description: 'Speak in mother tongue or Hindi and hear translation',
+      icon: Mic,
+      iconBg: 'bg-emerald-100',
+      iconColor: 'text-emerald-700',
+    },
+    {
+      id: 'worksheets',
+      title: 'My Assignments',
+      description: 'Complete class worksheets and fun drawing tasks',
+      icon: FileText,
+      iconBg: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+    },
+    {
+      id: 'assessments',
+      title: 'Quizzes & Stars',
+      description: 'Take fun chapter tests and collect learning stars',
+      icon: ClipboardCheck,
+      iconBg: 'bg-rose-100',
+      iconColor: 'text-rose-600',
+      badge: '⭐ Stars'
+    },
+  ];
+
+  const quickActions = userRole === 'student' ? studentQuickActions : teacherQuickActions;
+
   return (
     <div className="flex flex-col h-full bg-[#fbfdf8] text-slate-800 select-none overflow-y-auto no-scrollbar">
       {/* Top Header */}
@@ -103,9 +160,18 @@ export const HomeScreen: React.FC = () => {
           <Menu className="w-6 h-6 stroke-[2.2]" />
         </button>
 
-        <h1 className="text-xl font-extrabold tracking-wider text-janbhasha-800">
-          JANBHASHA
-        </h1>
+        <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => setCurrentScreen('role-select')}>
+          <h1 className="text-xl font-extrabold tracking-wider text-janbhasha-800">
+            JANBHASHA
+          </h1>
+          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+            userRole === 'student'
+              ? 'bg-amber-100 text-amber-900 border-amber-300'
+              : 'bg-emerald-100 text-emerald-800 border-emerald-300'
+          }`}>
+            {userRole === 'student' ? '🎒 Student' : '👩‍🏫 Teacher'}
+          </span>
+        </div>
 
         {/* Offline Mode Status Pill */}
         <button
@@ -128,15 +194,21 @@ export const HomeScreen: React.FC = () => {
       </div>
 
       <div className="px-4 pt-2 pb-6 space-y-4">
-        {/* Welcome Teacher Banner Card */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-amber-50/60 p-4.5 border border-emerald-200/70 shadow-sm">
+        {/* Welcome Role Banner Card */}
+        <div className={`relative overflow-hidden rounded-3xl p-4.5 border shadow-sm ${
+          userRole === 'student'
+            ? 'bg-gradient-to-br from-amber-50 via-orange-50/60 to-yellow-50/80 border-amber-200/90'
+            : 'bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-amber-50/60 border-emerald-200/70'
+        }`}>
           <div className="flex items-center justify-between">
             <div className="max-w-[58%] z-10">
               <span className="text-sm font-bold text-slate-900 flex items-center gap-1">
-                {t('welcomeTeacher')} <span className="animate-bounce inline-block">👋</span>
+                {userRole === 'student' ? 'जोहार, प्यारे बच्चे!' : t('welcomeTeacher')} <span className="animate-bounce inline-block">👋</span>
               </span>
               <p className="text-xs text-slate-600 mt-1 font-medium leading-relaxed">
-                {t('teacherHeroDesc')}
+                {userRole === 'student'
+                  ? 'अपनी मातृभाषा संताली में पाठ सीखें, शब्द खेलें और पढ़ाई का आनंद लें।'
+                  : t('teacherHeroDesc')}
               </p>
 
               {/* Active Mother Tongue Badge */}
@@ -158,17 +230,17 @@ export const HomeScreen: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Live Translate CTA */}
+          {/* Quick CTA */}
           <div className="mt-3 pt-2.5 border-t border-emerald-200/60 flex items-center justify-between">
             <span className="text-[11px] text-slate-600 font-semibold flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5 text-janbhasha-700" />
               {t('activeLanguage')}: <strong>{selectedLanguage.name}</strong>
             </span>
             <button
-              onClick={() => setCurrentScreen('voice-translation')}
+              onClick={() => setCurrentScreen(userRole === 'student' ? 'live-classroom' : 'voice-translation')}
               className="text-xs font-bold text-janbhasha-800 hover:text-janbhasha-900 flex items-center gap-0.5"
             >
-              <span>{t('tapToSpeak')}</span>
+              <span>{userRole === 'student' ? 'Join Live Audio' : t('tapToSpeak')}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

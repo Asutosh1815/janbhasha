@@ -1,0 +1,62 @@
+{
+  "category": "Weather",
+  "total": 4,
+  "items": [
+    {
+      "id": 112,
+      "category": "Weather",
+      "hindi": "बारिश / वर्षा",
+      "english": "Rain",
+      "santali": "Dak' joroi / Da'",
+      "ho": "Gama / Da'",
+      "mundari": "Gama / Da'",
+      "pronunciation": "Ga-ma / Dak",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 113,
+      "category": "Weather",
+      "hindi": "हवा / वायु",
+      "english": "Wind / Air",
+      "santali": "Hoyo",
+      "ho": "Hoyo",
+      "mundari": "Hoyo",
+      "pronunciation": "Ho-yo",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 114,
+      "category": "Weather",
+      "hindi": "धूप",
+      "english": "Sunlight / Heat",
+      "santali": "Situn",
+      "ho": "Jete / Singi",
+      "mundari": "Jete",
+      "pronunciation": "Si-tun / Je-te",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 115,
+      "category": "Weather",
+      "hindi": "ठंड / सर्दी",
+      "english": "Cold / Winter",
+      "santali": "Raban",
+      "ho": "Raban",
+      "mundari": "Raban",
+      "pronunciation": "Ra-ban",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

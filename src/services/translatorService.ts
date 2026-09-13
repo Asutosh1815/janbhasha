@@ -1,6 +1,9 @@
 import { LanguageId } from '../types';
 import customDataset from '../data/custom_dataset.json';
 import { translateHindiToSantali } from './santaliTranslator';
+import { BENCHMARK_CLASSROOM_SENTENCES } from '../data/benchmarkSentences';
+import flnMasterVocab from '../data/offline/fln_master_vocabulary.json';
+import numbers1To100 from '../data/offline/numbers_1_100.json';
 
 export interface TranslationResult {
   tribalText: string;
@@ -37,7 +40,22 @@ const CUSTOM_CORPUS: SentenceCorpusItem[] = (customDataset as any[]).map(item =>
   kurukhRoman: item.kurukhRoman
 }));
 
+const BENCHMARK_ITEMS: SentenceCorpusItem[] = BENCHMARK_CLASSROOM_SENTENCES.map(b => ({
+  hindiPatterns: [b.hi, b.hi.replace(/[.,?!।]/g, ''), b.en, b.en.replace(/[.,?!।]/g, '')],
+  ho: b.ho,
+  hoRoman: b.hoRoman,
+  mundari: b.mun,
+  mundariRoman: b.munRoman,
+  santhali: `${b.sat} (${b.satRoman})`,
+  santhaliRoman: b.satRoman,
+  gondi: b.mun,
+  gondiRoman: b.munRoman,
+  kurukh: b.mun,
+  kurukhRoman: b.munRoman
+}));
+
 const SENTENCE_CORPUS: SentenceCorpusItem[] = [
+  ...BENCHMARK_ITEMS,
   ...CUSTOM_CORPUS,
   // 1. Greetings & Salutations
   {
@@ -1317,7 +1335,35 @@ const VOCABULARY_LEXICON: WordEntry[] = [
     gondiRoman: 'Pad',
     kurukh: 'दसे',
     kurukhRoman: 'Dase'
-  }
+  },
+  // Ingest FLN Master Vocabulary entries (Multilingual)
+  ...(((flnMasterVocab as any)?.vocabulary || []).map((entry: any) => ({
+    hindi: (entry.hindi || '').split('/').map((s: string) => s.trim()).filter(Boolean),
+    ho: entry.ho || '',
+    hoRoman: entry.pronunciation || entry.ho || '',
+    mundari: entry.mundari || '',
+    mundariRoman: entry.pronunciation || entry.mundari || '',
+    santhali: entry.santali || '',
+    santhaliRoman: entry.pronunciation || entry.santali || '',
+    gondi: entry.mundari || '',
+    gondiRoman: entry.pronunciation || entry.mundari || '',
+    kurukh: entry.mundari || '',
+    kurukhRoman: entry.pronunciation || entry.mundari || ''
+  }))),
+  // Ingest Numbers 1 to 100 entries (Multilingual)
+  ...((numbers1To100 as any[]).map((num: any) => ({
+    hindi: [num.hindi, String(num.number), num.english],
+    ho: num.ho || '',
+    hoRoman: num.pronunciation || num.english || '',
+    mundari: num.mundari || '',
+    mundariRoman: num.pronunciation || num.english || '',
+    santhali: num.santali || '',
+    santhaliRoman: num.pronunciation || num.english || '',
+    gondi: num.mundari || '',
+    gondiRoman: num.pronunciation || num.english || '',
+    kurukh: num.mundari || '',
+    kurukhRoman: num.pronunciation || num.english || ''
+  })))
 ];
 
 // Main Accurate Linguistic Translation Engine

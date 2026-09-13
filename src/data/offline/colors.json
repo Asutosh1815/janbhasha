@@ -1,0 +1,76 @@
+{
+  "category": "Colors",
+  "total": 5,
+  "items": [
+    {
+      "id": 62,
+      "category": "Colors",
+      "hindi": "लाल",
+      "english": "Red",
+      "santali": "Arak'",
+      "ho": "Ara'",
+      "mundari": "Ara'",
+      "pronunciation": "A-rak",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 63,
+      "category": "Colors",
+      "hindi": "हरा",
+      "english": "Green",
+      "santali": "Hariyar",
+      "ho": "Hariyar",
+      "mundari": "Hariyar",
+      "pronunciation": "Ha-ri-yar",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 64,
+      "category": "Colors",
+      "hindi": "सफेद",
+      "english": "White",
+      "santali": "Pond",
+      "ho": "Pundi",
+      "mundari": "Pundi",
+      "pronunciation": "Pond / Pun-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 65,
+      "category": "Colors",
+      "hindi": "काला",
+      "english": "Black",
+      "santali": "Hende",
+      "ho": "Hende",
+      "mundari": "Hende",
+      "pronunciation": "Hen-de",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 66,
+      "category": "Colors",
+      "hindi": "पीला",
+      "english": "Yellow",
+      "santali": "Sasam",
+      "ho": "Sasam",
+      "mundari": "Sasang",
+      "pronunciation": "Sa-sam",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

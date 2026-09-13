@@ -47,7 +47,7 @@ export const SplashScreen: React.FC = () => {
         </p>
 
         <button
-          onClick={() => setCurrentScreen('language-select')}
+          onClick={() => setCurrentScreen('role-select')}
           className="w-full py-4 px-6 rounded-2xl bg-janbhasha-700 hover:bg-janbhasha-800 text-white font-bold text-base shadow-lg shadow-janbhasha-700/25 flex items-center justify-center gap-2 transform active:scale-98 transition-all"
         >
           <span>{t('continue')}</span>

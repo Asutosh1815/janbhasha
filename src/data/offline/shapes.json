@@ -1,0 +1,48 @@
+{
+  "category": "Shapes",
+  "total": 3,
+  "items": [
+    {
+      "id": 67,
+      "category": "Shapes",
+      "hindi": "गोल / वृत्त",
+      "english": "Circle / Round",
+      "santali": "Gol / Gundli",
+      "ho": "Gundul",
+      "mundari": "Gol",
+      "pronunciation": "Gun-dli",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 68,
+      "category": "Shapes",
+      "hindi": "चौकोर / वर्ग",
+      "english": "Square",
+      "santali": "Car-kona",
+      "ho": "Upun-kona",
+      "mundari": "Upun-kona",
+      "pronunciation": "Upun-ko-na",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 69,
+      "category": "Shapes",
+      "hindi": "त्रिकोण / त्रिभुज",
+      "english": "Triangle",
+      "santali": "Pee-kona",
+      "ho": "Api-kona",
+      "mundari": "Api-kona",
+      "pronunciation": "A-pi-ko-na",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

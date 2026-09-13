@@ -28,7 +28,8 @@ export const SettingsScreen: React.FC = () => {
     voiceSpeed,
     setVoiceSpeed,
     t,
-    appLanguage
+    appLanguage,
+    userRole
   } = useApp();
 
   const [activeModal, setActiveModal] = useState<'packs' | 'voice' | 'about' | null>(null);
@@ -96,6 +97,36 @@ export const SettingsScreen: React.FC = () => {
               }`}
             />
           </button>
+        </div>
+
+        {/* User Role Switcher Card */}
+        <div 
+          onClick={() => setCurrentScreen('role-select')}
+          className="rounded-3xl bg-white border border-slate-200/90 p-4 shadow-2xs flex items-center justify-between cursor-pointer hover:border-emerald-300 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${
+              userRole === 'teacher' ? 'bg-emerald-100 text-janbhasha-800' : 'bg-amber-100 text-amber-800'
+            }`}>
+              {userRole === 'teacher' ? '👩‍🏫' : '🎒'}
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-xs font-bold text-slate-900">
+                  Switch App Mode (शिक्षक / विद्यार्थी)
+                </h3>
+                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${
+                  userRole === 'teacher' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                }`}>
+                  {userRole === 'teacher' ? 'Teacher' : 'Student'}
+                </span>
+              </div>
+              <p className="text-[11px] text-slate-500 mt-0.5">
+                Current role: <strong>{userRole === 'teacher' ? 'Teacher (Broadcast & Translate)' : 'Student (Listen & Learn)'}</strong>
+              </p>
+            </div>
+          </div>
+          <ChevronRight className="w-4 h-4 text-slate-400" />
         </div>
 
         {/* Language Selection Card */}

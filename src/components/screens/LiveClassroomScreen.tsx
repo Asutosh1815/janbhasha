@@ -40,10 +40,10 @@ import {
 import { soundEffects } from '../../services/speechService';
 
 export const LiveClassroomScreen: React.FC = () => {
-  const { setCurrentScreen, playBilingualAudio, stopAudio, activeAudioId, t } = useApp();
+  const { setCurrentScreen, playBilingualAudio, stopAudio, activeAudioId, t, userRole } = useApp();
 
-  // Classroom Mode: 'teacher' (Broadcaster) or 'student' (Receiver)
-  const [classroomMode, setClassroomMode] = useState<'teacher' | 'student'>('teacher');
+  // Classroom Mode: 'teacher' (Broadcaster) or 'student' (Receiver), default synced to userRole
+  const [classroomMode, setClassroomMode] = useState<'teacher' | 'student'>(userRole === 'student' ? 'student' : 'teacher');
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [hindiText, setHindiText] = useState<string>('नमस्ते बच्चों, आज हम जोड़ सीखेंगे');
   const [pipelineResult, setPipelineResult] = useState({

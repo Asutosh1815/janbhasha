@@ -1,0 +1,48 @@
+{
+  "category": "Common Nouns",
+  "total": 3,
+  "items": [
+    {
+      "id": 116,
+      "category": "Common Nouns",
+      "hindi": "लोग / मनुष्य",
+      "english": "People / Person",
+      "santali": "Hor",
+      "ho": "Ho / Horoko",
+      "mundari": "Horo / Horoko",
+      "pronunciation": "Hor",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 117,
+      "category": "Common Nouns",
+      "hindi": "गाँव",
+      "english": "Village",
+      "santali": "Ato",
+      "ho": "Hatu",
+      "mundari": "Hatu",
+      "pronunciation": "A-to / Ha-tu",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 118,
+      "category": "Common Nouns",
+      "hindi": "बच्चा",
+      "english": "Child",
+      "santali": "Gidra",
+      "ho": "Hon",
+      "mundari": "Hongan / Hon",
+      "pronunciation": "Gid-ra / Hon",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

@@ -25,7 +25,8 @@ export const AppDrawer: React.FC = () => {
     selectedLanguage, 
     offlineMode, 
     setOfflineMode, 
-    t
+    t,
+    userRole
   } = useApp();
 
   if (!isDrawerOpen) return null;
@@ -62,17 +63,29 @@ export const AppDrawer: React.FC = () => {
 
           <h3 className="font-bold text-sm text-white">JanBhasha Companion</h3>
           <p className="text-[11px] text-emerald-200 mt-0.5">Mother Tongue Bridge for Tribal Education</p>
-          
-          {/* Active Language Badge */}
-          <div 
-            onClick={() => navigateTo('language-select')}
-            className="mt-3 flex items-center justify-between bg-white/10 hover:bg-white/20 rounded-xl p-2 text-xs cursor-pointer transition-colors"
-          >
-            <div className="flex items-center gap-1.5 text-emerald-100 text-[11px]">
-              <Languages className="w-3.5 h-3.5 text-amber-300" />
-              <span>{t('activeLanguage')}: <b>{selectedLanguage.name}</b></span>
+          {/* Active Role & Language Badges */}
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div 
+              onClick={() => navigateTo('role-select')}
+              className="flex items-center justify-between bg-white/10 hover:bg-white/20 rounded-xl p-2 text-xs cursor-pointer transition-colors"
+            >
+              <div className="flex items-center gap-1.5 text-emerald-100 text-[11px] truncate">
+                <span>{userRole === 'teacher' ? '👩‍🏫' : '🎒'}</span>
+                <span className="truncate"><b>{userRole === 'teacher' ? 'Teacher' : 'Student'}</b></span>
+              </div>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-300 flex-shrink-0" />
             </div>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
+
+            <div 
+              onClick={() => navigateTo('language-select')}
+              className="flex items-center justify-between bg-white/10 hover:bg-white/20 rounded-xl p-2 text-xs cursor-pointer transition-colors"
+            >
+              <div className="flex items-center gap-1.5 text-emerald-100 text-[11px] truncate">
+                <Languages className="w-3.5 h-3.5 text-amber-300 flex-shrink-0" />
+                <span className="truncate"><b>{selectedLanguage.name}</b></span>
+              </div>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-300 flex-shrink-0" />
+            </div>
           </div>
         </div>
 

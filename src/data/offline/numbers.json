@@ -1,0 +1,48 @@
+{
+  "category": "Numbers",
+  "total": 3,
+  "items": [
+    {
+      "id": 70,
+      "category": "Numbers",
+      "hindi": "गिनती",
+      "english": "Counting",
+      "santali": "Lekha / Ginak",
+      "ho": "Leka / Ginik",
+      "mundari": "Leka / Ginau",
+      "pronunciation": "Le-kha",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 71,
+      "category": "Numbers",
+      "hindi": "संख्या",
+      "english": "Number",
+      "santali": "Sonkha",
+      "ho": "Sonkha",
+      "mundari": "Lekha",
+      "pronunciation": "Son-kha",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 72,
+      "category": "Numbers",
+      "hindi": "आधा",
+      "english": "Half",
+      "santali": "Tala",
+      "ho": "Tala",
+      "mundari": "Tala",
+      "pronunciation": "Ta-la",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

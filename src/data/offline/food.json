@@ -1,0 +1,76 @@
+{
+  "category": "Food",
+  "total": 5,
+  "items": [
+    {
+      "id": 39,
+      "category": "Food",
+      "hindi": "खाना / भात",
+      "english": "Cooked Rice / Food",
+      "santali": "Daka",
+      "ho": "Mandi",
+      "mundari": "Mandi / Daka",
+      "pronunciation": "Da-ka / Man-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 40,
+      "category": "Food",
+      "hindi": "रोटी",
+      "english": "Bread / Roti",
+      "santali": "Pitha / Roti",
+      "ho": "Liti / Roti",
+      "mundari": "Roti / Lad",
+      "pronunciation": "Pi-tha",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 41,
+      "category": "Food",
+      "hindi": "पानी",
+      "english": "Water",
+      "santali": "Dak'",
+      "ho": "Da'",
+      "mundari": "Da'",
+      "pronunciation": "Dak / Da",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 42,
+      "category": "Food",
+      "hindi": "दूध",
+      "english": "Milk",
+      "santali": "Toa",
+      "ho": "Toa",
+      "mundari": "Toa",
+      "pronunciation": "To-a",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 43,
+      "category": "Food",
+      "hindi": "नमक",
+      "english": "Salt",
+      "santali": "Bulun",
+      "ho": "Bulun",
+      "mundari": "Bulung",
+      "pronunciation": "Bu-lun",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

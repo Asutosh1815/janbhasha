@@ -6,6 +6,7 @@
 
 import { Capacitor } from '@capacitor/core';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
+import { playVocalSynthesizer } from './vocalSynthesizer';
 
 // ==========================================
 // 1. AUDIBLE SOUND EFFECTS (Web Audio API)
@@ -352,10 +353,14 @@ function speakViaWebSpeech(
     utterance.pitch = pitch;
 
     const voices = synth.getVoices();
+    // Prioritize local offline voices; exclude online Google network voices
+    const offlineVoices = voices.filter(v => v.localService === true || !v.name.toLowerCase().includes('google'));
+    const candidateVoices = offlineVoices.length > 0 ? offlineVoices : voices;
+
     let chosenVoice: SpeechSynthesisVoice | undefined;
 
     if (preferredLang.startsWith('hi')) {
-      chosenVoice = voices.find(v =>
+      chosenVoice = candidateVoices.find(v =>
         v.lang.toLowerCase().startsWith('hi') ||
         v.lang.toLowerCase().includes('in') ||
         v.name.toLowerCase().includes('hindi')
@@ -363,7 +368,7 @@ function speakViaWebSpeech(
     }
 
     if (!chosenVoice) {
-      chosenVoice = voices.find(v => v.lang.includes('IN') || v.lang.startsWith('en') || v.default) || voices[0];
+      chosenVoice = candidateVoices.find(v => v.lang.includes('IN') || v.lang.startsWith('en') || v.default) || candidateVoices[0];
     }
 
     if (chosenVoice) {
@@ -543,7 +548,22 @@ export const speakText = async (
   // TIER 4: Universal Offline Web Speech (Roman Phonics)
   // Guaranteed voice output: speaks "Sanam gidra ko Johar!" with standard system voice
   // -------------------------------------------------------------
-  speakViaWebSpeech(romanPhonics, 'en-US', rate, pitch, onEnd);
+  const spoken = speakViaWebSpeech(romanPhonics, 'en-US', rate, pitch, onEnd);
+  if (spoken) return;
+
+  // -------------------------------------------------------------
+  // TIER 5: Pure Offline Acoustic Formant Synthesizer
+  // 100% Guaranteed Audio Sound on any browser / Android WebView even without TTS voices
+  // -------------------------------------------------------------
+  try {
+    const vocalAudio = await playVocalSynthesizer(speakableDevanagari || romanPhonics, 'sat', rate, onEnd);
+    if (vocalAudio) {
+      currentAudioInstance = vocalAudio;
+      return;
+    }
+  } catch {}
+
+  if (onEnd) onEnd();
 };
 
 // ==========================================

@@ -1,0 +1,62 @@
+{
+  "category": "Mathematics",
+  "total": 4,
+  "items": [
+    {
+      "id": 136,
+      "category": "Mathematics",
+      "hindi": "जोड़ / योग",
+      "english": "Addition",
+      "santali": "Jorao / Mesao",
+      "ho": "Jorao",
+      "mundari": "Jorao",
+      "pronunciation": "Jo-rao",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 137,
+      "category": "Mathematics",
+      "hindi": "घटाव",
+      "english": "Subtraction",
+      "santali": "Bhegao / Ghatao",
+      "ho": "Bhegar",
+      "mundari": "Katua / Ghatao",
+      "pronunciation": "Bhe-gao",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 138,
+      "category": "Mathematics",
+      "hindi": "गुणा",
+      "english": "Multiplication",
+      "santali": "Gubao / Guna",
+      "ho": "Guna",
+      "mundari": "Guna",
+      "pronunciation": "Gu-na",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 139,
+      "category": "Mathematics",
+      "hindi": "भाग / विभाजन",
+      "english": "Division",
+      "santali": "Hatin'",
+      "ho": "Hating",
+      "mundari": "Hating",
+      "pronunciation": "Ha-tin",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

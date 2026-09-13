@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { BottomNav } from './BottomNav';
 import { AppDrawer } from './AppDrawer';
 import { SplashScreen } from '../screens/SplashScreen';
+import { RoleSelectScreen } from '../screens/RoleSelectScreen';
 import { LanguageSelectScreen } from '../screens/LanguageSelectScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import { VoiceTranslationScreen } from '../screens/VoiceTranslationScreen';
@@ -21,6 +22,8 @@ export const AppShell: React.FC = () => {
     switch (currentScreen) {
       case 'splash':
         return <SplashScreen />;
+      case 'role-select':
+        return <RoleSelectScreen />;
       case 'language-select':
         return <LanguageSelectScreen />;
       case 'home':
@@ -46,8 +49,8 @@ export const AppShell: React.FC = () => {
     }
   };
 
-  // Hide bottom navigation on Splash screen
-  const hideBottomNav = currentScreen === 'splash';
+  // Hide bottom navigation on Splash and Role-Select screens
+  const hideBottomNav = currentScreen === 'splash' || currentScreen === 'role-select';
 
   return (
     <div className="w-full min-h-[100dvh] bg-[#fbfdf8] flex justify-center">

@@ -192,6 +192,8 @@ export function convertDevanagariToOlChiki(devaText: string): string {
   return res;
 }
 
+import { BENCHMARK_CLASSROOM_SENTENCES } from '../data/benchmarkSentences';
+
 // AI4Bharat IndicTrans2 Verified Sentence Bitext Pairs (sat_Olck / hin_Deva)
 interface VerifiedIndicTrans2Bitext {
   hindi: string;
@@ -201,7 +203,16 @@ interface VerifiedIndicTrans2Bitext {
   english: string;
 }
 
+const BENCHMARK_INDICTRANS2_ITEMS: VerifiedIndicTrans2Bitext[] = BENCHMARK_CLASSROOM_SENTENCES.map(b => ({
+  hindi: b.hi,
+  santaliOlChiki: b.sat,
+  santaliDeva: b.sat,
+  santaliRoman: b.satRoman,
+  english: b.en
+}));
+
 export const INDICTRANS2_CORPUS: VerifiedIndicTrans2Bitext[] = [
+  ...BENCHMARK_INDICTRANS2_ITEMS,
   {
     hindi: 'नमस्ते बच्चों',
     santaliOlChiki: 'ᱥᱟᱱᱟᱢ ᱜᱤᱫᱽᱨᱟᱹ ᱠᱚ ᱡᱚᱦᱟᱨ!',

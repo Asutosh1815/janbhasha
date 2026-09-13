@@ -1,0 +1,76 @@
+{
+  "category": "Classroom",
+  "total": 5,
+  "items": [
+    {
+      "id": 21,
+      "category": "Classroom",
+      "hindi": "श्यामपट्ट / ब्लैकबोर्ड",
+      "english": "Blackboard",
+      "santali": "Hende bord",
+      "ho": "Hende board",
+      "mundari": "Kala bord",
+      "pronunciation": "Hen-de Bord",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 22,
+      "category": "Classroom",
+      "hindi": "चौक / खल्ली",
+      "english": "Chalk",
+      "santali": "Chawk",
+      "ho": "Khori",
+      "mundari": "Khalli",
+      "pronunciation": "Chawk",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 23,
+      "category": "Classroom",
+      "hindi": "मेज़",
+      "english": "Table",
+      "santali": "Teble",
+      "ho": "Mej",
+      "mundari": "Mej",
+      "pronunciation": "Teb-le",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 24,
+      "category": "Classroom",
+      "hindi": "कुर्सी",
+      "english": "Chair",
+      "santali": "Maci / Chowki",
+      "ho": "Kurchi",
+      "mundari": "Kurchi / Gandu",
+      "pronunciation": "Ma-ci",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 25,
+      "category": "Classroom",
+      "hindi": "घंटी",
+      "english": "Bell",
+      "santali": "Ghanta",
+      "ho": "Ganta",
+      "mundari": "Ghanti",
+      "pronunciation": "Ghan-ta",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

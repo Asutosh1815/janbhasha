@@ -9,8 +9,8 @@ const config: CapacitorConfig = {
     allowMixedContent: true,
   },
   server: {
-    // Allow navigation to external URLs (needed for TTS CDN fallback)
-    allowNavigation: ['translate.google.com', 'localhost'],
+    // Localhost backend navigation and local assets
+    allowNavigation: ['localhost', '127.0.0.1'],
     // Allow cleartext (HTTP) traffic to localhost backend
     cleartext: true,
   },

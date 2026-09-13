@@ -1,0 +1,62 @@
+{
+  "category": "Time",
+  "total": 4,
+  "items": [
+    {
+      "id": 73,
+      "category": "Time",
+      "hindi": "समय / वक्त",
+      "english": "Time",
+      "santali": "Oktō / Bela",
+      "ho": "Dipila / Bela",
+      "mundari": "Bela / Somoy",
+      "pronunciation": "Ok-to / Be-la",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 74,
+      "category": "Time",
+      "hindi": "आज",
+      "english": "Today",
+      "santali": "Teheñ",
+      "ho": "Tising",
+      "mundari": "Tising",
+      "pronunciation": "Te-hen / Ti-sing",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 75,
+      "category": "Time",
+      "hindi": "कल (बीता)",
+      "english": "Yesterday",
+      "santali": "Holo",
+      "ho": "Hola",
+      "mundari": "Hola",
+      "pronunciation": "Ho-la",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 76,
+      "category": "Time",
+      "hindi": "कल (आने वाला)",
+      "english": "Tomorrow",
+      "santali": "Gapa",
+      "ho": "Gapa",
+      "mundari": "Gapa",
+      "pronunciation": "Ga-pa",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

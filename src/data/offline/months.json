@@ -1,0 +1,34 @@
+{
+  "category": "Months",
+  "total": 2,
+  "items": [
+    {
+      "id": 84,
+      "category": "Months",
+      "hindi": "माह / महीना",
+      "english": "Month",
+      "santali": "Cando",
+      "ho": "Chandu",
+      "mundari": "Chandu",
+      "pronunciation": "Can-do",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 85,
+      "category": "Months",
+      "hindi": "वर्ष / साल",
+      "english": "Year",
+      "santali": "Serma",
+      "ho": "Sirmā",
+      "mundari": "Sirma",
+      "pronunciation": "Ser-ma",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

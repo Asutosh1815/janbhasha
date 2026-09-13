@@ -6,7 +6,8 @@ import {
   TribalLanguage, 
   TranslationRecord, 
   OfflinePack,
-  WorksheetItem
+  WorksheetItem,
+  UserRole
 } from '../types';
 import { 
   LANGUAGES, 
@@ -22,6 +23,8 @@ import { translateAuthentic } from '../services/translatorService';
 interface AppContextType {
   currentScreen: ScreenType;
   setCurrentScreen: (screen: ScreenType) => void;
+  userRole: UserRole;
+  setUserRole: (role: UserRole) => void;
   selectedLanguage: TribalLanguage;
   setSelectedLanguageId: (id: LanguageId) => void;
   appLanguage: AppDisplayLanguage;
@@ -52,8 +55,9 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default screen starts at Splash, default app display language is English ('en'), default tribal language is Santali
+  // Default screen starts at Splash
   const [currentScreen, setCurrentScreen] = useState<ScreenType>('splash');
+  const [userRole, setUserRoleState] = useState<UserRole>('teacher');
   const [selectedLanguageId, setSelectedLanguageId] = useState<LanguageId>('santhali');
   const [appLanguage, setAppLanguageState] = useState<AppDisplayLanguage>('en');
   
@@ -187,6 +191,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       value={{
         currentScreen,
         setCurrentScreen: handleSetCurrentScreen,
+        userRole,
+        setUserRole: (role: UserRole) => {
+          setUserRoleState(role);
+          try {
+            localStorage.setItem('janbhasha_user_role', role);
+          } catch {}
+        },
         selectedLanguage,
         setSelectedLanguageId: handleSetSelectedLanguageId,
         appLanguage,
