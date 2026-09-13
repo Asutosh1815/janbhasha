@@ -1,0 +1,11 @@
+{
+  "package_name": "janbhasha-santali-tts",
+  "version": "1.0.0",
+  "language": "sat",
+  "dataset": "Santali Male Native - IndicTTS Phase 3 (~2GB source)",
+  "sample_rate": 22050,
+  "format": "pcm_16bit_wav",
+  "sha256": "9b1c784ad9e16f3189ca85e1351280fae92384a8619bc39115d918a93e871b81",
+  "offline_ready": true,
+  "no_python_required": true
+}

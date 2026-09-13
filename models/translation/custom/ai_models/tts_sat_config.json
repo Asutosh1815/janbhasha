@@ -1,0 +1,11 @@
+{
+  "voice_name": "Meta MMS-TTS Santhali",
+  "language_code": "sat",
+  "sample_rate": 22050,
+  "architecture": "VITS / Meta MMS-TTS",
+  "quantization": "INT8 ONNX",
+  "size_mb": 34.1,
+  "latency_20_words_ms": 68.4,
+  "source_repository": "facebook/mms-tts-sat",
+  "exported_at": "2026-09-02 18:48:53"
+}

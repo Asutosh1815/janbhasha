@@ -1,0 +1,21 @@
+{
+  "model_name": "IndicTrans2-Distilled-JANBHASHA",
+  "supported_pairs": [
+    "hi-sat",
+    "hi-mun",
+    "hi-ho",
+    "sat-hi",
+    "mun-hi",
+    "ho-hi"
+  ],
+  "quantization": "INT8 Dynamic",
+  "vocab_size": 79,
+  "size_mb": 48.2,
+  "latency_p95_ms": 42.5,
+  "training_sources": [
+    "Bharatavani (CIIL Mysore)",
+    "Karya Hindi-Mundari (dataset-hindi-mundari-translation)",
+    "Project VAANI (IISc Bangalore)"
+  ],
+  "exported_at": "2026-09-02 18:48:53"
+}

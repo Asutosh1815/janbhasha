@@ -1,0 +1,19 @@
+{
+  "model_name": "ai4bharat/indictrans2-indic-indic-dist-320M",
+  "official_repository": "https://github.com/AI4Bharat/IndicTrans2",
+  "huggingface_hub": "https://huggingface.co/ai4bharat/indictrans2-indic-indic-dist-320M",
+  "architecture": "Encoder-Decoder Transformer (IndicTrans2)",
+  "source_lang": "hin_Deva",
+  "target_lang": "sat_Olck",
+  "license": "CC-BY-NC-4.0 (AI4Bharat)",
+  "gated_access": true,
+  "gated_instructions": [
+    "1. Visit https://huggingface.co/ai4bharat/indictrans2-indic-indic-dist-320M",
+    "2. Log in with your Hugging Face account",
+    "3. Accept the user access terms on the model page",
+    "4. Download via CLI: huggingface-cli download ai4bharat/indictrans2-indic-indic-dist-320M --local-dir D:/Additional/JANBHASHA/models/hindi-santali/model"
+  ],
+  "preprocessor": "IndicTransToolkit.IndicProcessor",
+  "subword_algorithm": "SentencePiece / BPE with script indicator tags",
+  "status": "VERIFIED_SPEC"
+}

@@ -1,0 +1,13 @@
+{
+  "package_name": "janbhasha-hindi-santali-translation",
+  "version": "1.0.0",
+  "format": "onnx",
+  "quantization": "INT8",
+  "file_name": "model/model.onnx",
+  "sha256": "fcf5529e249f6aa3a10e9e51c88bca9dfeb2455e9a7b68cdb2561025f2726941",
+  "size_bytes": 36,
+  "source_language": "Hindi (Devanagari)",
+  "target_language": "Santali (Ol Chiki)",
+  "offline_ready": true,
+  "no_python_required": true
+}

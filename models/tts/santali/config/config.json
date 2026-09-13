@@ -1,0 +1,21 @@
+{
+  "architecture": "VITS / Sherpa-ONNX TTS",
+  "sample_rate": 48000,
+  "resample_rate": 22050,
+  "channels": 1,
+  "format": "PCM_16",
+  "speaker": "santali_male_native",
+  "language": "sat",
+  "script_support": [
+    "Devanagari (Santali IndicTTS)",
+    "Ol Chiki"
+  ],
+  "dataset": {
+    "source": "IndicTTS / Local Corpus",
+    "local_path": "C:/Users/smrut/Downloads/santali_male_native",
+    "audio_files": 5284,
+    "transcripts_count": 5284,
+    "audio_format": "WAV 48kHz Mono 16-bit"
+  },
+  "runtime_target": "Sherpa-ONNX (vits-piper / vits-sherpa)"
+}

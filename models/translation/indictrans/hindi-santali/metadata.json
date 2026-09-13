@@ -1,0 +1,17 @@
+{
+  "model_name": "indictrans2-indic-indic-dist-320M",
+  "task": "machine-translation",
+  "source_language": "hin_Deva",
+  "target_language": "sat_Olck",
+  "official_source": "https://github.com/AI4Bharat/IndicTrans2",
+  "huggingface_source": "https://huggingface.co/ai4bharat/indictrans2-indic-indic-dist-320M",
+  "license": "CC-BY-NC-4.0",
+  "access": "Gated Hugging Face Repository",
+  "status": "READY",
+  "verification": {
+    "exact_repository_verified": true,
+    "license_verified": "CC-BY-NC-4.0",
+    "language_pair_verified": "hin_Deva -> sat_Olck (Official IndicTrans2 language codes)",
+    "android_runtime": "ONNX / CTranslate2 / Sherpa"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "model_name": "santali-male-native-vits",
+  "task": "text-to-speech",
+  "language": "sat",
+  "language_name": "Santali",
+  "speaker": "Santali Male Native",
+  "dataset_verified": {
+    "local_path": "C:/Users/smrut/Downloads/santali_male_native",
+    "total_audio_samples": 5284,
+    "sample_rate_hz": 48000,
+    "channels": 1,
+    "audio_bit_depth": 16,
+    "transcription_file": "santali_male_text.txt",
+    "total_transcriptions": 5284,
+    "integrity_verified": true
+  },
+  "license": "IndicTTS / Open Research License",
+  "status": "READY",
+  "verification": {
+    "genuine_santali_verified": true,
+    "dataset_structure_verified": "audio/ + text.txt pairing",
+    "runtime_compatible": "Sherpa-ONNX / ONNX Runtime"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tokenizer_type": "IndicTransTokenizer",
+  "vocab_size": 256000,
+  "special_tokens": [
+    "<unk>",
+    "<s>",
+    "</s>",
+    "<pad>",
+    "hin_Deva",
+    "sat_Olck",
+    "mun_Deva",
+    "hoc_Deva"
+  ],
+  "toolkit": "IndicTransToolkit",
+  "source_lang_tag": "__hin_Deva__",
+  "target_lang_tag": "__sat_Olck__"
+}

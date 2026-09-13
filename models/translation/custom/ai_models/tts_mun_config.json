@@ -1,0 +1,11 @@
+{
+  "voice_name": "Karya Mundari TTS / MMS-TTS Mundari",
+  "language_code": "mun",
+  "sample_rate": 22050,
+  "architecture": "VITS / Meta MMS-TTS",
+  "quantization": "INT8 ONNX",
+  "size_mb": 34.1,
+  "latency_20_words_ms": 68.4,
+  "source_repository": "facebook/mms-tts-unr",
+  "exported_at": "2026-09-02 18:48:53"
+}

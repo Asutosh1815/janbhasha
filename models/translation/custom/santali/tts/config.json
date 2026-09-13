@@ -1,0 +1,25 @@
+{
+  "model_name": "santali_indictts_vits",
+  "architecture": "VITS / FastSpeech2 Acoustic Synthesizer",
+  "format": "ONNX Mobile / PCM Linear Synthesizer",
+  "version": "1.0.0",
+  "source_dataset": "Santali Male Mono — IndicTTS Phase 3 (IIT Madras / Bhashini)",
+  "license": "CC-BY-4.0 / Government Open Data",
+  "audio_parameters": {
+    "sample_rate": 22050,
+    "channels": 1,
+    "bit_depth": 16,
+    "hop_length": 256,
+    "win_length": 1024,
+    "n_mel_channels": 80
+  },
+  "supported_scripts": [
+    "Devanagari (Santali)",
+    "Ol Chiki (Santali)"
+  ],
+  "quantization": "int8_linear",
+  "model_size_mb": 24.5,
+  "inference_runtime": "ONNX Runtime Mobile (Android 9+)",
+  "offline_supported": true,
+  "target_latency_ms": 220
+}

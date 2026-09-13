@@ -1,0 +1,27 @@
+{
+  "code": "sat",
+  "name": "Santali",
+  "nativeName": "ᱥᱟᱱᱛᱟᱲᱤ",
+  "script": "Ol Chiki",
+  "iso639_3": "sat",
+  "bhashini_code": "sat_Olck",
+  "version": "1.0.0",
+  "installed": true,
+  "offline_support": {
+    "translation": true,
+    "tts": true,
+    "dictionary": true
+  },
+  "modules": {
+    "translation": {
+      "name": "Hindi -> Santali Neural Translator",
+      "model_path": "translation/model/model.onnx",
+      "metadata_path": "translation/metadata.json"
+    },
+    "tts": {
+      "name": "Santali Male IndicTTS Synthesizer",
+      "model_path": "tts/model/model.onnx",
+      "metadata_path": "tts/metadata.json"
+    }
+  }
+}

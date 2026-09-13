@@ -1,0 +1,28 @@
+{
+  "model_name": "ai4bharat/indictrans2-indic-indic-dist-320M",
+  "official_source": "https://github.com/AI4Bharat/IndicTrans2",
+  "checkpoint": "indictrans2-indic-indic-dist-320M",
+  "source_language": "hin_Deva",
+  "target_language": "sat_Olck",
+  "target_script_native": "Ol Chiki",
+  "target_script_alt": "Devanagari (Santali)",
+  "quantization": "int8_onnx / ctranslate2_int8",
+  "model_size_mb": 45.0,
+  "runtime": "ONNX Runtime Mobile / Native Local Engine",
+  "license": "AI4Bharat IndicTrans2 License (CC-BY-NC-4.0 / Research Open)",
+  "offline_supported": true,
+  "supported_pairs": [
+    {
+      "source": "hi",
+      "target": "sat",
+      "source_tag": "hin_Deva",
+      "target_tag": "sat_Olck"
+    },
+    {
+      "source": "sat",
+      "target": "hi",
+      "source_tag": "sat_Olck",
+      "target_tag": "hin_Deva"
+    }
+  ]
+}

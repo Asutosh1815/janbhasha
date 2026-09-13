@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+python-multipart
+sqlalchemy
+aiosqlite
+Pillow
+httpx
+pydantic
+pydantic-settings
+python-dotenv
+psutil
+flask
+flask-cors
+requests
+numpy
+onnxruntime

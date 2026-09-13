@@ -1,0 +1,11 @@
+{
+  "voice_name": "santali_male_native",
+  "language": "sat",
+  "script": "Ol Chiki",
+  "source_dataset": "IndicTTS Phase 3 Santali Male Mono (2.0 GB)",
+  "sample_rate": 22050,
+  "channels": 1,
+  "bits_per_sample": 16,
+  "audio_format": "WAV",
+  "architecture": "vits-acoustic-synthesizer"
+}

@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Large Model Weights (Downloaded on demand or stored in user cache)
+backend/models/indictrans2/
+backend/models/whisper_tiny/
+public/models/
+android/app/src/main/assets/models/indictrans2/
+android/app/src/main/assets/models/whisper_tiny/

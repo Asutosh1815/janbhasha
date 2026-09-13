@@ -1,0 +1,23 @@
+{
+  "model_name": "openai/whisper-tiny / whisper-base",
+  "repository": "https://huggingface.co/openai/whisper-tiny",
+  "language_support": "Multilingual (including Hindi / Indian languages)",
+  "license": "MIT",
+  "runtime_target": "Whisper.cpp / Sherpa-ONNX / PyTorch",
+  "files": [
+    {
+      "file": "tiny.pt",
+      "path": "tiny/tiny.pt",
+      "size_bytes": 75572083,
+      "size_mb": 72.07,
+      "sha256": "65147644a518d12f04e32d6f3b26facc3f8dd46e5390956a9424a650c0ce22b9"
+    },
+    {
+      "file": "base.pt",
+      "path": "base/base.pt",
+      "size_bytes": 145262807,
+      "size_mb": 138.53,
+      "sha256": "ed3a0b6b1c0edf879ad9b11b1af5a0e6ab5db9205f891f668f8b0e6c6326e34e"
+    }
+  ]
+}

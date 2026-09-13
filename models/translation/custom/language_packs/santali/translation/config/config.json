@@ -1,0 +1,11 @@
+{
+  "model_name": "indictrans2-hindi-santali-mobile",
+  "version": "1.0.0",
+  "source_lang": "hin_Deva",
+  "target_lang": "sat_Olck",
+  "architecture": "transformer-encoder-decoder",
+  "vocab_size": 32000,
+  "max_seq_length": 128,
+  "quantization": "int8",
+  "runtime": "onnxruntime-mobile"
+}
