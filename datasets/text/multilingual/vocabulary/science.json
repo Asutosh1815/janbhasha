@@ -1,0 +1,48 @@
+{
+  "category": "Science",
+  "total": 3,
+  "items": [
+    {
+      "id": 133,
+      "category": "Science",
+      "hindi": "पौधा",
+      "english": "Plant / Sapling",
+      "santali": "Dare baha",
+      "ho": "Daru / Baha",
+      "mundari": "Daru / Kusa",
+      "pronunciation": "Da-re",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 134,
+      "category": "Science",
+      "hindi": "मिट्टी",
+      "english": "Soil / Earth",
+      "santali": "Hasa",
+      "ho": "Hasa",
+      "mundari": "Hasa",
+      "pronunciation": "Ha-sa",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 135,
+      "category": "Science",
+      "hindi": "आग",
+      "english": "Fire",
+      "santali": "Sengel",
+      "ho": "Sengel",
+      "mundari": "Sengel",
+      "pronunciation": "Sen-gel",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "datasets_ingested": {
+    "karya_hindi_mundari": {
+      "url": "https://github.com/karya-inc/dataset-hindi-mundari-translation",
+      "license": "CC-BY-4.0",
+      "lang_pair": "hi-mun",
+      "script": "Devanagari"
+    },
+    "karya_mundari_tts": {
+      "url": "https://github.com/karya-inc/dataset-mundari-tts",
+      "license": "CC-BY-4.0",
+      "lang_pair": "mun-audio",
+      "script": "Devanagari"
+    },
+    "project_vaani_iisc": {
+      "url": "https://huggingface.co/datasets/ARTPARK-IISc/Vaani",
+      "portal": "https://vaani.iisc.ac.in/dataset",
+      "license": "Open Research",
+      "lang_pair": "hi-mun-sat-ho",
+      "script": "Audio & Transcripts"
+    },
+    "bharatavani_santali": {
+      "url": "https://bharatavani.in/santali/dictionaries",
+      "license": "Government Open Data / CIIL",
+      "lang_pair": "hi-sat",
+      "script": "Ol Chiki"
+    },
+    "bharatavani_mundari": {
+      "url": "https://bharatavani.in/mundari/dictionaries",
+      "license": "Government Open Data / CIIL",
+      "lang_pair": "hi-mun",
+      "script": "Devanagari"
+    }
+  },
+  "santhali_records": 15,
+  "mundari_records": 15,
+  "provenance_verified": true
+}

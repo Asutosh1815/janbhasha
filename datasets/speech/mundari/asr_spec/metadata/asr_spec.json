@@ -1,0 +1,10 @@
+{
+  "language": "mundari",
+  "iso_code": "unr / mun",
+  "script": "Devanagari",
+  "acoustic_model": "whisper_tiny_indic / Meta MMS-1B unr",
+  "sample_rate_hz": 16000,
+  "channels": 1,
+  "audio_format": "wav_pcm16",
+  "verified_transcripts_available": true
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ph_1",
+    "category": "greetings",
+    "hindi": "सुप्रभात",
+    "translations": {
+      "sat": "johar",
+      "ho": "johar",
+      "mun": "johar",
+      "od": "suprabhat",
+      "en": "good morning"
+    }
+  },
+  {
+    "id": "ph_2",
+    "category": "instructions",
+    "hindi": "कृपया बैठ जाइए",
+    "translations": {
+      "sat": "durup me",
+      "ho": "durup me",
+      "mun": "durup me",
+      "od": "basipara",
+      "en": "please sit down"
+    }
+  },
+  {
+    "id": "ph_3",
+    "category": "encouragement",
+    "hindi": "बहुत अच्छा",
+    "translations": {
+      "sat": "adi bes",
+      "ho": "adi bes",
+      "mun": "adi bes",
+      "od": "bahuta bhala",
+      "en": "very good"
+    }
+  },
+  {
+    "id": "ph_4",
+    "category": "math",
+    "hindi": "इसे गिनो",
+    "translations": {
+      "sat": "lekhay me",
+      "ho": "lekhay me",
+      "mun": "lekhay me",
+      "od": "eha ku gana",
+      "en": "count this"
+    }
+  },
+  {
+    "id": "ph_5",
+    "category": "reading",
+    "hindi": "किताब खोलो",
+    "translations": {
+      "sat": "puthi jhij me",
+      "ho": "puthi jhij me",
+      "mun": "puthi jhij me",
+      "od": "bahi khola",
+      "en": "open the book"
+    }
+  },
+  {
+    "id": "ph_6",
+    "category": "closing",
+    "hindi": "कल मिलेंगे",
+    "translations": {
+      "sat": "gapa napama",
+      "ho": "gapa napama",
+      "mun": "gapa napama",
+      "od": "kali dekha heba",
+      "en": "see you tomorrow"
+    }
+  }
+]

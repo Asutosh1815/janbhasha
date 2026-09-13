@@ -1,0 +1,901 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<title>Home | Official Website of Central Institute of Indian Languages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="origin">
+<meta name="description" content="Central Institute of Indian Languages was established to co-ordinate the development of Indian Languages, to bring about the essential unity of Indian languages through scientific studies, Promote inter-disciplinary research, contribute to mutual enrichment of languages, and thus contribute towards emotional integration of people of India.">
+<meta name="keywords" content="ciil,india,karnataka,mysore,Central Institute of Indian Languages, mysuru, anukruti,lipika,language,bhasha,linguistics,landscaping,grants,folklore,geolinguistics,library,gia,homepage,gwn,lsi,wordnet,multivision,multilingual dictionary,dictionary,bilingual" >
+<meta name="Developed By" content="Central Institute of Indian Languages" >
+<meta name="COPYRIGHT" content="Copyright (c) 2023 by CIIL" >
+<meta name="cache-control" content="no-cache">
+<!--<meta http-equiv="cache-control" content="no-cache"/>
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css"> 
+<link rel="stylesheet" href="css/bootstrap.min.css"> 
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="css/js/jquery.min.js"></script>
+<script src="css/js/bootstrap.min.js"></script>
+<script src="css/js/popper.min.js"></script>
+<script src="css/js/wow.min.js"></script>
+<script src="css/js/animate.min.js"></script>
+<script src="css/js/slick.min.js"></script>
+<script src="css/js/blis.js"></script>
+</head>
+<body> 
+<a id="button"><i class="fas fa-chevron-up"></i></a>
+<div class="top-head">
+<div class="container">
+<div class="row">
+<div class="col-sm-3 date-time">
+<span id="date_time">
+<script>
+document.write ('<span id="date" style="">', new Date().toLocaleString(), ' </span>')
+if (document.getElementById) onload = function ()
+{
+setInterval ("document.getElementById ('date').firstChild.data = new Date().toLocaleString()", 50)
+}
+</script>
+</span>
+</div>
+<div class="col-sm-9 text-right">
+<ul class="list-inline top-menu">
+<li class="list-inline-item"><a href="#content">Skip to main content</a>  | </li>
+<li class="list-inline-item"><a href="#navigation">Skip to navigation </a>  | </li>
+<li class="list-inline-item text-sizes">Text Size:  
+<span  id="min" onclick="set_font_size('decrease')" title="Decrease Font Size">A-</span> | <span id="normal" onclick="set_font_size('')" title="Default Font Size">A</span> | <span id="max" onclick="set_font_size('increase')" title="Increase Font Size">A+</span> |
+</li>
+<li class="list-inline-item">
+<div class="theme-change">
+<ul class="mb-0 d-flex p-0">
+<li>Color Theme: </li>
+<li>
+<div class="theme-item theme-1 dark" title="High Contrast view" tabindex="0"></div>
+</li>
+<li>
+<div class="theme-item theme-2 light" title="Standard view" tabindex="0"></div>
+</li>
+</ul>
+</div>
+</li>
+<li class="list-inline-item dropdown">
+<a class="dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language: English</a>
+<div class="dropdown-menu dropdown-menu-lang organisation" aria-labelledby="organisation">
+<ul class="list">
+<li><a href="index.php" onclick="return confirm('Do you want to change website language in English?');">English</a></li>
+<li><a href="index.php?ln=Hi" onclick="return confirm('क्या आप वेबसाइट की भाषा को हिन्दी में बदलना चाहते हैं?');">हिंदी</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<header>
+<div class="container">
+<div class="row">
+<div class="col-sm-1">
+<img src="images/a_logo.png" tabindex="0" class="img-responsive" width="100" alt ="National Emblem of India."  title="National Emblem of India." style="padding-top:8px;"></div>
+<div class="col-sm-8">
+<h1><a href="index.php" title="Official Website of Central Institute of Indian Languages">
+<img src="images/ciil_english-.png" class="img-responsive" alt="Official Website of Central Institute of Indian Languages"></a></h1>
+</div>
+<div class="col-sm-3 mg-auto">
+<div class="search-box">
+<form class="form-inline d-flex justify-content-center md-form form-sm active-pink-2 mt-2" method="get" action="searchresult.php">
+<input  type="text" style="background:#004466;" placeholder="Search" aria-label="Search" name="searcht" id="searcht" required >
+<!-- <i class="fas fa-search" aria-hidden="true"></i> --> <input type="submit" name="ssearch" id="ssearch" value="GO">
+</form>
+</div>
+</div>
+</div>
+</div>
+</header>
+<nav id="navigation" class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+<a class="navbar-brand" href="#">CIIL</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 15px;">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="index.php">Home <span class="sr-only">((current))</span></a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="organisation" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+About us</a>
+<div class="dropdown-menu organisation" aria-labelledby="organisation">
+<a class="dropdown-item" href="aims.php">Aims and Objectives</a>
+<a class="dropdown-item" href="lookingahead.php">Looking ahead, from the Director`s pen</a>
+<a class="dropdown-item" href="langtraining.php">Language Training Program</a>
+<a class="dropdown-item" href="aboutrlc.php">About Regional Language Centres</a>
+<a class="dropdown-item" href="aboutlibrary.php">About Library</a>  
+<a class="dropdown-item" href="physical.php">Physical Facilities</a>
+<a class="dropdown-item" href="staffmembers.php">Who`s Who</a>
+<a class="dropdown-item" href="generaladmin.php">General Administration</a>
+<a class="dropdown-item" href="rti.php">Disclosure Under RTI</a>
+<a class="dropdown-item" href="outreach.php">Outreach</a>
+<a class="dropdown-item" href="primers_book.php">CIIL-NCERT Primers</a>
+<a class="dropdown-item" href="https://drive.google.com/drive/folders/1WNvmsWg0eVNbwA9xicWza3En7tGEOBD4?usp=sharing" target="_blank">Annual Reports</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="centers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Centres</a>
+<div class="dropdown-menu constituents" aria-labelledby="centers">
+<a class="dropdown-item" href="erlc.php">ERLC, BHUBANESWAR</a>
+<a class="dropdown-item" href="nrlc.php">NRLC, PATIALA </a>
+<a class="dropdown-item" href="nerlc.php">NERLC, GUWAHATI</a>
+<a class="dropdown-item" href="srlc.php">SRLC, MYSURU</a>
+<a class="dropdown-item" href="utrcl.php">UTRC, LUCKNOW</a>
+<a class="dropdown-item" href="utrcs.php">UTRC, SOLAN</a>
+<a class="dropdown-item" href="wrlc.php">WRLC, PUNE</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="constituents" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Schemes and Projects</a>
+<div class="dropdown-menu constituents" aria-labelledby="constituents">
+<a class="dropdown-item" href="https://bharatavani.in" target="_blank" onclick="return confirm('This link will take you to an external website.');">BHARATAVANI</a>
+  <!-- <a class="dropdown-item" href="#">BHASHA SAGAR</a> -->
+<a class="dropdown-item" href="https://www.ldcil.org" target="_blank" onclick="return confirm('This link will take you to an external website.');">LDC-IL</a>
+<a class="dropdown-item" href="https://www.ntm.org.in" target="_blank" onclick="return confirm('This link will take you to an external website.');">NTM</a>
+<a class="dropdown-item" href="https://www.ciil-ntsindia.net/" target="_blank" onclick="return confirm('This link will take you to an external website.');">NTS-I</a>
+<a class="dropdown-item" href="#" onclick="return confirm('This link will take you to an external website.');">ODNEIL</a>
+<a class="dropdown-item" href="https://www.sppel.org" target="_blank" onclick="return confirm('This link will take you to an external website.');">SPPEL</a>
+<a class="dropdown-item" href="https://neoliterate.ciil.org" target="_blank" onclick="return confirm('This link will take you to an external website.');">Neo-Literate Children`s Literature Bank</a>
+<a class="dropdown-item" href="primers_book.php">Indian Language Primer Series</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="gallery" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Gallery</a>
+<div class="dropdown-menu gallery" aria-labelledby="gallery">
+<a class="dropdown-item" href="gallery.php">Images</a>
+<a class="dropdown-item" href="video.php">Videos</a>
+<a class="dropdown-item" href="newsclip.php">Newspaper Clippings</a>
+<a class="dropdown-item" href="bhashavideos.php">Bhasha Mandakini Videos</a>
+<a class="dropdown-item" href="events.php">Events</a>  
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="publications" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Publications</a>
+<div class="dropdown-menu publications" aria-labelledby="publications">
+<a class="dropdown-item" href="primers_book.php">CIIL-NCERT Primers</a>
+<a class="dropdown-item" href="publications.php" >CIIL Publications</a>  
+<a class="dropdown-item" href="https://store.ciil.org" target="_blank" onclick="return confirm('This link will take you to an external website.');">Buy Books Online</a> 
+<a class="dropdown-item" href="https://lri.ciil.org/communities/820070cb-7689-49e2-9510-736020ce412a" target="_blank">E- Materials</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" href="admissions.php" id="admissions" role="button"  aria-haspopup="true" aria-expanded="false">
+Admissions</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="programmes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+GIA</a>
+<div class="dropdown-menu programmes" aria-labelledby="programmes">
+<a class="dropdown-item" href="blacklist.php">Blacklisted NGOs</a>
+<a class="dropdown-item" href="normsguide.php">Norms and Guide Lines</a>
+<a class="dropdown-item" href="mom.php">Minutes of the Meeting</a>
+<a class="dropdown-item" href="expenditure.php">Expenditure</a>
+<a class="dropdown-item" href="plangrant.php">Grants</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="clangauges" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Classical Language Centres</a>
+<div class="dropdown-menu clanguages" aria-labelledby="clangauges">
+<a class="dropdown-item" href="https://shastriyakannada.org/" target="_blank" onclick="return confirm('This link will take you to an external website.');">Kannada</a>
+<a class="dropdown-item" href="#">Malayalam</a>
+<a class="dropdown-item" href="https://cesct.ciil.org/indexE.html" target="_blank" onclick="return confirm('This link will take you to an external website.');">Telugu</a>
+<a class="dropdown-item" href="#">Odia</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="awards" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Awards</a>
+<div class="dropdown-menu contacts" aria-labelledby="contacts">
+<a class="dropdown-item" href="scholarship.php">Scholarship and Fellowship Scheme</a>
+<a class="dropdown-item" href="bhashasamman.php">Bhasha Bharathi Samman</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="announcement" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Announcements</a>
+<div class="dropdown-menu announcement" aria-labelledby="announcement">
+<a class="dropdown-item" target="_blank" href="https://apply.ciil.org" onclick="return confirm('This link will take you to an external website.');">Recruitments</a>
+<a class="dropdown-item" href="announcement.php">Latest Updates</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link " href="http://library.ciil.org" id="Library" role="button"  aria-haspopup="true" aria-expanded="false" target="_blank">
+Library</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="contacts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Contacts</a>
+<div class="dropdown-menu contacts" aria-labelledby="contacts">
+<a class="dropdown-item" href="contact_us.php">Contact Us</a>
+<a class="dropdown-item" href="visitciil.php">Book an appointment</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<script>
+$(document).ready(function() {
+$('#ebooks').mouseenter(function() {
+$('.ebooks').fadeIn();
+  });
+  $('.ebooks').mouseleave(function() {
+$(this).fadeOut();
+  });
+});
+var btn = $('#button');
+$(window).scroll(function() {
+if ($(window).scrollTop() > 300) {
+btn.addClass('show');
+} else {
+btn.removeClass('show');
+}
+});
+btn.on('click', function(e) {
+e.preventDefault();
+$('html, body').animate({scrollTop:0}, '300');
+});
+function showResult(str) {
+if (str.length==0) {
+document.getElementById("livesearch").InerHTML="";
+return;
+}
+var xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function() {
+if (this.readyState==4 && this.status==200) {
+document.getElementById("livesearch").InerHTML=this.responseText;
+}
+}
+xmlhttp.open("GET","searchpage.php?q="+str,true);
+xmlhttp.send();
+}
+</script>
+
+<div id="slider-animation" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+
+
+<div class="carousel-item active">
+<img src="images/ciil_webbanner_2026.jpg" alt ="CIIL Foundation Day 2026 Banner 1"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/ciil_webbanner_20261.jpg" alt ="CIIL Foundation Day 2026 Banner 2"> 
+</div>
+
+
+<div class="carousel-item">
+<img src="images/mmeeing2026.jpg" alt ="Indian Language Primer Series"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/CLS-Book-Release-slide.jpg" alt ="Classical Books Release 2026"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/rlc_banner.png" alt ="Language Training Program"> 
+</div>
+
+<div class="carousel-item">
+<a href="https://medha.ciil.org" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies')" target="_blank"><img src="images/medha.jpg" alt ="medha ciil"></a> 
+</div>
+
+
+<!--
+<div class="carousel-item">
+<a href="https://ncert.nic.in/constitution_day.php" onclick="return confirm('');" target="_blank"><img src="images/cd_2024.jpg" alt =""></a> 
+</div>
+-->
+
+
+
+<!--
+<div class="carousel-item">
+<a href="https://ncert.nic.in/constitution_day.php" onclick="return confirm('');" target="_blank"><img src="images/cd_2024.jpg" alt =""></a> 
+</div>
+-->
+
+<div class="carousel-item">
+<img src="images/Swayam_Bengali.jpg" alt ="Swayam Bengali"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/Swayam_Kannada.jpg" alt ="Swayam Kannada"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/Swayam_Malayalam.jpg" alt ="Swayam Malayalam"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/Swayam_Marathi.jpg" alt ="Swayam Marathi"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/Swayam_Odia.jpg" alt ="Swayam Odia"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/Swayam_Punjabi.jpg" alt ="Swayam Punjabi"> 
+</div>
+
+<div class="carousel-item">
+<img src="images/cabinet.jpg" alt ="Cabinet"> 
+</div>
+<div class="carousel-item">
+<a href="https://store.ciil.org" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies')" target="_blank"><img src="images/store_launching_banner.jpg" alt ="Banner of Store portal launching website, 2024"></a> 
+</div>
+<div class="carousel-item">
+<img src="images/SPL_1.jpg" alt ="Banner of building of CIIL, Mysore"> 
+</div>
+<div class="carousel-item">
+<img src="images/SPL_2.jpg" alt ="Banner of garden view of building of CIIL, Mysore">
+</div>
+<div class="carousel-item">
+<img src="images/SPL_3.jpg" alt ="Another Banner of building of CIIL, Mysore">
+</div>
+<a class="carousel-control-prev" href="#slider-animation" data-slide="prev" title="Prev">
+<span class="carousel-control-prev-icon"><i class="fas fa-chevron-left slider-icn"></i></span>
+</a>
+<a class="carousel-control-next" href="#slider-animation" data-slide="next" title="Next">
+<span class="carousel-control-next-icon"><i class="fas fa-chevron-right slider-icn"></i></span>
+</a>
+<div id="carouselButtons">
+<button id="playButton" type="button" class="btn btn-default btn-xs" title="Play">
+<i class="fa fa-play" aria-hidden="true"></i>
+</button>
+<button id="pauseButton" type="button" class="btn btn-default btn-xs" title="Pause">
+<i class="fa fa-pause" aria-hidden="true"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="latest-news">
+<div class="row">
+<div class="col-sm-2 mg-auto">
+<div class="news-btn">
+<p>Mission Statement: </p>
+</div>
+</div>
+<div class="col-sm-10">
+<div id="marq" >
+<ul class="list-inline">   
+<li class="list-inline-item">
+<span class="right-link">Central Institute of Indian Languages was established to co-ordinate the development of Indian Languages, to bring about the essential unity of Indian languages through scientific studies, Promote inter-disciplinary research, contribute to mutual enrichment of languages, and thus contribute towards emotional integration of people of India.</span>
+</li>
+</ul>   
+</div>
+<div id="marqButtons">
+<button id="MplayButton" type="button" class="btn btn-default btn-xs" title="Play">
+<i class="fa fa-play" aria-hidden="true"></i>
+</button>
+<button id="MpauseButton" type="button" class="btn btn-default btn-xs" title="Pause">
+<i class="fa fa-pause" aria-hidden="true"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container" id="content">
+<div class="row">
+<div class="col-sm-12">
+<div class="activity-box wow fadeInRight">
+<h5 class="red" style="text-align: center;">Announcements</h5>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="circulars-tab" data-toggle="tab" href="#circulars" role="tab" aria-controls="circulars" aria-selected="true">Circulars/Notices</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="vacancies-tab" data-toggle="tab" href="#vacancies" role="tab" aria-controls="vacancies" aria-selected="false">Recruitments</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="tenders-tab" data-toggle="tab" href="#tenders" role="tab" aria-controls="tenders" aria-selected="false">Tenders</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="academic-tab" data-toggle="tab" href="#academic" role="tab" aria-controls="academic" aria-selected="false">Academic Programmes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="miscellaneous-tab" data-toggle="tab" href="#miscellaneous" role="tab" aria-controls="miscellaneous" aria-selected="false">Miscelllaneous</a>
+</li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="circulars" role="tabpanel" aria-labelledby="circulars-tab">
+<div class="scroll-content-tab">
+<ul class="list">
+<li><a href='announcements/Kannada Broucher.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; NATIONAL CONFERENCE AND REGIONAL WORKSHOP ON KANNADA (555) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Shortlisted Candidates for JRP and Web Designer Positions in Bharatavani Project.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Shortlisted Candidates for JRP and Web Designer Positions in Bharatavani Project (610) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/NERLC-Second Selection list for Diploma in Langauge Training for 2026-27.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; PROVISIONAL SELECTION OF 2ND LIST OF CANDIDATES OF PROSPECTIVE TEACHERS/ RESEARCH SCHOLARS/ GENERAL PUBLIC FOR  10- MONTH DIPLOMA IN LANGUAGE TRAINING OF NORTH-EASTERN REGIONAL LANGUAGE CENTRE GUWAHATI - 2026-27 (1304) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/NC&RW - Telugu Brochure.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; National Conference and Regional Workshop on Telugu (232) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Conference & Regional Workshop Series on Tamil.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; National Conference and Regional Workshop on Tamil (392) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Notification for engagement of Resource Persons (Teaching) - 2026-27.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notification for engagement of Resource Persons (Teaching) - 2026-27 (6870) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension of last date for submission of application for the various position in, CESCK CESCM, CESCO & CESCT.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of online application for the engagement of personnel on contractual basis for Classical Language Centre (CESCK CESCT CESCO &amp CESCM) (209) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension of last date for submission of application for the post of Project Director, CESCK & CESCT.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of application for the post of Project Director on contractual basis for Classical Language Centre (CESCK &amp CESCT) (206) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Further extension of last date for receipt of applications for Diploma in Language.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Further extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27-reg (388) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Announcement_Card_English.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; CIIL invites applications for Senior Fellowships Junior Fellowships and Scholarships (76) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Notification Extension copy.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of online application for the post of Projec Director on contractual basis for Classical Language Centre (CESCK &amp CESCT) (49) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27 (399) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/CESCK Short Notification 08042026-1.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notification - Project Director Centre of Excellence for Studies in Classical Kannada CESCK 2026 (1247) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Prospectus_2026_27.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Diploma in Language Training Prospectus and Application Form 2026-27 (2537) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/English_LTP_2026_27.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Application for Admission to Diploma in Language Training for the year 2026-2027 (1738) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/PROFORMA_CONSULTANT_1.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Proforma for the Engagement of Consultants for the Institute (123) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Consultant_2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Terms of Reference for the Engagement of Consultants for the Institute (562) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Online_Basic_Course_in_Indian_Languages.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Online Basic Courses in Indian Languages Poster and Links (248) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Indian_Languages_2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Media coverage of the Classical Language books launch by the Hon`ble Union Minister for Education Shri Dharmendra Pradhan held on 6 January 2026 at Kaushal Bhavan New Delhi (34014) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/NDWBF_2026_Poster.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; New Delhi World Book Fair - 2026 (2027) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Newsletter_KTS_4_8.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 8 (4082) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Newsletter_KTS_4_7.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 7 (23697) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Newsletter_KTS_4_6.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 6 (25948) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/4-12-2025_Newsletter_KTS_4.0.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 4 (30285) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/3-12-2025_Newsletter_KTS 4.0.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 3 (26788) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List of Selected Candidates for the Various Contractual Positions for the CESCO.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Selected Candidates for the Various Contractual Positions for the CESCO (676) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension_of_last_date_for_receipt_of_Project_Director_applications_for_CESEM_2025_1.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for receipt of Project Director applications for Centre of Excellence For Studies in Classical Malayalam (108) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension of last date for receipt of Project Director applications for CESCM.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for receipt of Project Director applications for Centre of Excellence For Studies in Classical Malayalam (154) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='https://www.pib.gov.in/PressReleasePage.aspx?PRID=2182427' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; 22 Languages Digitally Reimagined: Unlocking India’s Linguistic Future Through Technology<img src='images/new.gif' alt='New' ></a></li><li><a href='announcements/CIIL_ICC_2024_POSH.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Prevention of Sexual Harassment at Work Place Act 2013 (94) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li style='display: block;'><a href='circulars.php' class='btn btn-primary'>Circulars/Notices Archives</a></li></ul>
+</div>
+</div>
+<div class="tab-pane fade" id="vacancies" role="tabpanel" aria-labelledby="vacancies-tab">
+<div class="scroll-content-tab">
+<ul class="list">
+<li><a href='announcements/PD, CESCO _ Shortlisted Candidates Result 2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; PD CESCO _ List of Shortlisted Candidates (28) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/ICSSR_Eng_Advertisment.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Advertisement for Project Positions (Under ICSSR Major Research Project 2025–26) (514) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/NTS-Rec-Acc-06-08-2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of shortlisted candidates for the interview for the post of Assistant Grade-I (Accounts) in the National Testing Service-India (NTS-I) (166) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Shortlisted Candidates for various positions in CESCT.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Shortlisted Candidates for various positions in CESCT (280) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Shortlisted Candidates for various positions in CESCM.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Shortlisted Candidates for various positions in CESCM (286) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/MoTA Recruit_Notification_July_2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement of personnel for the project Language Documentation and Pedagogical Resource Development for Lesser-Known and Endangered Languages of India (1314) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Bilingual Notification- extension of last date of receipt of application for engagement of Resource Persons in Konkani and Sindhi languages.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of online application for the engagement of Resource Persons (Teaching) in Konkani and Sindhi languages-reg. (1531) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/RLCs_Provisional_selection_list.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; PROVISIONAL SELECTION LIST  FOR  10- MONTH DIPLOMA IN LANGUAGE TRAINING IN REGIONAL LANGUAGE CENTRES - 2026-27 (312) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/PD, CESCT _ Shortlisted Candidates.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Shortlisted Candidates for the Position of Project Director in the Centre for Excellence for Studies in Classical Telugu (CESCT) (514) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/PD, CESCK _ Shortlisted Candidates.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Shortlisted Candidates for the Position of Project Director in the Centre for Excellence for Studies in Classical Kannada (CESCK) (511) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/SPPEL_Recruit_Advt_June 2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement of personnel on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL) (1485) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Announcement - PD, CESCO_Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Announcement - Project Director for Centre of Excellence for Studies in Classical Odia (2026) (499) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Detailed Notification for the post of Project Director, CESCO_Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Detailed Notification - Project Director for Centre of Excellence for Studies in Classical Odia (2026) (764) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Application for the post of Project Director, CESCO_Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Application form - Project Director for Centre of Excellence for Studies in Classical Odia (2026) (651) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Detail Advertisement of  Required Posts_English.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Advertisement for the appointment of personnel on a contract basis at the National Testing Service-India (566) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/NTS-I Fellowship 2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Announcement of Doctoral and Postdoctoral Fellowships for NTS-I (483) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Engagement of personnel on contractual basis for Bharatavani Project.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement of personnel on contractual basis for Bharatavani Project (1041) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Notification_Engg Short Term RPs_SPPEL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement Notification of Resource Persons on Short Term (431) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List_Selected Candidates_SPPEL_May 2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Selected Candidates for the Contractual Positions of JRP - Academic &amp Technical Video Editor &amp Editorial Assistant for the Scheme for Protection and Preservation of Endangered Languages (SPPEL) (674) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Extension notification.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of online application for the engagement of personnel on contractual basis for Classical Language Centre (CESCK CESCT CESCO &amp CESCM) (220) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List_Shortlisted Candidates_SPPEL_Apr 2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of the candidates shortlisted for skill test and virtual interview for various positions in Scheme for Protection and Preservation of Endangered Languages (SPPEL) (858) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Application Form, Project Director, CESCT.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Application Form - Project Director Centre of Excellence for Studies in Classical Telugu (CESCT) (2026) (4588) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Short Notification for PD, CESCT 09042026 Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notification- Project Director_Centre of Excellence for Studies in Classical Telugu (CESCT) (2026) (789) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Deatiled Notification for PD, CESCT 09042026 Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Detailed Notification - Engagement of Project Director for the Centre of Excellence for Studies in Classical Telugu (CESCT) (2026) (1132) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Application Form, Project Director, CESCK.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Application Form Engagement of Project Director for the Centre of Excellence for Studies in Classical Kannada (C!ESCK) (2026) (4693) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Deatiled Notification for PD, CESCK 09042026 Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Detailed Notification - Engagement of Project Director for the Centre of Excellence for Studies in Classical Kannada (CESCK) (2026) (1197) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/CESCT - Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL TELUGU (2026) (805) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/CESCK - Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL KANNADA (2026) (1328) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/CESCO - Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL ODIA (2026) (1217) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/CESCM - Final.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGANGEMENT OF PROJECT DIRECTOR FOR THE CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL MALAYALAM (2026) (923) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Result of Lower Division Clerk in CESCO.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Result of Lower Division Clerk in CESCO (458) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Notification_Extn_SPPEL Recruitment_RPs_Dec_2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Extension of last date for submission of online application for the engagement of personnel on contractual basis for SPPEL project (325) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Sel-can-NTS-15-12-2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of the candidates selected for various positions in the National Testing Service-India (NTS-I) (147) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/SPPEL_Recruit_Advt_DIO_2025_Dec_2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement of Data Input Operator on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL) Project (1459) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/SPPEL_Recruit_Advt_2025_Dec_2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Engagement of personnel on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL) Project (1521) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Corrigendum_Engg RPs SWAYAM Gujarati.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Corrigendum for Engagement of Resource Persons in Gujarati for SWAYAM Courses (264) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Shortlisted-Candidates-28-10-2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; The list of shortlisted candidates for the interview for various positions in the National Testing Service-India (NTS-I) (939) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Engage_RP_SWAYAM_Gujarati Lg.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notification for engagement of Resource Persons in Gujarati for SWAYAM Courses (24) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List of selected candidates for the various contractual positions for CESCM.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of selected candidates for the various contractual positions for CESCM (882) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List of selected candidates for the various contractual positions for CESCT.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of selected candidates for the various contractual positions for CESCT (706) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List of selected candidates for the various contractual positions for CESCK.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of selected candidates for the various contractual positions for CESCK (705) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/LDC-IL2025-2_advertisement.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Recruitment of Various Vacant Contractual Positions of LDC-IL (872) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Project Director CESCM - Application Form.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGANGEMENT OF PROJECT DIRECTOR FOR CESCM - Application Form (3535) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Short Notification_Recruitment of Project Director CESCM.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Short Notification_Engagement of Project Director CESCM (659) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Deatiled_Notification for the Engagement of Project Director_CESCM_C.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; ENGANGEMENT OF PROJECT DIRECTOR FOR THE CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL MALAYALAM (246) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/20250904_JRP_OffAss_Results_LDCIL_.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Selected Candidates for JRP-I, JRP-II and Office Assistant at LDC-IL (312) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Detail Advertisement of  Required Posts_English.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Advertisement for Engagement of Personnel under National Testing Service-India (566) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/20250828_WrittenTestResults_LDCIL_2025.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Results of the Written Test (JRP-I, JRP-II and Office Assistant for LDC-IL 2025) (435) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List_Selected Candidates_Tech_Admn_SPPEL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Selected Candidates for the Contractual Positions of Technical and Administrative positions for the Scheme for Protection and Preservation of Endangered Languages (SPPEL) (677) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/List_Selected Candidates_SRP_JRP_SPPEL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Selected Candidates for the Contractual Positions of SRP and JRP for the Scheme for Protection and Preservation of Endangered Languages (SPPEL). (678) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li style='display: block;'><a href='recruitments.php' class='btn btn-primary'>Recruitments Archives</a></li></ul>
+</div>
+</div>
+<div class="tab-pane fade" id="tenders" role="tabpanel" aria-labelledby="tenders-tab">
+<div class="scroll-content-tab">
+<ul class="list">
+<li><a href='announcements/double demy.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Invitation of quotation for supply of CTCP double demy CTP PS plates with exposing (351) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/stiff board.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Invitation of quotation for supply of 90kg Stiff board (373) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Quotations-English-07-11-25.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Inviting quotations for multicolour printing and supply of NVS Regional Language Handbooks (195) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/TENDER NOTICE (3) (1).pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Tender Notice (210) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/TENDER NOTICE for Manpower at UTRC Solan.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Tender Notice for Manpower at UTRC Solan (214) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Swayam_Teleprompter_Tender_SPPRL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notice Inviting  quotation for supply of Teleprompter 32&quot with wireless scrolling (978) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/GeM-Bidding-8122266_new.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Institute has released the tender on GeM for procurement of high-end computers with bid No. GEM/2025/B/6481821 dt. 22.07.2025 (121) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/GeM-Bidding-8106541_new.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Institute has released the tender on GeM for procurement of high-end computers with bid No. GEM/2025/B/6468054 dt. 21.07.2025 (121) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Notification_ for_inviting_quotations_for_the_disposal_of_Junk_material_of_the_Insititute.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Notification for inviting quotations for the disposal of Junk material of the Insititute (543) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li style='display: block;'><a href='tenders.php' class='btn btn-primary'>Tenders Archives</a></li></ul>
+</div>
+</div>
+<div class="tab-pane fade" id="academic" role="tabpanel" aria-labelledby="academic-tab">
+<div class="scroll-content-tab">
+<ul class="list">
+<li><a href='announcements/Sel-cand-DF-Eng-28082026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of Candidates Selected for the Award of NTS-I Doctoral Fellowships for the Academic Year 2026–27 (150) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Doc-Fellows-06-08-2026.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of shortlisted candidates for the interview for Doctoral Fellowships in National Testing Service-India (NTS-I) (820) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/Selected-candidates-PDF-DF-24-25-Eng.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; List of the candidates selected for the award of NTS-I Doctoral and Post Doctoral Fellowships for the year 2024-2025 (355) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/2-_English_Announcement_-_Scholarship_Scheme_-_CIIL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Announcement of Scholarships (256) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/3-English_Announcement_-_Junior_Fellowship_Scheme_-_CIIL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Announcement of Junior Fellowships (332) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li><a href='announcements/4-_English_Announcement_-_Senior_Fellowships_-_CIIL.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Announcement of Senior Fellowships (263) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li><li style='display: block;'><a href='academics.php' class='btn btn-primary' aria-label=''>Academic Programmes Archives</a></li></ul>
+</div>
+</div>
+<div class="tab-pane fade" id="miscellaneous" role="tabpanel" aria-labelledby="miscellaneous-tab">
+<div class="scroll-content-tab">
+<ul class="list">
+<li><a href='announcements/20251126_HindiTamil_CommonVocabulary.pdf' class='right-link' target='_blank'><i class='far fa-hand-point-right'></i>&nbsp; Hindi Tamil Common Vocabulary (1064) KB <img src='images/pdf.jpg' alt ='PDF Logo'> <img src='images/new_window_icon.gif' alt='Opens in a new tab'> (Content in English) <img src='images/new.gif' alt='New'></a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div  class="regional-section">
+<div class="container">
+<h5 id="darkview">CIIL CENTRES</h5>
+<div class="inner-box">
+<div class="row">
+<div class="col-sm-3">
+<div class="region-box-erlc" title="">
+<div class="region-box-bg" >
+<h5>ERLC, BHUBANESWAR</h5>
+<a href="erlc.php" class="locate" target="_blank" >Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/Eastern+Regional+Language+Centre/@20.2704706,85.8545776,17z/data=!3m1!4b1!4m5!3m4!1s0x3a19a0afd09d2a05:0x7de13dca863a8818!8m2!3d20.2704706!4d85.8567663" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-nrlc" title="">
+<div class="region-box-bg">
+<h5>NRLC, PATIALA</h5>
+<a href="nrlc.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/Northern+Regional+Language+Centre/@30.3558048,76.4437699,17z/data=!3m1!4b1!4m5!3m4!1s0x3910281a9703a743:0x293e1fdb9a40160f!8m2!3d30.3558048!4d76.4459586" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-nerlc" title="">
+<div class="region-box-bg" >
+<h5>NERLC, GUWAHATI</h5>
+<a href="nerlc.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/North+Eastern+Regional+Language+Centre/@26.1158444,91.7890709,17z/data=!3m1!4b1!4m5!3m4!1s0x375a5ed7bbaba715:0x3383bff36f7c6a68!8m2!3d26.1157951!4d91.7912713" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-srlc" title="">
+<div class="region-box-bg">
+<h5>SRLC, MYSURU</h5>
+<a href="srlc.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/SOUTHERN+REGIONAL+LANGUAGE+CENTRE+(SRLC)/@12.3193856,76.6173508,17z/data=!3m1!4b1!4m5!3m4!1s0x3baf7b51d46e7fb7:0x8df4e0fa678e9c24!8m2!3d12.3193856!4d76.6195395" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="row wow fadeInUp">
+<div class="col-sm-3">
+<div class="region-box-utrclucknow" title="">
+<div class="region-box-bg">
+<h5>UTRC, LUCKNOW</h5>
+<a href="utrcl.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/Urdu+Teaching+and+Research+Centre/@26.8711386,80.9997131,17z/data=!3m1!4b1!4m5!3m4!1s0x399be2bba491d681:0x23739c2de8fd86f5!8m2!3d26.8711386!4d81.0019018" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-utrcsolan" title="">
+<div class="region-box-bg">
+<h5>UTRC, SOLAN</h5>
+<a href="utrcs.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/Urdu+Teachers+Training+Centre/@30.9089741,77.0864031,17z/data=!3m1!4b1!4m5!3m4!1s0x390f86b879649fb1:0x83e29515e429c02f!8m2!3d30.9089741!4d77.0885918" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-wrlc" title="">
+<div class="region-box-bg">
+<h5>WRLC, PUNE</h5>
+<a href="wrlc.php" class="locate" target="_blank">Visit site&nbsp; <i class="fas fa-long-arrow-alt-right"></i></a><a onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" href="https://www.google.com/maps/place/Western+Regional+Language+Centre,+Pune/@18.5494968,73.8702357,17z/data=!3m1!4b1!4m5!3m4!1s0x3bc2c0e946a1004d:0xd232a033860ca5d!8m2!3d18.5494968!4d73.8724244" class="locate" target="_blank">Locate&nbsp; <i class="fas fa-location-arrow"></i></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="region-box-shilong">
+<div class="region-box-bg">
+<h5>MORE INFORMATIONS</h5>
+<a href="clalanguages.php" class="locate">Information about Classical Centers &nbsp;</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="latest-news">
+<div class="row">
+<div class="col-sm-2 mg-auto">
+<div class="news-btn">
+<p>What`s New?</p>
+</div>
+</div>
+<div class="col-sm-10">
+<div id="marq1" >
+<ul class="list-inline">
+<li class="list-inline-item">
+<a href='announcements/Sel-cand-DF-Eng-28082026.pdf' class='right-link' target='_blank'>List of Candidates Selected for the Award of NTS-I Doctoral Fellowships for the Academic Year 2026–27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Kannada Broucher.pdf' class='right-link' target='_blank'>NATIONAL CONFERENCE AND REGIONAL WORKSHOP ON KANNADA</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/PD, CESCO _ Shortlisted Candidates Result 2026.pdf' class='right-link' target='_blank'>PD CESCO _ List of Shortlisted Candidates</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/ICSSR_Eng_Advertisment.pdf' class='right-link' target='_blank'>Advertisement for Project Positions (Under ICSSR Major Research Project 2025–26)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Shortlisted Candidates for JRP and Web Designer Positions in Bharatavani Project.pdf' class='right-link' target='_blank'>Shortlisted Candidates for JRP and Web Designer Positions in Bharatavani Project</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/NTS-Rec-Acc-06-08-2026.pdf' class='right-link' target='_blank'>List of shortlisted candidates for the interview for the post of Assistant Grade-I (Accounts) in the National Testing Service-India (NTS-I)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Doc-Fellows-06-08-2026.pdf' class='right-link' target='_blank'>List of shortlisted candidates for the interview for Doctoral Fellowships in National Testing Service-India (NTS-I)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/NERLC-Second Selection list for Diploma in Langauge Training for 2026-27.pdf' class='right-link' target='_blank'>PROVISIONAL SELECTION OF 2ND LIST OF CANDIDATES OF PROSPECTIVE TEACHERS/ RESEARCH SCHOLARS/ GENERAL PUBLIC FOR  10- MONTH DIPLOMA IN LANGUAGE TRAINING OF NORTH-EASTERN REGIONAL LANGUAGE CENTRE GUWAHATI - 2026-27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Shortlisted Candidates for various positions in CESCT.pdf' class='right-link' target='_blank'>Shortlisted Candidates for various positions in CESCT</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Shortlisted Candidates for various positions in CESCM.pdf' class='right-link' target='_blank'>Shortlisted Candidates for various positions in CESCM</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/MoTA Recruit_Notification_July_2026.pdf' class='right-link' target='_blank'>Engagement of personnel for the project Language Documentation and Pedagogical Resource Development for Lesser-Known and Endangered Languages of India</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Bilingual Notification- extension of last date of receipt of application for engagement of Resource Persons in Konkani and Sindhi languages.pdf' class='right-link' target='_blank'>Extension of last date for submission of online application for the engagement of Resource Persons (Teaching) in Konkani and Sindhi languages-reg.</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/RLCs_Provisional_selection_list.pdf' class='right-link' target='_blank'>PROVISIONAL SELECTION LIST  FOR  10- MONTH DIPLOMA IN LANGUAGE TRAINING IN REGIONAL LANGUAGE CENTRES - 2026-27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/NC&RW - Telugu Brochure.pdf' class='right-link' target='_blank'>National Conference and Regional Workshop on Telugu</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Conference & Regional Workshop Series on Tamil.pdf' class='right-link' target='_blank'>National Conference and Regional Workshop on Tamil</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Notification for engagement of Resource Persons (Teaching) - 2026-27.pdf' class='right-link' target='_blank'>Notification for engagement of Resource Persons (Teaching) - 2026-27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/PD, CESCT _ Shortlisted Candidates.pdf' class='right-link' target='_blank'>Shortlisted Candidates for the Position of Project Director in the Centre for Excellence for Studies in Classical Telugu (CESCT)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/PD, CESCK _ Shortlisted Candidates.pdf' class='right-link' target='_blank'>Shortlisted Candidates for the Position of Project Director in the Centre for Excellence for Studies in Classical Kannada (CESCK)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/SPPEL_Recruit_Advt_June 2026.pdf' class='right-link' target='_blank'>Engagement of personnel on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Announcement - PD, CESCO_Final.pdf' class='right-link' target='_blank'>Announcement - Project Director for Centre of Excellence for Studies in Classical Odia (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Detailed Notification for the post of Project Director, CESCO_Final.pdf' class='right-link' target='_blank'>Detailed Notification - Project Director for Centre of Excellence for Studies in Classical Odia (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Application for the post of Project Director, CESCO_Final.pdf' class='right-link' target='_blank'>Application form - Project Director for Centre of Excellence for Studies in Classical Odia (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Detail Advertisement of  Required Posts_English.pdf' class='right-link' target='_blank'>Advertisement for the appointment of personnel on a contract basis at the National Testing Service-India</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/NTS-I Fellowship 2026.pdf' class='right-link' target='_blank'>Announcement of Doctoral and Postdoctoral Fellowships for NTS-I</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Engagement of personnel on contractual basis for Bharatavani Project.pdf' class='right-link' target='_blank'>Engagement of personnel on contractual basis for Bharatavani Project</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension of last date for submission of application for the various position in, CESCK CESCM, CESCO & CESCT.pdf' class='right-link' target='_blank'>Extension of last date for submission of online application for the engagement of personnel on contractual basis for Classical Language Centre (CESCK CESCT CESCO &amp CESCM)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension of last date for submission of application for the post of Project Director, CESCK & CESCT.pdf' class='right-link' target='_blank'>Extension of last date for submission of application for the post of Project Director on contractual basis for Classical Language Centre (CESCK &amp CESCT)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Notification_Engg Short Term RPs_SPPEL.pdf' class='right-link' target='_blank'>Engagement Notification of Resource Persons on Short Term</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Further extension of last date for receipt of applications for Diploma in Language.pdf' class='right-link' target='_blank'>Further extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27-reg</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Announcement_Card_English.pdf' class='right-link' target='_blank'>CIIL invites applications for Senior Fellowships Junior Fellowships and Scholarships</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List_Selected Candidates_SPPEL_May 2026.pdf' class='right-link' target='_blank'>List of Selected Candidates for the Contractual Positions of JRP - Academic &amp Technical Video Editor &amp Editorial Assistant for the Scheme for Protection and Preservation of Endangered Languages (SPPEL)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Notification Extension copy.pdf' class='right-link' target='_blank'>Extension of last date for submission of online application for the post of Projec Director on contractual basis for Classical Language Centre (CESCK &amp CESCT)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27.pdf' class='right-link' target='_blank'>Extension of last date for receipt of applications for Diploma in Language Training for the year 2026-27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension notification.pdf' class='right-link' target='_blank'>Extension of last date for submission of online application for the engagement of personnel on contractual basis for Classical Language Centre (CESCK CESCT CESCO &amp CESCM)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List_Shortlisted Candidates_SPPEL_Apr 2026.pdf' class='right-link' target='_blank'>List of the candidates shortlisted for skill test and virtual interview for various positions in Scheme for Protection and Preservation of Endangered Languages (SPPEL)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Application Form, Project Director, CESCT.pdf' class='right-link' target='_blank'>Application Form - Project Director Centre of Excellence for Studies in Classical Telugu (CESCT) (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Short Notification for PD, CESCT 09042026 Final.pdf' class='right-link' target='_blank'>Notification- Project Director_Centre of Excellence for Studies in Classical Telugu (CESCT) (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Deatiled Notification for PD, CESCT 09042026 Final.pdf' class='right-link' target='_blank'>Detailed Notification - Engagement of Project Director for the Centre of Excellence for Studies in Classical Telugu (CESCT) (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CESCK Short Notification 08042026-1.pdf' class='right-link' target='_blank'>Notification - Project Director Centre of Excellence for Studies in Classical Kannada CESCK 2026</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Application Form, Project Director, CESCK.pdf' class='right-link' target='_blank'>Application Form Engagement of Project Director for the Centre of Excellence for Studies in Classical Kannada (C!ESCK) (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Deatiled Notification for PD, CESCK 09042026 Final.pdf' class='right-link' target='_blank'>Detailed Notification - Engagement of Project Director for the Centre of Excellence for Studies in Classical Kannada (CESCK) (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Prospectus_2026_27.pdf' class='right-link' target='_blank'>Diploma in Language Training Prospectus and Application Form 2026-27</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/English_LTP_2026_27.pdf' class='right-link' target='_blank'>Application for Admission to Diploma in Language Training for the year 2026-2027</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CESCT - Final.pdf' class='right-link' target='_blank'>ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL TELUGU (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CESCK - Final.pdf' class='right-link' target='_blank'>ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL KANNADA (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CESCO - Final.pdf' class='right-link' target='_blank'>ENGAGEMENT OF PROJECT STAFF FOR CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL ODIA (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CESCM - Final.pdf' class='right-link' target='_blank'>ENGANGEMENT OF PROJECT DIRECTOR FOR THE CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL MALAYALAM (2026)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/PROFORMA_CONSULTANT_1.pdf' class='right-link' target='_blank'>Proforma for the Engagement of Consultants for the Institute</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Consultant_2026.pdf' class='right-link' target='_blank'>Terms of Reference for the Engagement of Consultants for the Institute</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Online_Basic_Course_in_Indian_Languages.pdf' class='right-link' target='_blank'>Online Basic Courses in Indian Languages Poster and Links</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Indian_Languages_2026.pdf' class='right-link' target='_blank'>Media coverage of the Classical Language books launch by the Hon`ble Union Minister for Education Shri Dharmendra Pradhan held on 6 January 2026 at Kaushal Bhavan New Delhi</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/NDWBF_2026_Poster.pdf' class='right-link' target='_blank'>New Delhi World Book Fair - 2026</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Result of Lower Division Clerk in CESCO.pdf' class='right-link' target='_blank'>Result of Lower Division Clerk in CESCO</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Notification_Extn_SPPEL Recruitment_RPs_Dec_2025.pdf' class='right-link' target='_blank'>Extension of last date for submission of online application for the engagement of personnel on contractual basis for SPPEL project</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/double demy.pdf' class='right-link' target='_blank'>Invitation of quotation for supply of CTCP double demy CTP PS plates with exposing</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/stiff board.pdf' class='right-link' target='_blank'>Invitation of quotation for supply of 90kg Stiff board</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Sel-can-NTS-15-12-2025.pdf' class='right-link' target='_blank'>List of the candidates selected for various positions in the National Testing Service-India (NTS-I)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/SPPEL_Recruit_Advt_DIO_2025_Dec_2025.pdf' class='right-link' target='_blank'>Engagement of Data Input Operator on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL) Project</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Newsletter_KTS_4_8.pdf' class='right-link' target='_blank'>Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 8</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Newsletter_KTS_4_7.pdf' class='right-link' target='_blank'>Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 7</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Newsletter_KTS_4_6.pdf' class='right-link' target='_blank'>Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 6</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/4-12-2025_Newsletter_KTS_4.0.pdf' class='right-link' target='_blank'>Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 4</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/3-12-2025_Newsletter_KTS 4.0.pdf' class='right-link' target='_blank'>Kashi Tamil Sangamam 4.0 – Daily Bulletin Newsletter 3</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/SPPEL_Recruit_Advt_2025_Dec_2025.pdf' class='right-link' target='_blank'>Engagement of personnel on contractual basis for Scheme for Protection and Preservation of Endangered Languages (SPPEL) Project</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/20251126_HindiTamil_CommonVocabulary.pdf' class='right-link' target='_blank'>Hindi Tamil Common Vocabulary</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List of Selected Candidates for the Various Contractual Positions for the CESCO.pdf' class='right-link' target='_blank'>List of Selected Candidates for the Various Contractual Positions for the CESCO</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension_of_last_date_for_receipt_of_Project_Director_applications_for_CESEM_2025_1.pdf' class='right-link' target='_blank'>Extension of last date for receipt of Project Director applications for Centre of Excellence For Studies in Classical Malayalam</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Quotations-English-07-11-25.pdf' class='right-link' target='_blank'>Inviting quotations for multicolour printing and supply of NVS Regional Language Handbooks</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Extension of last date for receipt of Project Director applications for CESCM.pdf' class='right-link' target='_blank'>Extension of last date for receipt of Project Director applications for Centre of Excellence For Studies in Classical Malayalam</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Corrigendum_Engg RPs SWAYAM Gujarati.pdf' class='right-link' target='_blank'>Corrigendum for Engagement of Resource Persons in Gujarati for SWAYAM Courses</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/TENDER NOTICE (3) (1).pdf' class='right-link' target='_blank'>Tender Notice</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Shortlisted-Candidates-28-10-2025.pdf' class='right-link' target='_blank'>The list of shortlisted candidates for the interview for various positions in the National Testing Service-India (NTS-I)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='https://www.pib.gov.in/PressReleasePage.aspx?PRID=2182427' class='right-link' target='_blank'>22 Languages Digitally Reimagined: Unlocking India’s Linguistic Future Through Technology</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Engage_RP_SWAYAM_Gujarati Lg.pdf' class='right-link' target='_blank'>Notification for engagement of Resource Persons in Gujarati for SWAYAM Courses</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List of selected candidates for the various contractual positions for CESCM.pdf' class='right-link' target='_blank'>List of selected candidates for the various contractual positions for CESCM</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List of selected candidates for the various contractual positions for CESCT.pdf' class='right-link' target='_blank'>List of selected candidates for the various contractual positions for CESCT</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List of selected candidates for the various contractual positions for CESCK.pdf' class='right-link' target='_blank'>List of selected candidates for the various contractual positions for CESCK</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/LDC-IL2025-2_advertisement.pdf' class='right-link' target='_blank'>Recruitment of Various Vacant Contractual Positions of LDC-IL</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/TENDER NOTICE for Manpower at UTRC Solan.pdf' class='right-link' target='_blank'>Tender Notice for Manpower at UTRC Solan</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Project Director CESCM - Application Form.pdf' class='right-link' target='_blank'>ENGANGEMENT OF PROJECT DIRECTOR FOR CESCM - Application Form</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Short Notification_Recruitment of Project Director CESCM.pdf' class='right-link' target='_blank'>Short Notification_Engagement of Project Director CESCM</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Deatiled_Notification for the Engagement of Project Director_CESCM_C.pdf' class='right-link' target='_blank'>ENGANGEMENT OF PROJECT DIRECTOR FOR THE CENTRE OF EXCELLENCE FOR STUDIES IN CLASSICAL MALAYALAM</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/20250904_JRP_OffAss_Results_LDCIL_.pdf' class='right-link' target='_blank'>List of Selected Candidates for JRP-I, JRP-II and Office Assistant at LDC-IL</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Detail Advertisement of  Required Posts_English.pdf' class='right-link' target='_blank'>Advertisement for Engagement of Personnel under National Testing Service-India</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/20250828_WrittenTestResults_LDCIL_2025.pdf' class='right-link' target='_blank'>Results of the Written Test (JRP-I, JRP-II and Office Assistant for LDC-IL 2025)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Swayam_Teleprompter_Tender_SPPRL.pdf' class='right-link' target='_blank'>Notice Inviting  quotation for supply of Teleprompter 32&quot with wireless scrolling</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List_Selected Candidates_Tech_Admn_SPPEL.pdf' class='right-link' target='_blank'>List of Selected Candidates for the Contractual Positions of Technical and Administrative positions for the Scheme for Protection and Preservation of Endangered Languages (SPPEL)</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/List_Selected Candidates_SRP_JRP_SPPEL.pdf' class='right-link' target='_blank'>List of Selected Candidates for the Contractual Positions of SRP and JRP for the Scheme for Protection and Preservation of Endangered Languages (SPPEL).</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/GeM-Bidding-8122266_new.pdf' class='right-link' target='_blank'>Institute has released the tender on GeM for procurement of high-end computers with bid No. GEM/2025/B/6481821 dt. 22.07.2025</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/GeM-Bidding-8106541_new.pdf' class='right-link' target='_blank'>Institute has released the tender on GeM for procurement of high-end computers with bid No. GEM/2025/B/6468054 dt. 21.07.2025</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Notification_ for_inviting_quotations_for_the_disposal_of_Junk_material_of_the_Insititute.pdf' class='right-link' target='_blank'>Notification for inviting quotations for the disposal of Junk material of the Insititute</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/CIIL_ICC_2024_POSH.pdf' class='right-link' target='_blank'>Prevention of Sexual Harassment at Work Place Act 2013</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/Selected-candidates-PDF-DF-24-25-Eng.pdf' class='right-link' target='_blank'>List of the candidates selected for the award of NTS-I Doctoral and Post Doctoral Fellowships for the year 2024-2025</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/2-_English_Announcement_-_Scholarship_Scheme_-_CIIL.pdf' class='right-link' target='_blank'>Announcement of Scholarships</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/3-English_Announcement_-_Junior_Fellowship_Scheme_-_CIIL.pdf' class='right-link' target='_blank'>Announcement of Junior Fellowships</a><img src='images/new.gif' alt='New'>|| &nbsp;<a href='announcements/4-_English_Announcement_-_Senior_Fellowships_-_CIIL.pdf' class='right-link' target='_blank'>Announcement of Senior Fellowships</a><img src='images/new.gif' alt='New'>|| &nbsp;</li>
+</ul>   
+</div>
+<div id="marq1Buttons">
+<button id="M1playButton" type="button" class="btn btn-default btn-xs" title="Play">
+<i class="fa fa-play" aria-hidden="true"></i>
+</button>
+<button id="M1pauseButton" type="button" class="btn btn-default btn-xs" title="Pause">
+<i class="fa fa-pause" aria-hidden="true"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-section" id="dark">
+<div class="container">
+<div class="row wow fadeInRight">
+<div class="col-sm-2">
+<div class="res-box">
+<a href="https://bharatavani.in" target="_blank" title="BHARATAVANI" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img src="images/bharatavani.png" alt="BHARATAVANI" aria-hidden="true">
+<p>BHARATAVANI</p>
+</a>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="res-box">
+<a href="https://www.ldcil.org/" target="_blank" title="LDC-IL" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img src="images/ldcil.png" alt="LDC-IL" aria-hidden="true" >
+<p>LDC-IL</p>
+</a>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="res-box">
+<a href="https://www.ntm.org.in/" target="_blank" title="NTM" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img src="images/ntm.png" alt="NTM" aria-hidden="true">
+<p>NTM</p>
+</a>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="res-box">
+<a href="https://www.ciil-ntsindia.net/" target="_blank" title= "NTS-I" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img src="images/nts.png" alt="NTS-I"  aria-hidden="true">
+<p>NTS-I</p>
+</a>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="res-box">
+<a href="https://www.sppel.org/"  target="_blank" title="SPPEL" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img src="images/sppel.png" alt="SPPEL" aria-hidden="true">
+<p>SPPEL</p>
+</a>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="res-box">
+<a href="#" title="ODNEIL">
+<img src="images/odneil.png" alt="ODNEIL" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" aria-hidden="true">
+<p>ODNEIL</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="initiatives">
+<div class="container promo-section-border">
+<h5>CIIL RELATED SITES</h5>
+<div class="customer-logos slider">
+<div class="slide"><a href="http://corpora.ciil.org/" target="_blank" title="Corpora" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/corpora.png" alt="Corpora"></a></div>
+<div class="slide"><a href="http://lisindia.ciil.org/" target="_blank" title="Lis India" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" ><img src="images/lisindia.png" alt="Lis India"></a></div>
+<!-- <div class="slide"><a href="https://lai.ciil.org" target="_blank"><img src="images/bbsangam.png"></a></div> -->
+<!-- <div class="slide"><a href="#"><img src="images/bhashasagar.png"></a></div> -->
+<div class="slide"><a href="http://grammars.ciil.org/" target="_blank" title="Grammars" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/grammars.png" alt="Grammars"></a></div>
+<div class="slide"><a href="https://data.ldcil.org" target="_blank" title="LDCIL Data" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/ldcli_data.png" alt="LDCIL Data"></a></div>
+<div class="slide"><a href="http://library.ciil.org//" target="_blank" title="CIIL Library" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/ciil_library.png" alt="CIIL Library"></a></div>
+<div class="slide"><a href="https://apply.ciil.org" target="_blank" title="Online application" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/online_application.png" alt="Online application"></a></div>
+<div class="slide"><a href="bhashavideos.php" target="_blank" title="Bhasha Mandakini" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/bhasha_man.png" alt="Bhasha Mandakini"></a></div>
+<div class="slide"><a href="https://store.ciil.org/" target="_blank" title="Buy Books" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><img src="images/book_store.png" alt="Buy Books"></a></div>
+<div class="slide"><a href="https://miles.ciil-ntsindia.net/miles/" target="_blank" title="Miles 2026" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" ><img src="images/MILES2026.png" alt="Miles 2026"></a></div>
+</div>
+
+<div class="modal fade" id="popModal" tabindex="-1" aria-labelledby="popModal" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-body p-1">
+<button type="button" class="close bg-danger" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+<a href="https://www.g20.org/en/" target="_blank" title="G20"><img class="img-fluid" src="images/g20-logo-2022.png" alt="G20"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+wow = new WOW(
+{
+animateClass: 'animated',
+offset: 100,
+callback: function(box) {
+console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+}
+}
+);
+wow.init();
+/* document.getElementById('moar').onclick = function() {
+var section = document.createElement('section');
+section.className = 'section--purple wow fadeInDown';
+this.parentNode.insertBefore(section, this);
+}; */
+$(document).ready(function(){
+$('#playButton').click(function () {
+$('#slider-animation').carousel('cycle');
+$('#carouselButtons button').removeClass("active");
+$('#playButton').addClass("active");
+});
+$('#pauseButton').click(function () {
+$('#slider-animation').carousel('pause');
+$('#carouselButtons button').removeClass("active");
+$('#pauseButton').addClass("active");
+});
+$('#MpauseButton').click(function (e) {
+e.preventDefault();
+$('#marq').trigger('pause');
+//$('#marq').stop(); // Stop the marquee animation
+$('#marqButtons button').removeClass("active"); // Remove active class from all buttons
+$(this).addClass("active"); // Add active class to the clicked button
+});
+$('#MplayButton').click(function (e) {
+e.preventDefault();
+$('#marq').trigger('resume');
+//$('#marq').stop();
+$('#marqButtons button').removeClass("active");
+$('#MpauseButton').addClass("active");
+});
+$('#M1playButton').click(function (e) {
+e.preventDefault();
+$('#marq1').trigger('resume');
+$('#marq1Buttons button').removeClass("active");
+$('#M1playButton').addClass("active");
+});
+$('#M1pauseButton').click(function (e) {
+e.preventDefault();
+$('#marq1').trigger('pause');
+$('#marq1Buttons button').removeClass("active");
+$('#M1pauseButton').addClass("active");
+});
+$('.customer-logos').slick({
+slidesToShow: 5,
+slidesToScroll: 1,
+autoplay: false,
+//autoplaySpeed: 1500,
+arrows: true,
+dots: false,
+//pauseOnHover: false,
+responsive: [{
+breakpoint: 768,
+settings: {
+slidesToShow: 4
+}
+}, {
+breakpoint: 520,
+settings: {
+slidesToShow: 3
+}
+}]
+});
+});
+</script>
+<script>
+/*
+var a = 0;
+$(window).scroll(function() {
+var oTop = $('#counter').offset().top - window.innerHeight;
+if (a == 0 && $(window).scrollTop() > oTop) {
+$('.counter-value').each(function() {
+var $this = $(this),
+countTo = $this.attr('data-count');
+$({
+countNum: $this.text()
+}).animate({
+countNum: countTo
+},
+{
+duration: 2000,
+easing: 'swing',
+step: function() {
+$this.text(Math.floor(this.countNum));
+},
+complete: function() {
+$this.text(this.countNum);
+//alert('finished');
+}
+});
+});
+a = 1;
+}
+});
+*/
+</script>
+<script>
+$(window).on('load', function() {
+//   $('#popModal').modal('show');
+});
+</script>
+<script>
+function showResult(str) {
+if (str.length==0) {
+document.getElementById("livesearch").innerHTML="";
+return;
+}
+var xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function() {
+if (this.readyState==4 && this.status==200) {
+document.getElementById("livesearch").innerHTML=this.responseText;
+}
+}
+xmlhttp.open("GET","searchpage.php?q="+str,true);
+xmlhttp.send();
+}
+</script>
+<script src="css/js/jquery_pause.js"></script>
+<script src="css/js/jquery_easing_min.js"></script>
+<script src="css/js/jquery_marquee.js?v=3"></script>
+<script>
+$(document).ready(function(){
+$('#marq').marquee({
+speed: 50,
+gap: 100,
+delayBeforeStart: 0,
+direction: 'left',
+duplicated: true,
+pauseOnHover: true
+});
+$('#marq1').marquee({
+speed: 50,
+gap: 100,
+delayBeforeStart: 0,
+direction: 'left',
+duplicated: true,
+pauseOnHover: true
+});
+});
+</script>
+
+<footer> 
+<div class="container">
+<div class="foootsec">
+<div class="row" style="">
+<div class="col-md-12">
+<ul class="list list-inline mb-0">
+<li class="list-inline-item">
+<a href="https://amritmahotsav.nic.in/" target="_blank" title ="Ajaadi ke amrit mahotsav" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" >
+<img  src="images/AKAM-logo.png" alt ="Ajaadi ke amrit mahotsav" >
+</a>
+</li>
+<li class="list-inline-item">
+<a href="http://data.gov.in" target="_blank" title ="Data Gov" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/data-gov_0.png" alt ="Data Gov" >
+</a>
+</li>
+<li class="list-inline-item">
+<a href="http://mygov.in" target="_blank" title ="My Gov" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/mygovlogo.png" alt="My Gov">
+</a>
+</li>
+<li class="list-inline-item">
+<a href="https://www.digitalindia.gov.in/" target="_blank" title ="Digital India" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/Digital-india.png" alt ="Digital India">
+</a>
+</li>
+<li class="list-inline-item">
+<a href="https://www.education.gov.in/" title ="Ministry of Education" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');" target="_blank"><img  src="images/mhrd-logo.png" alt ="Ministry of Education">
+</a>
+</li>
+<li class="list-inline-item">
+<a href="https://swayam.gov.in" target="_blank" title ="Swayam" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/swayam.png" alt ="Swayam">
+</a>
+</li>
+<li class="list-inline-item">
+<a href="http://epathshala.nic.in/" target="_blank" title ="E Pathshala" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/epathshala.png" alt ="E Pathshala">
+</a>
+</li>
+<li class="list-inline-item">
+<a href="https://www.g20.in/" target="_blank" title ="G20" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img  src="images/g20-logo.png" alt ="G20">
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row text-center" style="padding-bottom:25px;" >
+<div class="col-md-12 footer-links-new mg-auto" style="">
+<a href="primers_book.php" target="_blank" style="color:#032457;font-weight: bold;">CIIL-NCERT Primers</a> &nbsp;I&nbsp; 
+<a href="https://store.ciil.org" target="_blank" style="color:#032457;font-weight: bold;" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">Buy Books</a> &nbsp;I&nbsp; 
+<a href="visitciil.php" target="_blank" style="color:#032457;font-weight: bold;">Book an appointment</a> &nbsp;I&nbsp; 
+<a href="rti.php" target="_blank" style="color:#032457;font-weight: bold;">RTI</a> &nbsp;I&nbsp; 
+<a href="posh.php" target="_blank" style="color:#032457;font-weight: bold;">POSH Act 2013</a> &nbsp;I&nbsp; 
+<a href="langtraining.php" target="_blank" style="color:#032457;font-weight: bold;">Language Training Program</a> &nbsp;I&nbsp; 
+<!-- <a href="#" target="_blank" style="color:#032457;font-weight: bold;">HTS</a> &nbsp;I&nbsp; -->
+<a href="http://library.ciil.org//" target="_blank" style="color:#032457;font-weight: bold;" aria-label="footer library">Library</a> &nbsp;I&nbsp; 
+<a href="https://drive.google.com/drive/folders/1WNvmsWg0eVNbwA9xicWza3En7tGEOBD4?usp=sharing" style="color:#032457;font-weight: bold;" target="_blank">Annual Reports</a> &nbsp;I&nbsp; 
+<a href="feedback.php" style="color:#032457;font-weight: bold;">Feedback</a> &nbsp;I&nbsp;
+<a href="dload.php" style="color:#032457;font-weight: bold;">Download</a> &nbsp;I&nbsp;
+<a href="disclaimer.php" style="color:#032457;font-weight: bold;">Disclaimer</a> &nbsp;I&nbsp;
+<a href="t_conditions.php" style="color:#032457;font-weight: bold;">Terms & Condition</a> &nbsp;I&nbsp;
+<a href="w_policies.php" style="color:#032457;font-weight: bold;">Website Policies</a> &nbsp;I&nbsp;
+<a href="a_statement.php" style="color:#032457;font-weight: bold;">Accessibility Statement</a> &nbsp;I&nbsp;
+<a href="help.php" style="color:#032457;font-weight: bold;">Help</a> &nbsp;I&nbsp;
+<a href="s_policy.php" style="color:#032457;font-weight: bold;">Security Policy</a> &nbsp;I&nbsp;
+<a href="sitemap.php" style="color:#032457;font-weight: bold;" >Sitemap</a>
+</div>
+</div>
+</div>
+</div>
+
+<div id="brown-bg" style="padding-bottom: 10px">
+<div class="container">
+<div class="row">
+<div class="col-sm-3 white-heading">
+<p class="mb-1"><strong>FOLLOW CIIL</strong></p>  
+
+<a href="https://www.facebook.com/ciilmysore/" title="Facebook" target="_blank" class="icon fb" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><i class="fab fa-facebook-f"></i></a>
+<a href="https://twitter.com/ciilsocialmedia" class="icon twitter" target="_blank" title="Twitter" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><i class="fa fa-twitter" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" class="r-18jsvk2 r-4qtqp9 r-yyyyoo r-16y2uox r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp" style=" width: 16px; fill: white; vertical-align: text-top;"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg></i></a>
+<a href="https://www.youtube.com/@CIILMysoreOfficial" class="icon yt" title="Youtube" target="_blank" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');"><i class="fab fa-youtube"></i></a>
+<!-- <a href="#" class="icon ins" target="_blank"><i class="fab fa-instagram"></i></a> -->
+</div>
+<div class="col-sm-9 white-heading" style="text-align:left">
+<div class="mb-2"><span><i class="fas fa-map-pin"></i>&nbsp;Central Institute of Indian Languages, Department of Higher Education, Ministry of Education, Government of India, Manasagangothri, Hunsur Road, Mysore 570006</span></div>
+<div class="mb-2">Content on this website is published and managed by Central Institute of Indian Languages.  <br>For any query regarding this website, please contact the web information manager.  <br>Name: Dr. Narayan Choudhary,  <br>Designation: Officer In-Charge, Computer Application Unit, CIIL,  <br>Email ID: n[dot]choudhary[at]gov[dot]in,  <br>Tel No.: +91-821-234-5000 (Reception)   <br>Room No: 320, CIIL, Mysore, Karnataka<br><br>
+Last updated on : 23/07/2026 15:18:37</div>
+</div>
+</div> 
+</div>
+<div style="border-top:1px solid #eaeaea45;text-align:center;width:100%;margin-top:10px; padding: 10px 0px 0px 0px;">Copyright © <span id="demo">2024</span> | Developed By CIIL, Mysuru | 
+<a href="https://jigsaw.w3.org/css-validator/check/referer" title="Valid css" target="_blank" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img style="border:0;width:88px;height:31px"
+src="https://jigsaw.w3.org/css-validator/images/vcss"
+alt="Valid css" >
+</a> <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fciil.gov.in%2F" title="Valid HTML" target="_blank" onclick="return confirm('You are being redirected to an external website. Please note that Central Institute of Indian Languages (CIIL) cannot be held responsible for external websites content and privacy policies');">
+<img style="border:0;width:88px;height:31px" src="images/HTML5_certified_logo.png" alt="Valid css">
+</a><br><br>
+</div>
+</div>
+</footer> 
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getFullYear();
+</script>  
+</body>
+</html>  

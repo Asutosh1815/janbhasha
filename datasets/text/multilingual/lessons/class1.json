@@ -1,0 +1,63 @@
+{
+  "grade": 1,
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Alphabet - वर्णमाला",
+      "subject": "Hindi",
+      "type": "lesson",
+      "xpReward": 50,
+      "content": [
+        {"type": "text", "value": "Hindi Alphabet has 44 letters. हिंदी वर्णमाला में 44 अक्षर हैं।"},
+        {"type": "text", "value": "Vowels (स्वर): अ आ इ ई उ ऊ ए ऐ ओ औ"},
+        {"type": "text", "value": "Let's learn: A = अ (as in Anar अनार)"},
+        {"type": "question", "value": "Which is a vowel?", "options": ["अ", "क", "ग", "ज"], "correct": 0}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Numbers 1-10 - संख्याएं",
+      "subject": "Mathematics",
+      "type": "lesson",
+      "xpReward": 50,
+      "content": [
+        {"type": "text", "value": "Let's count! गिनती सीखें!\n1 = एक, 2 = दो, 3 = तीन"},
+        {"type": "text", "value": "4 = चार, 5 = पाँच, 6 = छह"},
+        {"type": "text", "value": "7 = सात, 8 = आठ, 9 = नौ, 10 = दस"},
+        {"type": "question", "value": "How do you say 5 in Hindi?", "options": ["तीन", "चार", "पाँच", "छह"], "correct": 2}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Addition - जोड़",
+      "subject": "Mathematics",
+      "type": "lesson",
+      "xpReward": 60,
+      "content": [
+        {"type": "text", "value": "Addition means putting numbers together! जोड़ का मतलब है दो संख्याओं को मिलाना।"},
+        {"type": "text", "value": "🍎🍎 + 🍎🍎🍎 = 🍎🍎🍎🍎🍎\n2 + 3 = 5"},
+        {"type": "question", "value": "What is 2 + 3?", "options": ["4", "5", "6", "7"], "correct": 1},
+        {"type": "question", "value": "What is 1 + 1?", "options": ["1", "2", "3", "4"], "correct": 1}
+      ]
+    }
+  ],
+  "flashcards": [
+    {"id": 1, "front": "🍎 सेब", "back": "Apple", "audio": null},
+    {"id": 2, "front": "🍌 केला", "back": "Banana", "audio": null},
+    {"id": 3, "front": "🐄 गाय", "back": "Cow", "audio": null},
+    {"id": 4, "front": "🌳 पेड़", "back": "Tree", "audio": null},
+    {"id": 5, "front": "🌺 फूल", "back": "Flower", "audio": null}
+  ],
+  "stories": [
+    {
+      "id": 1,
+      "title": "रामू का विद्यालय",
+      "pages": [
+        {"scene": "🌅🏘️", "text": "रामू एक छोटे गाँव में रहता था।\nRamu lived in a small village."},
+        {"scene": "🏫📚", "text": "वह हर रोज़ विद्यालय जाता था।\nHe went to school every day."},
+        {"scene": "👩🏫📖", "text": "उसकी शिक्षिका बहुत अच्छी थीं।\nHis teacher was very kind."},
+        {"scene": "⭐🎉", "text": "रामू ने सब पाठ सीख लिए!\nRamu learned all his lessons!"}
+      ]
+    }
+  ]
+}

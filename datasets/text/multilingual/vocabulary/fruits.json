@@ -1,0 +1,76 @@
+{
+  "category": "Fruits",
+  "total": 5,
+  "items": [
+    {
+      "id": 44,
+      "category": "Fruits",
+      "hindi": "फल",
+      "english": "Fruit",
+      "santali": "Jojo / Bele jo",
+      "ho": "Jo",
+      "mundari": "Jo",
+      "pronunciation": "Jo",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 45,
+      "category": "Fruits",
+      "hindi": "आम",
+      "english": "Mango",
+      "santali": "Uli",
+      "ho": "Uli",
+      "mundari": "Uli",
+      "pronunciation": "U-li",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 46,
+      "category": "Fruits",
+      "hindi": "केला",
+      "english": "Banana",
+      "santali": "Kaira",
+      "ho": "Kaira",
+      "mundari": "Kera",
+      "pronunciation": "Kai-ra",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 47,
+      "category": "Fruits",
+      "hindi": "अमरूद",
+      "english": "Guava",
+      "santali": "Amrud",
+      "ho": "Tamras",
+      "mundari": "Amrud",
+      "pronunciation": "Tam-ras",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 48,
+      "category": "Fruits",
+      "hindi": "जामुन",
+      "english": "Blackberry",
+      "santali": "Kuda",
+      "ho": "Kuda",
+      "mundari": "Kuda",
+      "pronunciation": "Ku-da",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

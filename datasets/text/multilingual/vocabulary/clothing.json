@@ -1,0 +1,48 @@
+{
+  "category": "Clothing",
+  "total": 3,
+  "items": [
+    {
+      "id": 102,
+      "category": "Clothing",
+      "hindi": "कपड़ा / वस्त्र",
+      "english": "Clothes",
+      "santali": "Kicri'",
+      "ho": "Lija'",
+      "mundari": "Lija'",
+      "pronunciation": "Kic-ri / Li-ja",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 103,
+      "category": "Clothing",
+      "hindi": "साड़ी",
+      "english": "Sari",
+      "santali": "Pancikhanda / Sari",
+      "ho": "Sari",
+      "mundari": "Sari",
+      "pronunciation": "Sa-ri",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 104,
+      "category": "Clothing",
+      "hindi": "धोती",
+      "english": "Dhoti",
+      "santali": "Dhoti / Dhotin",
+      "ho": "Dhoti",
+      "mundari": "Dhoti",
+      "pronunciation": "Dho-ti",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

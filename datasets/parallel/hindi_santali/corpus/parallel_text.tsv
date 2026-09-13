@@ -1,0 +1,16 @@
+id	source	hindi_text	target_text	language	script	license	source_metadata	verification_status
+SAT_0001	Bharatavani / CIIL	नमस्ते	ᱡᱚᱦᱟᱨ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""greeting""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0002	Bharatavani / CIIL	धन्यवाद	ᱥᱟᱨᱦᱟᱣ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""greeting""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0003	Bharatavani / CIIL	बच्चों, अपनी किताब खोलो।	ᱜᱤᱫᱽᱨᱟᱹ ᱠᱚ, ᱟᱯᱮᱭᱟᱜ ᱯᱩᱛᱷᱤ ᱡᱷᱤᱡᱽ ᱯᱮ ᱾	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""classroom""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0004	Bharatavani / CIIL	आज हम जोड़ का अभ्यास करेंगे।	ᱛᱮᱦᱮᱧ ᱫᱚ ᱟᱵᱚ ᱡᱚᱲᱟᱣ ᱵᱚ ᱪᱮᱫᱟ ᱾	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""mathematics""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0005	Bharatavani / CIIL	पानी पियो।	ᱫᱟᱜ ᱧᱩᱭ ᱢᱮ ᱾	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""daily_life""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0006	Bharatavani / CIIL	पेड़ पर पक्षी बैठा है।	ᱫᱟᱨᱮ ᱨᱮ ᱪᱮᱬᱮ ᱫᱩᱲᱩᱵ ᱟᱠᱟᱱᱟ ᱾	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""nature""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0007	Bharatavani / CIIL	एक	ᱢᱤᱫ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0008	Bharatavani / CIIL	दो	ᱵᱟᱨ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0009	Bharatavani / CIIL	तीन	ᱯᱮ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0010	Bharatavani / CIIL	चार	ᱯᱩᱱ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0011	Bharatavani / CIIL	पाँच	ᱢᱚᱬᱮ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0012	Bharatavani / CIIL	घर	ᱚᱲᱟᱜ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""vocabulary""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0013	Bharatavani / CIIL	सूरज	ᱥᱤᱧ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""nature""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0014	Bharatavani / CIIL	गाय	ᱜᱟᱹᱭ	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""animals""}"	VERIFIED_NATIVE_REVIEWED
+SAT_0015	Bharatavani / CIIL	जल ही जीवन है।	ᱫᱟᱜ ᱜᱮ ᱡᱤᱣᱤ ᱠᱟᱱᱟ ᱾	santhali	Ol Chiki	CC-BY-4.0	"{""domain"": ""science""}"	VERIFIED_NATIVE_REVIEWED

@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "framework": "NIPUN Bharat",
+    "version": "1.0.0",
+    "grades": [1, 2, 3]
+  },
+  "mathematics": {
+    "counting_1_to_10": {
+      "titleHindi": "१ से १० तक गिनती",
+      "titles": {
+        "sat": "mit khon gel",
+        "ho": "obo te gel",
+        "mun": "mit ae gel",
+        "od": "eka ru dasa",
+        "en": "Counting 1 to 10"
+      },
+      "code": "FLN-MATH-1",
+      "grade": 1,
+      "exercises": [
+        {
+          "type": "count",
+          "question": "कितने सेब हैं?",
+          "translations": {
+            "sat": "tinak sadom menaka?",
+            "ho": "chimina sapan mena?",
+            "mun": "chimina sadom mena?",
+            "od": "kete seba achi?",
+            "en": "How many apples are there?"
+          },
+          "answer": "3"
+        }
+      ]
+    },
+    "addition_basic": {
+      "titleHindi": "बुनियादी जोड़",
+      "titles": {
+        "sat": "joma basic",
+        "ho": "joma basic",
+        "mun": "joma basic",
+        "od": "misaana",
+        "en": "Basic Addition"
+      },
+      "code": "FLN-MATH-2",
+      "grade": 1,
+      "exercises": []
+    },
+    "subtraction_basic": {
+      "titleHindi": "बुनियादी घटाव",
+      "titles": {
+        "sat": "ghatao basic",
+        "ho": "ghatao basic",
+        "mun": "ghatao basic",
+        "od": "phedana",
+        "en": "Basic Subtraction"
+      },
+      "code": "FLN-MATH-3",
+      "grade": 1,
+      "exercises": []
+    },
+    "shapes": {
+      "titleHindi": "आकार",
+      "titles": {
+        "sat": "akar",
+        "ho": "akar",
+        "mun": "akar",
+        "od": "akara",
+        "en": "Shapes"
+      },
+      "code": "FLN-MATH-4",
+      "grade": 1,
+      "exercises": []
+    }
+  },
+  "language": {
+    "letter_recognition": {
+      "titleHindi": "अक्षर पहचान",
+      "titles": {
+        "sat": "akhar urum",
+        "ho": "akhar urum",
+        "mun": "akhar urum",
+        "od": "akhara chinha",
+        "en": "Letter Recognition"
+      },
+      "code": "FLN-LANG-1",
+      "grade": 1,
+      "exercises": []
+    },
+    "word_reading": {
+      "titleHindi": "शब्द पठन",
+      "titles": {
+        "sat": "sabad padhao",
+        "ho": "sabad padhao",
+        "mun": "sabad padhao",
+        "od": "sabda pathana",
+        "en": "Word Reading"
+      },
+      "code": "FLN-LANG-2",
+      "grade": 1,
+      "exercises": []
+    },
+    "sentence_formation": {
+      "titleHindi": "वाक्य निर्माण",
+      "titles": {
+        "sat": "katha benao",
+        "ho": "katha benao",
+        "mun": "katha benao",
+        "od": "bakya gathana",
+        "en": "Sentence Formation"
+      },
+      "code": "FLN-LANG-3",
+      "grade": 1,
+      "exercises": []
+    }
+  },
+  "evs": {
+    "body_parts": {
+      "titleHindi": "शरीर के अंग",
+      "titles": {
+        "sat": "hormo reya ang",
+        "ho": "hormo reya ang",
+        "mun": "hormo reya ang",
+        "od": "sarirara anga",
+        "en": "Body Parts"
+      },
+      "code": "FLN-EVS-1",
+      "grade": 1,
+      "exercises": []
+    },
+    "animals": {
+      "titleHindi": "जानवर",
+      "titles": {
+        "sat": "janwar",
+        "ho": "janwar",
+        "mun": "janwar",
+        "od": "pashu",
+        "en": "Animals"
+      },
+      "code": "FLN-EVS-2",
+      "grade": 1,
+      "exercises": []
+    },
+    "community_helpers": {
+      "titleHindi": "सामुदायिक सहायक",
+      "titles": {
+        "sat": "sot helper",
+        "ho": "sot helper",
+        "mun": "sot helper",
+        "od": "samudayika sahayaka",
+        "en": "Community Helpers"
+      },
+      "code": "FLN-EVS-3",
+      "grade": 1,
+      "exercises": []
+    }
+  }
+}

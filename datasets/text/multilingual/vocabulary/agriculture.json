@@ -1,0 +1,62 @@
+{
+  "category": "Agriculture",
+  "total": 4,
+  "items": [
+    {
+      "id": 94,
+      "category": "Agriculture",
+      "hindi": "खेत",
+      "english": "Field / Farm",
+      "santali": "Khet / Bad",
+      "ho": "Badi / Ote",
+      "mundari": "Badi / Khet",
+      "pronunciation": "Bad / Ba-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 95,
+      "category": "Agriculture",
+      "hindi": "धान",
+      "english": "Paddy / Rice crop",
+      "santali": "Horo",
+      "ho": "Baba",
+      "mundari": "Baba",
+      "pronunciation": "Ho-ro / Ba-ba",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 96,
+      "category": "Agriculture",
+      "hindi": "हल",
+      "english": "Plough",
+      "santali": "Nahel",
+      "ho": "Nāyol",
+      "mundari": "Nahel",
+      "pronunciation": "Na-hel",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 97,
+      "category": "Agriculture",
+      "hindi": "किसान",
+      "english": "Farmer",
+      "santali": "Casi / Hor",
+      "ho": "Chasi",
+      "mundari": "Kisan / Kasi horo",
+      "pronunciation": "Ca-si",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

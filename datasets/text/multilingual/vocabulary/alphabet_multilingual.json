@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "title": "JANBHASHA Multi-Script Educational Alphabet & Phonology Matrix",
+    "source": "Central Institute of Indian Languages (CIIL) & National Tribal Script Standardization",
+    "scripts_covered": {
+      "Hindi": "Devanagari (33 consonants, 12 vowels)",
+      "Santali": "Ol Chiki (30 basic letters invented by Pt. Raghunath Murmu)",
+      "Ho": "Warang Chiti (invented by Lako Bodra) & Devanagari transliteration",
+      "Mundari": "Devanagari (primary standard in Jharkhand) & Mundari Bani"
+    }
+  },
+  "english_az_corpus": [
+    {
+      "letter": "A",
+      "hindi_sound": "ए / अ",
+      "english_word": "Apple",
+      "hindi": "सेब",
+      "sat": "Apple / Jo",
+      "ho": "Apple",
+      "mun": "Apple",
+      "pronunciation": "Ay",
+      "sentence": "Apple is red. / सेब लाल है। / Apple do arak' gea."
+    },
+    {
+      "letter": "B",
+      "hindi_sound": "बी / ब",
+      "english_word": "Book",
+      "hindi": "किताब",
+      "sat": "Pothi",
+      "ho": "Puthi",
+      "mun": "Pothi",
+      "pronunciation": "Bee",
+      "sentence": "Read the book. / किताब पढ़ो। / Pothi parhao me."
+    },
+    {
+      "letter": "C",
+      "hindi_sound": "सी / क",
+      "english_word": "Cow",
+      "hindi": "गाय",
+      "sat": "Gai",
+      "ho": "Gai",
+      "mun": "Uri'",
+      "pronunciation": "See",
+      "sentence": "The cow gives milk. / गाय दूध देती है। / Gai doa emaye."
+    },
+    {
+      "letter": "D",
+      "hindi_sound": "डी / ड",
+      "english_word": "Dog",
+      "hindi": "कुत्ता",
+      "sat": "Seta",
+      "ho": "Seta",
+      "mun": "Seta",
+      "pronunciation": "Dee",
+      "sentence": "Dog is faithful. / कुत्ता वफादार है। / Seta do bugin ho."
+    },
+    {
+      "letter": "E",
+      "hindi_sound": "ई / ए",
+      "english_word": "Elephant",
+      "hindi": "हाथी",
+      "sat": "Hati",
+      "ho": "Hati",
+      "mun": "Hati",
+      "pronunciation": "Ee",
+      "sentence": "Elephant is big. / हाथी बड़ा है। / Hati do marang gea."
+    },
+    {
+      "letter": "F",
+      "hindi_sound": "एफ / फ",
+      "english_word": "Flower",
+      "hindi": "फूल",
+      "sat": "Baha",
+      "ho": "Baha",
+      "mun": "Ba",
+      "pronunciation": "Ef",
+      "sentence": "Flower is beautiful. / फूल सुंदर है। / Baha do napai gea."
+    },
+    {
+      "letter": "G",
+      "hindi_sound": "जी / ग",
+      "english_word": "Goat",
+      "hindi": "बकरी",
+      "sat": "Merom",
+      "ho": "Merom",
+      "mun": "Merom",
+      "pronunciation": "Jee",
+      "sentence": "Goat eats grass. / बकरी घास खाती है। / Merom ghas jomae."
+    },
+    {
+      "letter": "H",
+      "hindi_sound": "एच / ह",
+      "english_word": "Hand",
+      "hindi": "हाथ",
+      "sat": "Ti",
+      "ho": "Ti",
+      "mun": "Ti",
+      "pronunciation": "Aych",
+      "sentence": "Wash your hands. / हाथ धो लो। / Ti arup' me."
+    },
+    {
+      "letter": "I",
+      "hindi_sound": "आई / इ",
+      "english_word": "Ink",
+      "hindi": "स्याही",
+      "sat": "Siyahi / Ol dak'",
+      "ho": "Kali",
+      "mun": "Kali",
+      "pronunciation": "Eye",
+      "sentence": "Blue ink. / नीली स्याही। / Lil dak'."
+    },
+    {
+      "letter": "J",
+      "hindi_sound": "जे / ज",
+      "english_word": "Jug",
+      "hindi": "जग / लोटा",
+      "sat": "Lota / Jug",
+      "ho": "Lota",
+      "mun": "Lota",
+      "pronunciation": "Jay",
+      "sentence": "Water in jug. / जग में पानी है। / Lota re dak' menaa."
+    },
+    {
+      "letter": "K",
+      "hindi_sound": "के / क",
+      "english_word": "Kite",
+      "hindi": "पतंग",
+      "sat": "Gudi",
+      "ho": "Patang",
+      "mun": "Gudi",
+      "pronunciation": "Kay",
+      "sentence": "Fly the kite. / पतंग उड़ाओ। / Gudi udau me."
+    },
+    {
+      "letter": "L",
+      "hindi_sound": "एल / ल",
+      "english_word": "Leaf",
+      "hindi": "पत्ता",
+      "sat": "Sakam",
+      "ho": "Sakam",
+      "mun": "Sakam",
+      "pronunciation": "El",
+      "sentence": "Green leaf. / हरा पत्ता। / Hariyar sakam."
+    },
+    {
+      "letter": "M",
+      "hindi_sound": "एम / म",
+      "english_word": "Mango",
+      "hindi": "आम",
+      "sat": "Uli",
+      "ho": "Uli",
+      "mun": "Uli",
+      "pronunciation": "Em",
+      "sentence": "Sweet mango. / मीठा आम। / Sibin uli."
+    },
+    {
+      "letter": "N",
+      "hindi_sound": "एन / न",
+      "english_word": "Nose",
+      "hindi": "नाक",
+      "sat": "Mũ",
+      "ho": "Mũ",
+      "mun": "Mũ",
+      "pronunciation": "En",
+      "sentence": "Touch your nose. / अपनी नाक छुओ। / Mũ joted' me."
+    },
+    {
+      "letter": "O",
+      "hindi_sound": "ओ / ओ",
+      "english_word": "Ox",
+      "hindi": "बैल",
+      "sat": "Dangra",
+      "ho": "Sanduri",
+      "mun": "Dangra",
+      "pronunciation": "Oh",
+      "sentence": "Ox plows the field. / बैल खेत जोतता है। / Dangra khet siye."
+    },
+    {
+      "letter": "P",
+      "hindi_sound": "पी / प",
+      "english_word": "Pen",
+      "hindi": "कलम",
+      "sat": "Kolom",
+      "ho": "Kalam",
+      "mun": "Kolom",
+      "pronunciation": "Pee",
+      "sentence": "Write with pen. / कलम से लिखो। / Kolom te ol me."
+    },
+    {
+      "letter": "Q",
+      "hindi_sound": "क्यू / क",
+      "english_word": "Queue",
+      "hindi": "पंक्ति / कतार",
+      "sat": "Tohar / Lain",
+      "ho": "Lain",
+      "mun": "Lain",
+      "pronunciation": "Kyoo",
+      "sentence": "Stand in queue. / कतार में खड़े हो जाओ। / Lain re tingu me."
+    },
+    {
+      "letter": "R",
+      "hindi_sound": "आर / र",
+      "english_word": "River",
+      "hindi": "नदी",
+      "sat": "Gada",
+      "ho": "Gara",
+      "mun": "Gara",
+      "pronunciation": "Ahr",
+      "sentence": "Clean river water. / नदी का साफ पानी। / Gada reak' pharcha dak'."
+    },
+    {
+      "letter": "S",
+      "hindi_sound": "एस / स",
+      "english_word": "Sun",
+      "hindi": "सूरज",
+      "sat": "Singi",
+      "ho": "Singi",
+      "mun": "Singi",
+      "pronunciation": "Es",
+      "sentence": "Sun rises in east. / सूरज पूर्व में उगता है। / Singi purub re rakap'aa."
+    },
+    {
+      "letter": "T",
+      "hindi_sound": "टी / ट",
+      "english_word": "Tree",
+      "hindi": "पेड़",
+      "sat": "Dare",
+      "ho": "Daru",
+      "mun": "Daru",
+      "pronunciation": "Tee",
+      "sentence": "Big tree. / बड़ा पेड़। / Marang dare."
+    },
+    {
+      "letter": "U",
+      "hindi_sound": "यू / उ",
+      "english_word": "Umbrella",
+      "hindi": "छाता",
+      "sat": "Chhata",
+      "ho": "Chhata",
+      "mun": "Chhati",
+      "pronunciation": "Yoo",
+      "sentence": "Open the umbrella. / छाता खोलो। / Chhata otang me."
+    },
+    {
+      "letter": "V",
+      "hindi_sound": "वी / व",
+      "english_word": "Village",
+      "hindi": "गाँव",
+      "sat": "Ato",
+      "ho": "Hatu",
+      "mun": "Hatu",
+      "pronunciation": "Vee",
+      "sentence": "My village. / मेरा गाँव। / Inya' ato."
+    },
+    {
+      "letter": "W",
+      "hindi_sound": "डब्ल्यू / व",
+      "english_word": "Water",
+      "hindi": "पानी",
+      "sat": "Dak'",
+      "ho": "Da'",
+      "mun": "Da'",
+      "pronunciation": "Dub-ul-yoo",
+      "sentence": "Drink water. / पानी पियो। / Dak' ñu me."
+    },
+    {
+      "letter": "X",
+      "hindi_sound": "एक्स / क्स",
+      "english_word": "Xylophone",
+      "hindi": "जलतरंग / काष्ठतरंग",
+      "sat": "Banam rurang",
+      "ho": "Rutu",
+      "mun": "Rutu",
+      "pronunciation": "Zye-lo-fone",
+      "sentence": "Play music. / संगीत बजाओ। / Rurang orong me."
+    },
+    {
+      "letter": "Y",
+      "hindi_sound": "वाई / य",
+      "english_word": "Yellow",
+      "hindi": "पीला",
+      "sat": "Sasam",
+      "ho": "Sasam",
+      "mun": "Sasang",
+      "pronunciation": "Wye",
+      "sentence": "Yellow flower. / पीला फूल। / Sasam baha."
+    },
+    {
+      "letter": "Z",
+      "hindi_sound": "ज़ेड / ज़",
+      "english_word": "Zero",
+      "hindi": "शून्य",
+      "sat": "Sunya",
+      "ho": "Sunya",
+      "mun": "Sunya",
+      "pronunciation": "Zed / Zee",
+      "sentence": "Zero means nothing. / शून्य का अर्थ कुछ नहीं। / Sunya reak' mane jahana' banu'."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "category": "Directions",
+  "total": 4,
+  "items": [
+    {
+      "id": 108,
+      "category": "Directions",
+      "hindi": "पूर्व",
+      "english": "East",
+      "santali": "Samat' / Purub",
+      "ho": "Singi turu",
+      "mundari": "Purub",
+      "pronunciation": "Pu-rub",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 109,
+      "category": "Directions",
+      "hindi": "पश्चिम",
+      "english": "West",
+      "santali": "Pachhim / Singihasur",
+      "ho": "Singi hasur",
+      "mundari": "Pachhim",
+      "pronunciation": "Pach-him",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 110,
+      "category": "Directions",
+      "hindi": "उत्तर",
+      "english": "North",
+      "santali": "Utar",
+      "ho": "Utar",
+      "mundari": "Utar",
+      "pronunciation": "U-tar",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 111,
+      "category": "Directions",
+      "hindi": "दक्षिण",
+      "english": "South",
+      "santali": "Dakhin",
+      "ho": "Dakhin",
+      "mundari": "Dakhin",
+      "pronunciation": "Dak-hin",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "category": "Birds",
+  "total": 5,
+  "items": [
+    {
+      "id": 34,
+      "category": "Birds",
+      "hindi": "पक्षी / चिड़िया",
+      "english": "Bird",
+      "santali": "Chene",
+      "ho": "Chene",
+      "mundari": "Chene",
+      "pronunciation": "Che-ne",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 35,
+      "category": "Birds",
+      "hindi": "मुर्गी",
+      "english": "Hen",
+      "santali": "Sim enga",
+      "ho": "Sim enga",
+      "mundari": "Sim enga",
+      "pronunciation": "Sim en-ga",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 36,
+      "category": "Birds",
+      "hindi": "मुर्गा",
+      "english": "Rooster",
+      "santali": "Sim sandi",
+      "ho": "Sim sandi",
+      "mundari": "Sim sandi",
+      "pronunciation": "Sim san-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 37,
+      "category": "Birds",
+      "hindi": "कौआ",
+      "english": "Crow",
+      "santali": "Kahu",
+      "ho": "Kahu",
+      "mundari": "Kau",
+      "pronunciation": "Ka-hu",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 38,
+      "category": "Birds",
+      "hindi": "मोर",
+      "english": "Peacock",
+      "santali": "Marak'",
+      "ho": "Mara",
+      "mundari": "Mara",
+      "pronunciation": "Ma-rak",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

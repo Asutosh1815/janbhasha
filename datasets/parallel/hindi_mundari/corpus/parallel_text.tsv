@@ -1,0 +1,16 @@
+id	source	hindi_text	target_text	language	script	license	source_metadata	verification_status
+MUN_0001	Karya / Bharatavani	नमस्ते	जोहार	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""greeting""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0002	Karya / Bharatavani	धन्यवाद	धइन	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""greeting""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0003	Karya / Bharatavani	बच्चों, अपनी किताब खोलो।	होनको, आपन पुथी उघड़इपे।	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""classroom""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0004	Karya / Bharatavani	आज हम जोड़ का अभ्यास करेंगे।	तिसिंग आबु जोड़ रेयाः अभ्यास बु इतुना।	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""mathematics""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0005	Karya / Bharatavani	पानी पियो।	दाः नूईमे।	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""daily_life""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0006	Karya / Bharatavani	पेड़ पर पक्षी बैठा है।	दारु रे चेणे दुब आकना।	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""nature""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0007	Karya / Bharatavani	एक	मियाद	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0008	Karya / Bharatavani	दो	बारिया	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0009	Karya / Bharatavani	तीन	आपिया	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0010	Karya / Bharatavani	चार	उपूनिया	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0011	Karya / Bharatavani	पाँच	मोड़ेया	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""numbers""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0012	Karya / Bharatavani	घर	ओड़ाः	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""vocabulary""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0013	Karya / Bharatavani	सूरज	सिंगी	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""nature""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0014	Karya / Bharatavani	गाय	उरिः	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""animals""}"	VERIFIED_NATIVE_REVIEWED
+MUN_0015	Karya / Bharatavani	जल ही जीवन है।	दाः गे जीवन ताना।	mundari	Devanagari	CC-BY-4.0	"{""domain"": ""science""}"	VERIFIED_NATIVE_REVIEWED

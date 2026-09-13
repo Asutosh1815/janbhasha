@@ -1,0 +1,95 @@
+{
+  "manifest_version": "1.0",
+  "updated_at": "2026-09-03 18:31:55",
+  "datasets": [
+    {
+      "name": "Karya Hindi-Mundari Translation",
+      "language": "mundari",
+      "language_code": "mun / unr",
+      "direction": "hi-mundari",
+      "source": "https://github.com/karya-inc/dataset-hindi-mundari-translation",
+      "download_url": "https://raw.githubusercontent.com/karya-inc/dataset-hindi-mundari-translation/main/translation-hi-unr.tsv",
+      "license": "CC-BY-4.0 / Open Data for AI",
+      "version": "1.0.0",
+      "local_path": "datasets\\mundari\\translation\\raw\\karya\\translation-hi-unr.tsv",
+      "size_bytes": 3788450,
+      "sha256": "217be36a2d459bc8ff513165c6cbf809532ac6a51f8bc118b9728cf5da6ef4ca",
+      "status": "downloaded"
+    },
+    {
+      "name": "AI4Bharat BPCC & CIIL Santali Parallel Corpus",
+      "language": "santali",
+      "language_code": "sat / sat_Olck",
+      "direction": "hi-santali (Ol Chiki)",
+      "source": "https://huggingface.co/datasets/ai4bharat/BPCC",
+      "download_url": "https://huggingface.co/datasets/ai4bharat/BPCC/tree/main/bpcc-seed-v2",
+      "license": "CC-BY-NC-4.0 / Research & Education",
+      "version": "2.0.0",
+      "local_path": "datasets\\santali\\translation\\raw\\bpcc\\sat_Olck.tsv",
+      "size_bytes": 2572,
+      "sha256": "943145dd81041630854bd5812c980777c880e82d7d0d68a38d3d2d5e335b4b1f",
+      "status": "downloaded"
+    },
+    {
+      "name": "Karya Mundari TTS & Microsoft MunTTS Dataset",
+      "language": "mundari",
+      "language_code": "mun / unr",
+      "direction": "text-to-speech",
+      "source": "https://github.com/karya-inc/dataset-mundari-tts",
+      "download_url": "https://github.com/karya-inc/dataset-mundari-tts",
+      "license": "Research Access (Contact: Karya Inc.) / MIT (MunTTS)",
+      "version": "1.0",
+      "local_path": "datasets\\mundari\\tts\\raw\\karya",
+      "status": "metadata_verified"
+    },
+    {
+      "name": "Santali Male Mono — IndicTTS Phase 3",
+      "language": "santali",
+      "language_code": "sat / sat_Olck / sat_Deva",
+      "direction": "text-to-speech",
+      "source": "https://aikosh.indiaai.gov.in/home/datasets/details/santali_male_mono_indictts_phase_3.html",
+      "license": "CC-BY-4.0 / Government Open Data License",
+      "version": "3.0",
+      "local_path": "C:\\Users\\smrut\\Downloads\\santali_male_native\\santali_male_native_web",
+      "size_bytes": 2735270793,
+      "audio_format": "PCM 16-bit Mono 48kHz",
+      "total_utterances": 5284,
+      "total_duration_hours": 9.98,
+      "status": "downloaded_and_preprocessed"
+    },
+    {
+      "name": "Murmu722 Santali Unified Corpus v2",
+      "language": "santali",
+      "language_code": "sat / sat_Olck",
+      "direction": "monolingual-and-parallel-olchiki",
+      "source": "https://huggingface.co/datasets/Murmu722/santali_corpus_unified_v2",
+      "download_url": "https://huggingface.co/datasets/Murmu722/santali_corpus_unified_v2",
+      "license": "Open Access / CC-BY-4.0",
+      "version": "v2.0",
+      "total_batches": 13,
+      "status": "verified_accessible"
+    },
+    {
+      "name": "MMLoSo Mundari Translation Corpus (Train & Test)",
+      "language": "mundari",
+      "language_code": "mun / unr",
+      "direction": "hi-mundari",
+      "source": "https://mmloso-workshop.github.io/task/",
+      "license": "CC-BY-4.0 / Research Task Data",
+      "version": "1.0",
+      "local_path": "datasets/mundari/translation/raw/mmloso/mundari-train.csv",
+      "status": "imported_and_processed"
+    },
+    {
+      "name": "MMLoSo Santali Ol Chiki Translation Corpus (Train & Test)",
+      "language": "santali",
+      "language_code": "sat / sat_Olck",
+      "direction": "en-santali / hi-santali",
+      "source": "https://mmloso-workshop.github.io/task/",
+      "license": "CC-BY-4.0 / Research Task Data",
+      "version": "1.0",
+      "local_path": "datasets/santali/translation/raw/mmloso/santali-train.csv",
+      "status": "imported_and_processed"
+    }
+  ]
+}

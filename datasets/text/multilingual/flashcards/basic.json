@@ -1,0 +1,16 @@
+{
+  "grade": "1-3",
+  "category": "Basic Vocabulary",
+  "cards": [
+    {"id": 1, "hindi": "सेब", "english": "Apple", "santali": "Sadom", "odia": "ଆପଲ", "emoji": "🍎"},
+    {"id": 2, "hindi": "केला", "english": "Banana", "santali": "Kela", "odia": "କଦଳୀ", "emoji": "🍌"},
+    {"id": 3, "hindi": "गाय", "english": "Cow", "santali": "Gai", "odia": "ଗାଈ", "emoji": "🐄"},
+    {"id": 4, "hindi": "पेड़", "english": "Tree", "santali": "Dare", "odia": "ଗଛ", "emoji": "🌳"},
+    {"id": 5, "hindi": "पानी", "english": "Water", "santali": "Dak", "odia": "ପାଣି", "emoji": "💧"},
+    {"id": 6, "hindi": "आग", "english": "Fire", "santali": "Serma", "odia": "ନିଆଁ", "emoji": "🔥"},
+    {"id": 7, "hindi": "चाँद", "english": "Moon", "santali": "Cando", "odia": "ଚନ୍ଦ୍ର", "emoji": "🌙"},
+    {"id": 8, "hindi": "सूरज", "english": "Sun", "santali": "Sinji", "odia": "ସୂର୍ଯ୍ୟ", "emoji": "☀️"},
+    {"id": 9, "hindi": "घर", "english": "House", "santali": "Orak", "odia": "ଘର", "emoji": "🏠"},
+    {"id": 10, "hindi": "रोटी", "english": "Bread", "santali": "Roti", "odia": "ରୁଟି", "emoji": "🫓"}
+  ]
+}

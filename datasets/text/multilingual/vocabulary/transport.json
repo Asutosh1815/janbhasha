@@ -1,0 +1,48 @@
+{
+  "category": "Transport",
+  "total": 3,
+  "items": [
+    {
+      "id": 105,
+      "category": "Transport",
+      "hindi": "सड़क / रास्ता",
+      "english": "Road / Path",
+      "santali": "Hor",
+      "ho": "Hora",
+      "mundari": "Hora",
+      "pronunciation": "Hor / Ho-ra",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 106,
+      "category": "Transport",
+      "hindi": "गाड़ी",
+      "english": "Cart / Vehicle",
+      "santali": "Gadi / Sagar",
+      "ho": "Gadi",
+      "mundari": "Gadi",
+      "pronunciation": "Ga-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 107,
+      "category": "Transport",
+      "hindi": "साइकिल",
+      "english": "Bicycle",
+      "santali": "Saikel",
+      "ho": "Saikel",
+      "mundari": "Saikel",
+      "pronunciation": "Sai-kel",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

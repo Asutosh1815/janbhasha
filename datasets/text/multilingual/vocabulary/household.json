@@ -1,0 +1,62 @@
+{
+  "category": "Household",
+  "total": 4,
+  "items": [
+    {
+      "id": 98,
+      "category": "Household",
+      "hindi": "घर",
+      "english": "House",
+      "santali": "Orak'",
+      "ho": "Oa'",
+      "mundari": "Ora'",
+      "pronunciation": "O-rak / O-ra",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 99,
+      "category": "Household",
+      "hindi": "दरवाज़ा",
+      "english": "Door",
+      "santali": "Duwar",
+      "ho": "Duar",
+      "mundari": "Duar",
+      "pronunciation": "Du-war",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 100,
+      "category": "Household",
+      "hindi": "खिड़की",
+      "english": "Window",
+      "santali": "Khirki",
+      "ho": "Khirki",
+      "mundari": "Khirki",
+      "pronunciation": "Khir-ki",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 101,
+      "category": "Household",
+      "hindi": "बर्तन / थाली",
+      "english": "Plate / Utensil",
+      "santali": "Thari / Dhibri",
+      "ho": "Thari",
+      "mundari": "Thari",
+      "pronunciation": "Tha-ri",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

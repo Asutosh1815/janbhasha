@@ -1,0 +1,10 @@
+{
+  "language": "santali",
+  "iso_code": "sat",
+  "script": "Ol Chiki",
+  "tts_engine": "Meta MMS-TTS-sat / IndicTTS",
+  "voice_type": "female_classroom_clear",
+  "audio_sample_rate": 22050,
+  "phoneme_dictionary": "datasets/santali/tts/metadata/phonemes.json",
+  "status": "ready"
+}

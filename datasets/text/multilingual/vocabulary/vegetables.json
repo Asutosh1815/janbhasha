@@ -1,0 +1,76 @@
+{
+  "category": "Vegetables",
+  "total": 5,
+  "items": [
+    {
+      "id": 49,
+      "category": "Vegetables",
+      "hindi": "सब्जी",
+      "english": "Vegetable",
+      "santali": "Utu",
+      "ho": "Utu",
+      "mundari": "Utu",
+      "pronunciation": "U-tu",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 50,
+      "category": "Vegetables",
+      "hindi": "आलू",
+      "english": "Potato",
+      "santali": "Aloo",
+      "ho": "Alu",
+      "mundari": "Alu",
+      "pronunciation": "A-lu",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 51,
+      "category": "Vegetables",
+      "hindi": "प्याज",
+      "english": "Onion",
+      "santali": "Piyaj",
+      "ho": "Piyaj",
+      "mundari": "Piyaj",
+      "pronunciation": "Pi-yaj",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 52,
+      "category": "Vegetables",
+      "hindi": "टमाटर",
+      "english": "Tomato",
+      "santali": "Vilati / Tamatar",
+      "ho": "Bilati",
+      "mundari": "Bilati",
+      "pronunciation": "Bi-la-ti",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 53,
+      "category": "Vegetables",
+      "hindi": "साग / पत्तेदार सब्जी",
+      "english": "Leafy greens",
+      "santali": "Arak'",
+      "ho": "Ara'",
+      "mundari": "Ara'",
+      "pronunciation": "A-rak",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

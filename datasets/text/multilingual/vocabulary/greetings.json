@@ -1,0 +1,90 @@
+{
+  "category": "Greetings",
+  "total": 6,
+  "items": [
+    {
+      "id": 1,
+      "category": "Greetings",
+      "hindi": "नमस्ते / जोहार",
+      "english": "Greetings / Hello",
+      "santali": "Johar",
+      "ho": "Johar",
+      "mundari": "Johar",
+      "pronunciation": "Jo-har",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 2,
+      "category": "Greetings",
+      "hindi": "सुप्रभात",
+      "english": "Good morning",
+      "santali": "Bhor Johar",
+      "ho": "Seta Johar",
+      "mundari": "Setah Johar",
+      "pronunciation": "Se-tah Jo-har",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 3,
+      "category": "Greetings",
+      "hindi": "शुभ रात्रि",
+      "english": "Good night",
+      "santali": "Nida Johar",
+      "ho": "Ayu Johar",
+      "mundari": "Ayub Johar",
+      "pronunciation": "Ni-da Jo-har",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 4,
+      "category": "Greetings",
+      "hindi": "धन्यवाद",
+      "english": "Thank you",
+      "santali": "Sarhao",
+      "ho": "Sarhao",
+      "mundari": "Sarhao / Daniabad",
+      "pronunciation": "Sar-hao",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 5,
+      "category": "Greetings",
+      "hindi": "आप कैसे हैं?",
+      "english": "How are you?",
+      "santali": "Chet' leka menama?",
+      "ho": "Chena leka menama?",
+      "mundari": "Chilikam menaa?",
+      "pronunciation": "Chet le-ka me-na-ma",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 6,
+      "category": "Greetings",
+      "hindi": "मैं ठीक हूँ",
+      "english": "I am fine",
+      "santali": "In do bbes ge menana",
+      "ho": "Ain bugite menana",
+      "mundari": "Ain bbesge menana",
+      "pronunciation": "In do bes ge me-na-na",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

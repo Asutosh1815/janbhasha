@@ -1,0 +1,10 @@
+{
+  "language": "mundari",
+  "iso_code": "unr / mun",
+  "script": "Devanagari",
+  "tts_engine": "Microsoft MunTTS VITS / Meta MMS-TTS-unr",
+  "voice_type": "female_classroom_clear",
+  "audio_sample_rate": 22050,
+  "phoneme_dictionary": "datasets/mundari/tts/metadata/phonemes.json",
+  "status": "ready"
+}

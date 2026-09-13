@@ -1,0 +1,16 @@
+{
+  "grade": 2,
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Words - शब्द",
+      "subject": "Hindi",
+      "type": "lesson",
+      "xpReward": 50,
+      "content": [
+        {"type": "text", "value": "Let's learn new words! नए शब्द सीखें!"},
+        {"type": "text", "value": "House = घर, School = विद्यालय"}
+      ]
+    }
+  ]
+}

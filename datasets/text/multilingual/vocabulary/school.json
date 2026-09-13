@@ -1,0 +1,90 @@
+{
+  "category": "School",
+  "total": 6,
+  "items": [
+    {
+      "id": 15,
+      "category": "School",
+      "hindi": "विद्यालय / स्कूल",
+      "english": "School",
+      "santali": "Itun asra / Iskul",
+      "ho": "Iskul / Ol itun asra",
+      "mundari": "Iskul / Itun asra",
+      "pronunciation": "I-tun As-ra",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 16,
+      "category": "School",
+      "hindi": "शिक्षक",
+      "english": "Teacher",
+      "santali": "Machete / Gurugomke",
+      "ho": "Mastar / Guru",
+      "mundari": "Machete / Sikshak",
+      "pronunciation": "Ma-che-te",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 17,
+      "category": "School",
+      "hindi": "विद्यार्थी / छात्र",
+      "english": "Student",
+      "santali": "Chechedi / Pathua",
+      "ho": "Itun hon",
+      "mundari": "Sikhao hon / Chhatro",
+      "pronunciation": "Che-che-di",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 18,
+      "category": "School",
+      "hindi": "किताब",
+      "english": "Book",
+      "santali": "Puthie / Potob",
+      "ho": "Puthi",
+      "mundari": "Pothi",
+      "pronunciation": "Pu-thi",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 19,
+      "category": "School",
+      "hindi": "कलम",
+      "english": "Pen",
+      "santali": "Kolom",
+      "ho": "Kalam",
+      "mundari": "Kolom",
+      "pronunciation": "Ko-lom",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    },
+    {
+      "id": 20,
+      "category": "School",
+      "hindi": "कापी",
+      "english": "Notebook",
+      "santali": "Ol puthi",
+      "ho": "Ol puthi",
+      "mundari": "Ol pothi",
+      "pronunciation": "Ol pu-thi",
+      "source": "CIIL Tribal Vocabularies & Bharatavani Portal",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "human_verified": true
+    }
+  ]
+}

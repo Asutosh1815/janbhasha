@@ -1,0 +1,16 @@
+{
+  "grade": 3,
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Sentences - वाक्य",
+      "subject": "Hindi",
+      "type": "lesson",
+      "xpReward": 60,
+      "content": [
+        {"type": "text", "value": "Let's make sentences. वाक्य बनाएं।"},
+        {"type": "text", "value": "I am a boy. = मैं एक लड़का हूँ।"}
+      ]
+    }
+  ]
+}
